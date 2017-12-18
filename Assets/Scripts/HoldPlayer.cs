@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HoldCharacter : MonoBehaviour {
+public class HoldPlayer : MonoBehaviour {
 
 	void OnTriggerEnter(Collider col)
 	{
+        Debug.Log(col.name);
 		col.transform.parent = gameObject.transform;
 	}
 	void OnTriggerExit(Collider col)

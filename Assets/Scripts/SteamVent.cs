@@ -17,8 +17,11 @@ public class SteamVent : MonoBehaviour {
 	}
 	void OnTriggerStay(Collider other) 
 	{
-		player = other.GetComponent<Chara> ();
-		Debug.Log (other.gameObject.name + " has stepped on " + gameObject.name);
-        player.moveDirection.y += 0.2f;
+        if (other.tag == "Player")
+        {
+            player = other.GetComponent<Chara>();
+            Debug.Log(other.gameObject.name + " has stepped on " + gameObject.name);
+            player.moveDirection.y += 0.2f;
+        }
 	}
 }

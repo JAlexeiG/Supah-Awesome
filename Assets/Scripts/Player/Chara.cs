@@ -29,6 +29,31 @@ public class Chara : MonoBehaviour {
     private RaycastHit hit;
 
 
+    [SerializeField]
+    private int bullets;
+    [SerializeField]
+    private int playerBullets;
+    [SerializeField]
+    private int bulletCap;
+    [SerializeField]
+    private int bulletLoaded;
+
+    [SerializeField]
+    Transform aimingOrigin;
+    [SerializeField]
+    Transform bulletSpawnPoint;
+    [SerializeField]
+    GameObject bulletPreFab;
+    [SerializeField]
+    GameObject crosshairPreFab;
+
+    public bool dashing;
+    public float dashLength;
+    public float dashStrength;
+    float dashInput;
+    float dashTimer;
+
+
     public bool doubleJump;
     void Start()
     {
@@ -54,14 +79,35 @@ public class Chara : MonoBehaviour {
         {
             gliderStrength = 6;
         }
+        if (dashStrength <= 0)
+        {
+            dashStrength = 10;
+        }
+        if(dashTimer <= 0)
+        {
+            dashTimer = 0.1f;
+        }
         OGravity = gravity;
         OSpeed = speed;
         ////
+
+        bullets = 10;
+        playerBullets = 5;
+        bulletCap = 10;
+        bulletLoaded = 0;
     }
 
     void Update()
     {
-        //A bunch of stuff to know where the player is pointing with keys. NOT MOUSE.
+        //Updates to make sure everything is not over the cap
+        if (playerBullets > bulletCap)
+        {
+            playerBullets = bulletCap;
+        }
+
+
+
+        //All the inputsfor boosting in air
         if (Input.GetAxis("Horizontal") > 0.1)
         {
             right = boostStrength;
@@ -74,6 +120,7 @@ public class Chara : MonoBehaviour {
         {
             right = 0;
         }
+
         if (Input.GetAxis("Vertical") > 0)
         {
             left = boostStrength;
@@ -88,32 +135,82 @@ public class Chara : MonoBehaviour {
         }
 
 
-
         //A bunch of stuff to know where mouse is
         if (Input.GetButtonDown("Fire1"))
         {
-            ray = Camera.main.ScreenPointToRay(Input.mousePosition);//Creates a ray where the mouse clicks
-            playerRay = Camera.main.ScreenPointToRay(gameObject.transform.position);//Creates a ray from where the character is
-
-            //Mouse position (+20 because camera is -20) to find where to shoot something
-            mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 20);
-
-
-            Vector3 potato = Camera.main.ScreenToWorldPoint(mousePos); //Gives world-coordinants of where you just fired
-
-            //Explains what the mouse just clicked, if anything. Use for grappling hook if we use it
-            if (Physics.Raycast(ray))
+            if (bulletLoaded != 0)
             {
-                Physics.Raycast(ray, out hit); //When raycast hits something, 'hit' explains what it hit
-                if (hit.transform.tag == "Enemy")
-                    {
-                        Destroy(hit.transform.gameObject);
-                    }
+                ray = Camera.main.ScreenPointToRay(Input.mousePosition);//Creates a ray where the mouse clicks
+                playerRay = Camera.main.ScreenPointToRay(gameObject.transform.position);//Creates a ray from where the character is
+
+                //Mouse position (+20 because camera is -20) to find where to shoot something
+                mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z);
+
+
+                Vector3 potato = Camera.main.ScreenToWorldPoint(mousePos); //Gives world-coordinants of where you just fired
+
+                GameObject crosshair = Instantiate(crosshairPreFab, potato, Quaternion.Euler(0, 0, 0));
+
+
+                ///Updates for aiming
+                aimingOrigin.LookAt(crosshair.transform);
+
+                GameObject bullet = Instantiate(bulletPreFab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+
+                bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 10;
+
+                Destroy(bullet, 3.0f);
+                Destroy(crosshair, 0.5f);
+
+                bulletLoaded--;
             }
+            else
+            {
+                Debug.Log("You have no bullets loaded, re-loading");
+                if (playerBullets <= 0)
+                {
+                    Debug.Log("You have no bullets left");
+                }
+                else
+                {
+                    if (playerBullets < 5)
+                    {
+                        bulletLoaded = playerBullets;
+                        playerBullets = 0;
+                    }
+                    else
+                    {
+                        playerBullets -= 5;
+                        bulletLoaded += 5;
+                    }
+                }
+            }
+            
         }
 
         CharacterController controller = GetComponent<CharacterController>();
-        if (controller.isGrounded)
+
+        if (Input.GetButtonDown("Dash") && SteamManager.instance.steamUsable == true)
+        {
+            dashing = true;
+            dashTimer = 0;
+            dashInput = Input.GetAxis("Dash");
+            SteamManager.instance.steam -= 10;
+        }
+        if(dashing)
+        {
+            dashTimer += Time.deltaTime;
+
+
+            moveDirection = new Vector3(dashStrength * dashInput, 0, 0); //Adds movement
+
+            if (dashTimer >= dashLength)
+            {
+                dashing = false;
+            }
+        }
+
+        if (controller.isGrounded && !dashing)
         {
             doubleJump = true; //Makes jumping available again
             moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, 0); //Adds movement
@@ -135,7 +232,7 @@ public class Chara : MonoBehaviour {
                 speed = OSpeed;
             }
         }
-        else
+        else if (!dashing)
         {
             if (doubleJump == true & SteamManager.instance.steamUsable == true)//Checks for double jump and jumps
             {
@@ -160,5 +257,23 @@ public class Chara : MonoBehaviour {
 
         moveDirection.y -= gravity * Time.deltaTime; // Adds velocity downwards over tiem
         controller.Move(moveDirection * Time.deltaTime); // Moves the character according to velocity   
+    }
+
+
+    public void fire()
+    {
+        GameObject bullet = Instantiate(bulletPreFab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+
+        bulletLoaded--;
+
+        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 10;
+
+        Destroy(bullet, 3.0f);
+
+    }
+
+    public void addBullets(int x)
+    {
+        playerBullets += x;
     }
 }
