@@ -21,7 +21,7 @@ public class SteamVent : MonoBehaviour {
         {
             player = other.GetComponent<Chara>();
             Debug.Log(other.gameObject.name + " has stepped on " + gameObject.name);
-            player.moveDirection.y += 0.2f;
+            player.GetComponent<Rigidbody>().AddRelativeForce(0,0.2f,0,ForceMode.Acceleration);
         }
 	}
 }

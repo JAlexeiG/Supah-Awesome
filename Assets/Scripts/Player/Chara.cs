@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Chara : MonoBehaviour {
+public class Chara : MonoBehaviour
+{
 
     public float speed;
     public float jumpSpeed;
@@ -10,18 +11,21 @@ public class Chara : MonoBehaviour {
 
     private float OGravity;
     private float OSpeed;
-    public Vector3 moveDirection = Vector3.zero;
-    
+    private Vector3 moveDirection;
+
+    private Rigidbody rb;
 
     public float boostStrength;
     public float gliderStrength;
+
+
+    private bool grounded;
 
     //Left and right for booster via arrow keys
     float left;
     float right;
 
     //Where the mouse is
-    Ray ray;
     Ray playerRay;
     private Vector3 mousePos;
 
@@ -47,26 +51,43 @@ public class Chara : MonoBehaviour {
     [SerializeField]
     GameObject crosshairPreFab;
 
+
     public bool dashing;
     public float dashLength;
     public float dashStrength;
-    float dashInput;
     float dashTimer;
+
+    Transform trans;
+
+    static bool onWall_;
+    [SerializeField]
+    private float rad_angle;
+    float pi = Mathf.PI;
+    [SerializeField]
+    private float angle_;
+
 
 
     public bool doubleJump;
+
+
     void Start()
     {
-        
+        trans = GetComponent<Transform>();
+
+        rb = GetComponent<Rigidbody>();
+
+        if (!rb)
+        {
+            gameObject.AddComponent<Rigidbody>();
+        }
+
         //// Checks to make sure nothing is 0 and pre-sets the original speed and gravity
         if (speed <= 0)
         {
             speed = 4.0f;
         }
-        if (gravity <= 0)
-        {
-            gravity = 4.0f;
-        }
+        gravity = -9.81f;
         if (jumpSpeed <= 0)
         {
             jumpSpeed = 5.0f;
@@ -83,7 +104,7 @@ public class Chara : MonoBehaviour {
         {
             dashStrength = 10;
         }
-        if(dashTimer <= 0)
+        if (dashTimer <= 0)
         {
             dashTimer = 0.1f;
         }
@@ -95,10 +116,19 @@ public class Chara : MonoBehaviour {
         playerBullets = 5;
         bulletCap = 10;
         bulletLoaded = 0;
+
+        ////
+
+        onWall = false;
+        grounded = false;
     }
 
     void Update()
     {
+
+        rb.AddRelativeForce(0, gravity, 0, ForceMode.Acceleration); //Adds gravity downwards towards the player's feet and only towards the player's feet
+
+
         //Updates to make sure everything is not over the cap
         if (playerBullets > bulletCap)
         {
@@ -140,8 +170,7 @@ public class Chara : MonoBehaviour {
         {
             if (bulletLoaded != 0)
             {
-                ray = Camera.main.ScreenPointToRay(Input.mousePosition);//Creates a ray where the mouse clicks
-                playerRay = Camera.main.ScreenPointToRay(gameObject.transform.position);//Creates a ray from where the character is
+                playerRay = Camera.main.ScreenPointToRay(trans.position);//Creates a ray from where the character is
 
                 //Mouse position (+20 because camera is -20) to find where to shoot something
                 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z);
@@ -185,24 +214,25 @@ public class Chara : MonoBehaviour {
                     }
                 }
             }
-            
+
         }
 
-        CharacterController controller = GetComponent<CharacterController>();
 
         if (Input.GetButtonDown("Dash") && SteamManager.instance.steamUsable == true)
         {
             dashing = true;
             dashTimer = 0;
-            dashInput = Input.GetAxis("Dash");
             SteamManager.instance.steam -= 10;
         }
-        if(dashing)
+
+        if (dashing)
         {
             dashTimer += Time.deltaTime;
 
 
-            moveDirection = new Vector3(dashStrength * dashInput, 0, 0); //Adds movement
+            //moveDirection = new Vector3(dashStrength, 0, 0); //Adds movement
+
+            ////FIX MOVING (Dash Movement)
 
             if (dashTimer >= dashLength)
             {
@@ -210,16 +240,15 @@ public class Chara : MonoBehaviour {
             }
         }
 
-        if (controller.isGrounded && !dashing)
+        if (grounded && !dashing)
         {
             doubleJump = true; //Makes jumping available again
-            moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, 0); //Adds movement
-            moveDirection = transform.TransformDirection(moveDirection); //Moves stuff
-            moveDirection *= speed; // Applies an acceleration to the movement
+
+
 
             if (Input.GetButtonDown("Jump"))
             {
-                moveDirection.y = jumpSpeed;//Jump
+                rb.AddRelativeForce(0, jumpSpeed, 0, ForceMode.VelocityChange);
             }
 
             if (Input.GetButton("Glider") & SteamManager.instance.steamUsable == true) // Button is Shift
@@ -240,7 +269,9 @@ public class Chara : MonoBehaviour {
                 {
                     SteamManager.instance.steam -= 25; // Lowers steam by a number
                     doubleJump = false;//Turns it off
-                    moveDirection += new Vector3(right, left, 0);//Adds a force to the char based on buttons held down
+
+                    rb.AddRelativeForce(0, jumpSpeed, 0, ForceMode.VelocityChange);
+
                 }
             }
 
@@ -251,12 +282,33 @@ public class Chara : MonoBehaviour {
             }
             else
             {
-                gravity = OGravity; //Reesets gravity
+                gravity = OGravity;
             }
+            
         }
 
-        moveDirection.y -= gravity * Time.deltaTime; // Adds velocity downwards over tiem
-        controller.Move(moveDirection * Time.deltaTime); // Moves the character according to velocity   
+
+
+        float input = Input.GetAxis("Horizontal");
+
+        if (input > 0)
+        {
+            trans.position += trans.right * speed * Time.deltaTime;
+        }
+        else if (input < 0)
+        {
+            trans.position += -trans.right * speed * Time.deltaTime;
+        }
+
+        if (trans.eulerAngles.z < angle)
+        {
+            trans.eulerAngles += Vector3.Lerp(trans.eulerAngles, new Vector3(0, 0, angle), 5f) * Time.deltaTime;
+        }
+        else if (trans.eulerAngles.z > angle)
+        {
+
+            trans.eulerAngles -= Vector3.Lerp(new Vector3(0, 0, 0), trans.eulerAngles, 5f) * Time.deltaTime;
+        }
     }
 
 
@@ -275,5 +327,31 @@ public class Chara : MonoBehaviour {
     public void addBullets(int x)
     {
         playerBullets += x;
+    }
+
+    public bool onWall
+    {
+        get { return onWall_; }
+        set { onWall_ = value; }
+    }
+    public float angle
+    {
+        get { return angle_; }
+        set { angle_ = value; }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Floor")
+        {
+            grounded = true;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Floor")
+        {
+            grounded = false;
+        }
     }
 }
