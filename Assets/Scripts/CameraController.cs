@@ -1,11 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//Written by: Socrates
+//Last Updated : 26/01/2018
 
-/*This script is to be attached to a camera. The camera will transition from transform to transform.
-create a game object where you want your camera angle to be, then drag the transform(game object) into the 
-script public transform. Insert as much as views needed.
-*/
 
 public class CameraController : MonoBehaviour
 {
@@ -14,24 +12,41 @@ public class CameraController : MonoBehaviour
 
 
     private Vector3 offset;         //Private variable to store the offset distance between the player and camera
-
+    bool zoom;
     // Use this for initialization
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         //Calculate and store the offset value by getting the distance between the player's position and camera's position.
         offset = transform.position - player.transform.position;
+
+        
     }
 
     // LateUpdate is called after Update each frame
     void LateUpdate()
     {
         // Set the position of the camera's transform to be the same as the player's, but offset by the calculated offset distance.
-        transform.position = player.transform.position + offset;
+        if (zoom)
+        {
+            transform.position = player.transform.position + (offset);
+        }
+
+        if(!zoom)
+        {
+            ZoomIn();
+        }
+
+        //for testing 
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            zoom = !zoom;
+        }
     }
-    void Dialog()
+    void ZoomIn()
     {
-        
+        transform.position = player.transform.position + (offset + new Vector3(0, 0, 10));
     }
+    
 
 }
