@@ -299,16 +299,18 @@ public class Chara : MonoBehaviour
         {
             trans.position += -trans.right * speed * Time.deltaTime;
         }
+        
 
         if (trans.eulerAngles.z < angle)
         {
-            trans.eulerAngles += Vector3.Lerp(trans.eulerAngles, new Vector3(0, 0, angle), 5f) * Time.deltaTime;
+            trans.eulerAngles += Vector3.Lerp(trans.eulerAngles, new Vector3(0, 0, angle), 0.5f) * Time.deltaTime;
         }
         else if (trans.eulerAngles.z > angle)
         {
 
-            trans.eulerAngles -= Vector3.Lerp(new Vector3(0, 0, 0), trans.eulerAngles, 5f) * Time.deltaTime;
+            trans.eulerAngles -= Vector3.Lerp(new Vector3(0, 0, 0), trans.eulerAngles, 0.5f) * Time.deltaTime;
         }
+        Debug.Log(Vector3.Angle(trans.eulerAngles, new Vector3(0, 0, angle)) + " Total " + trans.eulerAngles + " Current angle " + angle + " angle ");
     }
 
 
