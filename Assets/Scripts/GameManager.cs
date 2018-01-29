@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour {
 
     public void LoadGame()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Game_Justin");
     }
     public void LoadMain()
     {

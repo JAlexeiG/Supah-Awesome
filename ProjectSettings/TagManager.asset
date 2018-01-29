@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - Pushable
   - Collectible
+  - Floor
+  - Bullet
   layers:
   - Default
   - TransparentFX
