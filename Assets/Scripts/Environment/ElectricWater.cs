@@ -20,10 +20,13 @@ public class ElectricWater : MonoBehaviour {
 
     void OnTriggerStay(Collider col)
     {
-        Debug.Log(col.name + " is on " + gameObject);
-        if(isPowered)
+        if (col.name == "Player")
         {
-            HealthManager.instance.health -= 0.5f;
+            Debug.Log(col.name + " is on " + gameObject);
+            if (isPowered)
+            {
+                HealthManager.instance.health -= 0.5f;
+            }
         }
     }
 }
