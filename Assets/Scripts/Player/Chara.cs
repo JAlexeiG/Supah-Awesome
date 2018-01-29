@@ -9,6 +9,7 @@ public class Chara : MonoBehaviour
     public float jumpSpeed;
     public float gravity;
 
+
     private float OGravity;
     private float OSpeed;
     private Vector3 moveDirection;
@@ -22,11 +23,9 @@ public class Chara : MonoBehaviour
     private bool grounded;
 
     //Left and right for booster via arrow keys
-    float left;
+    float up;
     float right;
-
-    //Where the mouse is
-    Ray playerRay;
+    
     private Vector3 mousePos;
 
     //What the mouse clicked
@@ -62,14 +61,12 @@ public class Chara : MonoBehaviour
     static bool onWall_;
     [SerializeField]
     private float rad_angle;
-    float pi = Mathf.PI;
     [SerializeField]
     private float angle_;
-
-
+    [SerializeField]
+    private float rotationSpeed;
 
     public bool doubleJump;
-
 
     void Start()
     {
@@ -112,7 +109,6 @@ public class Chara : MonoBehaviour
         OSpeed = speed;
         ////
 
-        bullets = 10;
         playerBullets = 5;
         bulletCap = 10;
         bulletLoaded = 0;
@@ -153,15 +149,15 @@ public class Chara : MonoBehaviour
 
         if (Input.GetAxis("Vertical") > 0)
         {
-            left = boostStrength;
+            up = boostStrength;
         }
         else if (Input.GetAxis("Vertical") < -0.1)
         {
-            left = -boostStrength;
+            up = -boostStrength;
         }
         else
         {
-            left = 0;
+            up = 0;
         }
 
 
@@ -170,8 +166,6 @@ public class Chara : MonoBehaviour
         {
             if (bulletLoaded != 0)
             {
-                playerRay = Camera.main.ScreenPointToRay(trans.position);//Creates a ray from where the character is
-
                 //Mouse position (+20 because camera is -20) to find where to shoot something
                 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z);
 
@@ -217,8 +211,8 @@ public class Chara : MonoBehaviour
 
         }
 
-
-        if (Input.GetButtonDown("Dash") && SteamManager.instance.steamUsable == true)
+        bool dashMovement = Input.GetButtonDown("Dash");
+        if (dashMovement && SteamManager.instance.steamUsable == true)
         {
             dashing = true;
             dashTimer = 0;
@@ -229,7 +223,14 @@ public class Chara : MonoBehaviour
         {
             dashTimer += Time.deltaTime;
 
-
+            if (Input.GetAxis("Dash") < 0)
+            {
+                rb.velocity = new Vector3(-dashStrength, 0, 0);
+            }
+            else if (Input.GetAxis("Dash") > 0)
+            {
+                rb.velocity = new Vector3(dashStrength, 0, 0);
+            }
             //moveDirection = new Vector3(dashStrength, 0, 0); //Adds movement
 
             ////FIX MOVING (Dash Movement)
@@ -237,6 +238,7 @@ public class Chara : MonoBehaviour
             if (dashTimer >= dashLength)
             {
                 dashing = false;
+                rb.velocity = new Vector3(0, 0, 0);
             }
         }
 
@@ -270,7 +272,7 @@ public class Chara : MonoBehaviour
                     SteamManager.instance.steam -= 25; // Lowers steam by a number
                     doubleJump = false;//Turns it off
 
-                    rb.AddRelativeForce(0, jumpSpeed, 0, ForceMode.VelocityChange);
+                    rb.AddRelativeForce(right, up, 0, ForceMode.VelocityChange);
 
                 }
             }
@@ -299,18 +301,24 @@ public class Chara : MonoBehaviour
         {
             trans.position += -trans.right * speed * Time.deltaTime;
         }
-        
 
-        if (trans.eulerAngles.z < angle)
+        float diff = Mathf.Abs(trans.eulerAngles.z - angle);
+        if (diff > 5f)
         {
-            trans.eulerAngles += Vector3.Lerp(trans.eulerAngles, new Vector3(0, 0, angle), 0.5f) * Time.deltaTime;
-        }
-        else if (trans.eulerAngles.z > angle)
-        {
+            if (trans.eulerAngles.z < angle)
+            {
+                trans.eulerAngles += Vector3.Lerp(trans.eulerAngles, new Vector3(0, 0, angle), 5f) * Time.deltaTime * 5;
+            }
 
-            trans.eulerAngles -= Vector3.Lerp(new Vector3(0, 0, 0), trans.eulerAngles, 0.5f) * Time.deltaTime;
+            else if (trans.eulerAngles.z > angle)
+            {
+                trans.eulerAngles -= Vector3.Lerp(new Vector3(0, 0, angle), trans.eulerAngles, 5f) * Time.deltaTime * 5;
+            }
         }
-        Debug.Log(Vector3.Angle(trans.eulerAngles, new Vector3(0, 0, angle)) + " Total " + trans.eulerAngles + " Current angle " + angle + " angle ");
+        else
+        {
+            trans.eulerAngles = new Vector3(0, 0, angle);
+        }
     }
 
 
