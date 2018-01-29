@@ -6,7 +6,7 @@ public class HoldPlayer : MonoBehaviour {
 
 	void OnTriggerEnter(Collider col)
 	{
-        Debug.Log(col.name);
+        Debug.Log(col.name + " is on " + gameObject);
 		col.transform.parent = gameObject.transform;
 	}
 	void OnTriggerExit(Collider col)

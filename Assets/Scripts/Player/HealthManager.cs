@@ -7,7 +7,7 @@ public class HealthManager : MonoBehaviour {
     static HealthManager _instance = null;
 
     public int maxHealth;
-    public int health;
+    public float health;
     float healthScale;
     public RectTransform healthBar;
 
@@ -17,11 +17,11 @@ public class HealthManager : MonoBehaviour {
         instance = this;
         if (health <= 0)
         {
-            health = 5;
+            health = 100;
         }
         if (maxHealth <= 0)
         {
-            maxHealth = 5;
+            maxHealth = 100;
         }
         healthScale = healthBar.sizeDelta.x / health;
     }
