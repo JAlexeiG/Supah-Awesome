@@ -23,8 +23,8 @@ public class Chara : MonoBehaviour
     private bool grounded;
 
     //Left and right for booster via arrow keys
-    float up;
-    float right;
+    //float up;
+    //float right;
     
     private Vector3 mousePos;
 
@@ -67,6 +67,9 @@ public class Chara : MonoBehaviour
     private float rotationSpeed;
 
     public bool doubleJump;
+
+    private Vector3 mouseMovement;
+    private Vector3 dashAngle;
 
     void Start()
     {
@@ -134,31 +137,33 @@ public class Chara : MonoBehaviour
 
 
         //All the inputsfor boosting in air
-        if (Input.GetAxis("Horizontal") > 0.1)
-        {
-            right = boostStrength;
-        }
-        else if (Input.GetAxis("Horizontal") < -0.1)
-        {
-            right = -boostStrength;
-        }
-        else
-        {
-            right = 0;
-        }
+        /*
+            if (Input.GetAxis("Horizontal") > 0.1)
+            {
+                right = boostStrength;
+            }
+            else if (Input.GetAxis("Horizontal") < -0.1)
+            {
+                right = -boostStrength;
+            }
+            else
+            {
+                right = 0;
+            }
 
-        if (Input.GetAxis("Vertical") > 0)
-        {
-            up = boostStrength;
-        }
-        else if (Input.GetAxis("Vertical") < -0.1)
-        {
-            up = -boostStrength;
-        }
-        else
-        {
-            up = 0;
-        }
+            if (Input.GetAxis("Vertical") > 0)
+            {
+                up = boostStrength;
+            }
+            else if (Input.GetAxis("Vertical") < -0.1)
+            {
+                up = -boostStrength;
+            }
+            else
+            {
+                up = 0;
+            }
+        */
 
 
         //A bunch of stuff to know where mouse is
@@ -169,10 +174,9 @@ public class Chara : MonoBehaviour
                 //Mouse position (+20 because camera is -20) to find where to shoot something
                 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z);
 
+                mouseMovement = Camera.main.ScreenToWorldPoint(mousePos); //Gives world-coordinants of where you just fired
 
-                Vector3 potato = Camera.main.ScreenToWorldPoint(mousePos); //Gives world-coordinants of where you just fired
-
-                GameObject crosshair = Instantiate(crosshairPreFab, potato, Quaternion.Euler(0, 0, 0));
+                GameObject crosshair = Instantiate(crosshairPreFab, mouseMovement, Quaternion.Euler(0, 0, 0));
 
 
                 ///Updates for aiming
@@ -210,35 +214,53 @@ public class Chara : MonoBehaviour
             }
 
         }
-
-        bool dashMovement = Input.GetButtonDown("Dash");
-        if (dashMovement && SteamManager.instance.steamUsable == true)
+        
+        if (Input.GetButtonDown("Cancel"))
+        {
+            Application.Quit();
+        }
+        if (SteamManager.instance.steamUsable == true && Input.GetMouseButtonDown(1) && !dashing)
         {
             dashing = true;
-            dashTimer = 0;
             SteamManager.instance.steam -= 10;
+            dashTimer = 0;
+            //Mouse position (+20 because camera is -20) to find where to shoot something
+            mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z);
+
+            dashAngle = Camera.main.ScreenToWorldPoint(mousePos); //Gives world-coordinants of where you just fired
         }
 
         if (dashing)
         {
-            dashTimer += Time.deltaTime;
-
-            if (Input.GetAxis("Dash") < 0)
+            Vector3 direction = trans.position - dashAngle;
+            Vector3 normal = direction.normalized;
+            if (grounded)
             {
-                rb.velocity = new Vector3(-dashStrength, 0, 0);
+                dashTimer += Time.deltaTime;
+
+
+                if (normal.x < 0)
+                {
+                    rb.velocity = new Vector3(dashStrength, 0, 0);
+                }
+                else if (normal.x > 0)
+                {
+                    rb.velocity = new Vector3(-dashStrength, 0, 0);
+                }
+                //moveDirection = new Vector3(dashStrength, 0, 0); //Adds movement
+
+
+                if (dashTimer >= dashLength)
+                {
+                    dashing = false;
+                    rb.velocity = new Vector3(0, 0, 0);
+                }
             }
-            else if (Input.GetAxis("Dash") > 0)
+            else if (doubleJump)
             {
-                rb.velocity = new Vector3(dashStrength, 0, 0);
-            }
-            //moveDirection = new Vector3(dashStrength, 0, 0); //Adds movement
-
-            ////FIX MOVING (Dash Movement)
-
-            if (dashTimer >= dashLength)
-            {
+                rb.AddForce(normal * jumpSpeed);
                 dashing = false;
-                rb.velocity = new Vector3(0, 0, 0);
+                doubleJump = false;
             }
         }
 
@@ -272,7 +294,7 @@ public class Chara : MonoBehaviour
                     SteamManager.instance.steam -= 25; // Lowers steam by a number
                     doubleJump = false;//Turns it off
 
-                    rb.AddRelativeForce(right, up, 0, ForceMode.VelocityChange);
+                    //rb.AddRelativeForce(right, up, 0, ForceMode.VelocityChange);
 
                 }
             }
@@ -333,6 +355,9 @@ public class Chara : MonoBehaviour
         Destroy(bullet, 3.0f);
 
     }
+
+    
+
 
     public void addBullets(int x)
     {

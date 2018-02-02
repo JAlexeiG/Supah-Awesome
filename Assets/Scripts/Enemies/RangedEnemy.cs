@@ -47,7 +47,7 @@ public class RangedEnemy : MonoBehaviour
         //play some gun fire effect? or does it shoot a projectile?
         float fractionalDistance = (range.radius - Vector3.Distance(transform.position, player.position)) / range.radius; //if player is standing on top of enemy this = 1, if player is at max range from enemy this = 0
         float damage = scaleDamage * fractionalDistance + minDamage; //if standing on enemy, 4 * 1 + 1 = 5 aka max damage. if at max range, 4 * 0 + 1 = 1 aka min damage
-        //PlayerHealth.TakeDamage(damage); (whatever the player's function for taking damage is will go here) or i guess since there's now a projectile it can go on the projectile script instead
+        HealthManager.instance.health -= damage;
     }
 
     IEnumerator Cooldown()
