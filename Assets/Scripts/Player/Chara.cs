@@ -19,7 +19,7 @@ public class Chara : MonoBehaviour
     public float boostStrength;
     public float gliderStrength;
 
-
+    [SerializeField]
     private bool grounded;
 
     //Left and right for booster via arrow keys
@@ -55,6 +55,10 @@ public class Chara : MonoBehaviour
     public float dashLength;
     public float dashStrength;
     float dashTimer;
+
+    [SerializeField]
+    private bool canMove;
+
 
     Transform trans;
 
@@ -117,6 +121,7 @@ public class Chara : MonoBehaviour
 
         onWall = false;
         grounded = false;
+        canMove = true;
     }
 
     void Update()
@@ -245,12 +250,13 @@ public class Chara : MonoBehaviour
         if (grounded && !dashing)
         {
             doubleJump = true; //Makes jumping available again
+            canMove = true;
 
 
 
             if (Input.GetButtonDown("Jump"))
             {
-                rb.AddRelativeForce(0, jumpSpeed, 0, ForceMode.VelocityChange);
+                rb.AddRelativeForce(0, jumpSpeed, 0, ForceMode.Impulse);
             }
 
             if (Input.GetButton("Glider") & SteamManager.instance.steamUsable == true) // Button is Shift
@@ -272,34 +278,48 @@ public class Chara : MonoBehaviour
                     SteamManager.instance.steam -= 25; // Lowers steam by a number
                     doubleJump = false;//Turns it off
 
-                    rb.AddRelativeForce(right, up, 0, ForceMode.VelocityChange);
+                    rb.AddRelativeForce(right, up, 0, ForceMode.Impulse);
 
                 }
             }
-
+            
+            if (Input.GetButtonDown("Glider"))
+            {
+                rb.velocity = new Vector3(rb.velocity.x,rb.velocity.y/1.5f);
+            }
             if (Input.GetButton("Glider") & SteamManager.instance.steamUsable == true) // Button is Shift
             {
+                canMove = true;
                 gravity = OGravity / gliderStrength; // Lowers gravity
                 SteamManager.instance.steam--; //Loweres steam by one per frame
+                speed = OSpeed;
             }
             else
             {
                 gravity = OGravity;
+                canMove = false;
             }
             
         }
 
 
 
-        float input = Input.GetAxis("Horizontal");
+        if (canMove)
+        {
+            float input = Input.GetAxis("Horizontal");
 
-        if (input > 0)
-        {
-            trans.position += trans.right * speed * Time.deltaTime;
-        }
-        else if (input < 0)
-        {
-            trans.position += -trans.right * speed * Time.deltaTime;
+            if (input > 0.1f)
+            {
+                rb.velocity = new Vector3(speed, rb.velocity.y);
+            }
+            else if (input < -0.1f)
+            {
+                rb.velocity = new Vector3(-speed, rb.velocity.y);
+            }
+            else
+            {
+                rb.velocity = new Vector3(0, rb.velocity.y);
+            }
         }
 
         float diff = Mathf.Abs(trans.eulerAngles.z - angle);
@@ -350,7 +370,7 @@ public class Chara : MonoBehaviour
         set { angle_ = value; }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.tag == "Floor")
         {

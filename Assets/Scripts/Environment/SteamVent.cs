@@ -5,7 +5,8 @@ using UnityEngine;
 public class SteamVent : MonoBehaviour {
 
 	Chara player;
-
+    [SerializeField]
+    float strength;
 	// Use this for initialization
 	void Start () {
 		
@@ -21,7 +22,7 @@ public class SteamVent : MonoBehaviour {
         {
             player = other.GetComponent<Chara>();
             Debug.Log(other.gameObject.name + " has stepped on " + gameObject.name);
-            player.GetComponent<Rigidbody>().AddRelativeForce(0,0.2f,0,ForceMode.Acceleration);
+            player.GetComponent<Rigidbody>().AddRelativeForce(transform.up * strength,ForceMode.Acceleration);
         }
 	}
 }
