@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HoldCharacter : MonoBehaviour {
-
+public class HoldPlayer : MonoBehaviour {
+    public Transform parent;
 	void OnTriggerEnter(Collider col)
 	{
-		col.transform.parent = gameObject.transform;
+        Debug.Log(col.name + " is on " + gameObject);
+		col.transform.parent = parent;
 	}
 	void OnTriggerExit(Collider col)
 	{
