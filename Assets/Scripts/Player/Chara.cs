@@ -148,7 +148,7 @@ public class Chara : MonoBehaviour
             if (bulletLoaded != 0)
             {
                 //Mouse position (+20 because camera is -20) to find where to shoot something
-                mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, gameObject.transform.position.z);
+                mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, trans.position.z+30);
 
 
                 Vector3 potato = Camera.main.ScreenToWorldPoint(mousePos); //Gives world-coordinants of where you just fired

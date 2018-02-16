@@ -912,7 +912,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 427583678}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 2.18}
+  m_LocalPosition: {x: 0, y: 0, z: 2.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1475406873}
@@ -3044,7 +3044,7 @@ MonoBehaviour:
   bulletLoaded: 0
   aimingOrigin: {fileID: 1475406873}
   bulletSpawnPoint: {fileID: 427583679}
-  bulletPreFab: {fileID: 1731624591461558, guid: e39ae98a82c33ce4a82adee3c77aa6a2,
+  bulletPreFab: {fileID: 1056223846333592, guid: e39ae98a82c33ce4a82adee3c77aa6a2,
     type: 2}
   crosshairPreFab: {fileID: 1566234836182138, guid: 05cc471978a18e1499b2e04853696c24,
     type: 2}
@@ -3761,6 +3761,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   strength: 20.74
+  isPowered: 0
 --- !u!23 &1103356714
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6960,6 +6961,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   strength: 9.8
+  isPowered: 0
 --- !u!23 &2007483789
 MeshRenderer:
   m_ObjectHideFlags: 0
