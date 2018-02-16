@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Chara : MonoBehaviour
 {
+    [SerializeField]
+    private float feetDistance;
 
     public float speed;
     public float jumpSpeed;
@@ -127,6 +129,8 @@ public class Chara : MonoBehaviour
     void Update()
     {
 
+        
+
         rb.AddRelativeForce(0, gravity, 0, ForceMode.Acceleration); //Adds gravity downwards towards the player's feet and only towards the player's feet
 
 
@@ -135,36 +139,8 @@ public class Chara : MonoBehaviour
         {
             playerBullets = bulletCap;
         }
-
-
-
-        //All the inputsfor boosting in air
-        if (Input.GetAxis("Horizontal") > 0.1)
-        {
-            right = boostStrength;
-        }
-        else if (Input.GetAxis("Horizontal") < -0.1)
-        {
-            right = -boostStrength;
-        }
-        else
-        {
-            right = 0;
-        }
-
-        if (Input.GetAxis("Vertical") > 0)
-        {
-            up = boostStrength;
-        }
-        else if (Input.GetAxis("Vertical") < -0.1)
-        {
-            up = -boostStrength;
-        }
-        else
-        {
-            up = 0;
-        }
-
+        
+      
 
         //A bunch of stuff to know where mouse is
         if (Input.GetButtonDown("Fire1"))
@@ -254,9 +230,10 @@ public class Chara : MonoBehaviour
 
 
 
-            if (Input.GetButtonDown("Jump"))
+            if (Input.GetButtonDown("Jump") && checkGrounded())
             {
                 rb.AddRelativeForce(0, jumpSpeed, 0, ForceMode.Impulse);
+                grounded = false;
             }
 
             if (Input.GetButton("Glider") & SteamManager.instance.steamUsable == true) // Button is Shift
@@ -273,13 +250,18 @@ public class Chara : MonoBehaviour
         {
             if (doubleJump == true & SteamManager.instance.steamUsable == true)//Checks for double jump and jumps
             {
-                if (Input.GetButtonDown("Jump"))
+                if (Input.GetButtonDown("Fire2"))
                 {
+                    mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z);
+
+                    Vector3 potato = Camera.main.ScreenToWorldPoint(mousePos); //Gives world-coordinants of where you just fired
+
+                    Vector3 distance = (potato - trans.position).normalized;
+                    
+
                     SteamManager.instance.steam -= 25; // Lowers steam by a number
                     doubleJump = false;//Turns it off
-
-                    rb.AddRelativeForce(right, up, 0, ForceMode.Impulse);
-
+                    rb.AddRelativeForce(distance * jumpSpeed, ForceMode.Impulse); ///// FIX THE DOUBLE JUMP.
                 }
             }
             
@@ -345,7 +327,7 @@ public class Chara : MonoBehaviour
     public void fire()
     {
         GameObject bullet = Instantiate(bulletPreFab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-
+        
         bulletLoaded--;
 
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 10;
@@ -370,18 +352,19 @@ public class Chara : MonoBehaviour
         set { angle_ = value; }
     }
 
-    private void OnTriggerStay(Collider other)
+    bool checkGrounded()
     {
-        if (other.tag == "Floor")
-        {
-            grounded = true;
-        }
+        Ray ray = new Ray(trans.position, -trans.up);
+        RaycastHit hit;
+
+
+        return Physics.Raycast(ray, out hit, feetDistance);
+
+
     }
-    private void OnTriggerExit(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.tag == "Floor")
-        {
-            grounded = false;
-        }
+        grounded = checkGrounded();
     }
+
 }

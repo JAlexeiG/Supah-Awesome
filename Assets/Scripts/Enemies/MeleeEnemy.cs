@@ -77,4 +77,12 @@ public class MeleeEnemy : MonoBehaviour {
         Debug.Log("end move cooldown");
         moveCooldown = false;
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.tag == "Bullet")
+        {
+            Destroy(gameObject);
+        }
+    }
 }
