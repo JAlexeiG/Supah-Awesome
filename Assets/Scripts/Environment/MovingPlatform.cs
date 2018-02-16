@@ -12,15 +12,19 @@ public class MovingPlatform : MonoBehaviour {
 	public float smooth;
 	public float resetTime;
 
+    public bool isPowered;
+
     // Use this for initialization
     void Start () {
-        GetComponent<MovingPlatform>().enabled = false;
         ChangeTarget();
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        movingPlatform.position = Vector3.MoveTowards(movingPlatform.position, newposition, smooth * Time.deltaTime);
+        if (isPowered)
+        {
+            movingPlatform.position = Vector3.MoveTowards(movingPlatform.position, newposition, smooth * Time.deltaTime);
+        }
 
     }
 	public void ChangeTarget()
@@ -42,4 +46,11 @@ public class MovingPlatform : MonoBehaviour {
 		}
 		Invoke("ChangeTarget", resetTime);
 	}
+
+    public void PowerSwitch()
+    {
+        isPowered = !isPowered;
+        Debug.Log(gameObject + " power has been switched to " + isPowered);
+
+    }
 }

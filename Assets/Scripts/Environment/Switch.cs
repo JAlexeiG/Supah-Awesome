@@ -6,13 +6,8 @@ public class Switch : MonoBehaviour {
 
     
     public GameObject steamvent;
+
     public GameObject platform;
-
-	// Use this for initialization
-	void Start () {
-
-    }
-	
 	// Update is called once per frame
 	void Update () {
 		
@@ -23,22 +18,38 @@ public class Switch : MonoBehaviour {
         {
             {
                 Debug.Log(col.name + " is standing on " + gameObject);
-                steamvent.GetComponent<SteamVent>().PowerOn();
-                Debug.Log(platform + " is on");
-                platform.GetComponent<MovingPlatform>().enabled = true;
+                if (steamvent != null)
+                {
+                    steamvent.GetComponent<SteamVent>().PowerSwitch();
+                }
+
+
+                Debug.Log(platform + " is stepped on");
+                if (platform != null)
+                {
+                    platform.GetComponent<MovingPlatform>().PowerSwitch();
+                }
             }
         }
     }
+
     void OnTriggerExit(Collider col)
     {
         if (col.tag == "Player" || col.tag == "box")
         {
             {
-                Debug.Log(col.name + " is off the " + gameObject);
-                steamvent.GetComponent<SteamVent>().PowerOff();
-                Debug.Log(platform + " is off");
-                platform.GetComponent<MovingPlatform>().enabled = false;
+                Debug.Log(col.name + " is standing on " + gameObject);
+                if (steamvent != null)
+                {
+                    steamvent.GetComponent<SteamVent>().PowerSwitch();
+                }
 
+
+                Debug.Log(platform + " is stepped on");
+                if (platform != null)
+                {
+                    platform.GetComponent<MovingPlatform>().PowerSwitch();
+                }
             }
         }
     }

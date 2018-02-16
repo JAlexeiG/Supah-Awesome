@@ -12,14 +12,13 @@ public class SteamVent : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        isPowered = false;
         m_collider = GetComponent<Collider>();
-        m_collider.enabled = false;
+        m_collider.enabled = isPowered;
     }
 	
 	// Update is called once per frame
 	void Update () {
-
+        m_collider.enabled = isPowered;
     }
     void OnTriggerStay(Collider other) 
 	{
@@ -31,17 +30,10 @@ public class SteamVent : MonoBehaviour {
             //player.GetComponent<Rigidbody>().AddRelativeForce(transform.up * strength, ForceMode.Acceleration);
         }
 	}
-    public void PowerOn()
+    public void PowerSwitch()
     {
-        isPowered = true;
-        m_collider.enabled = true;
-        Debug.Log(gameObject + "is on");
+        isPowered = !isPowered;
+        Debug.Log(gameObject + " power has been switched to " + isPowered);
 
-    }
-    public void PowerOff()
-    {
-        isPowered = false;
-        m_collider.enabled = false;
-        Debug.Log(gameObject + "is off");
     }
 }

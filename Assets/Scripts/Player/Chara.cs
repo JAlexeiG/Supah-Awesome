@@ -76,6 +76,8 @@ public class Chara : MonoBehaviour
 
     void Start()
     {
+
+        feetDistance = 1.2f;
         trans = GetComponent<Transform>();
 
         rb = GetComponent<Rigidbody>();
@@ -255,8 +257,15 @@ public class Chara : MonoBehaviour
                     mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z);
 
                     Vector3 potato = Camera.main.ScreenToWorldPoint(mousePos); //Gives world-coordinants of where you just fired
-
-                    Vector3 distance = (potato - trans.position).normalized;
+                    Vector3 distance;
+                    if (!onWall)
+                    {
+                        distance = (potato - trans.position).normalized;
+                    }
+                    else
+                    {
+                        distance = (trans.position - potato).normalized;
+                    }
                     
 
                     SteamManager.instance.steam -= 25; // Lowers steam by a number
