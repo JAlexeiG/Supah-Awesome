@@ -12,16 +12,18 @@ public class MovingPlatform : MonoBehaviour {
 	public float smooth;
 	public float resetTime;
 
-	// Use this for initialization
-	void Start () {
-		changeTarget ();
+    // Use this for initialization
+    void Start () {
+        GetComponent<MovingPlatform>().enabled = false;
+        ChangeTarget();
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		movingPlatform.position = Vector3.MoveTowards (movingPlatform.position, newposition, smooth * Time.deltaTime);
-	}
-	void changeTarget()
+        movingPlatform.position = Vector3.MoveTowards(movingPlatform.position, newposition, smooth * Time.deltaTime);
+
+    }
+	public void ChangeTarget()
 	{
 		if (currentState == "Moving to Position 1")
 		{
@@ -38,6 +40,6 @@ public class MovingPlatform : MonoBehaviour {
 			currentState = "Moving to Position 2";
 			newposition = position2.position;
 		}
-		Invoke("changeTarget", resetTime);
+		Invoke("ChangeTarget", resetTime);
 	}
 }

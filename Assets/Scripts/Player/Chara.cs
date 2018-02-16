@@ -148,7 +148,7 @@ public class Chara : MonoBehaviour
             if (bulletLoaded != 0)
             {
                 //Mouse position (+20 because camera is -20) to find where to shoot something
-                mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z);
+                mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, gameObject.transform.position.z);
 
 
                 Vector3 potato = Camera.main.ScreenToWorldPoint(mousePos); //Gives world-coordinants of where you just fired
@@ -161,7 +161,7 @@ public class Chara : MonoBehaviour
 
                 GameObject bullet = Instantiate(bulletPreFab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
 
-                bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 10;
+                bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 20;
 
                 Destroy(bullet, 3.0f);
                 Destroy(crosshair, 0.5f);

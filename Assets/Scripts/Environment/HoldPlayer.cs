@@ -6,11 +6,17 @@ public class HoldPlayer : MonoBehaviour {
     public Transform parent;
 	void OnTriggerEnter(Collider col)
 	{
-        Debug.Log(col.name + " is on " + gameObject);
-		col.transform.parent = parent;
+        if (col.tag == "Player")
+        {
+            Debug.Log(col.name + " is on " + gameObject);
+            col.transform.parent = parent;
+        }
 	}
 	void OnTriggerExit(Collider col)
 	{
-		col.transform.parent = null;
+        if (col.tag == "Player")
+        {
+            col.transform.parent = null;
+        }
 	}
 }

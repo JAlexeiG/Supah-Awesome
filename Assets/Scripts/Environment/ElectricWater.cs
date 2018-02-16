@@ -25,7 +25,7 @@ public class ElectricWater : MonoBehaviour {
             Debug.Log(col.name + " is on " + gameObject);
             if (isPowered)
             {
-                HealthManager.instance.health -= 0.5f;
+                HealthManager.instance.health -= 0.3f;
             }
         }
     }
