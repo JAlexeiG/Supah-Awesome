@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class RangedEnemy : MonoBehaviour
 {
+
     float damage = 5;
 
+    bool isDying = false;
     private SphereCollider range;
     private Transform player;
     private Vector3 playerLocation;
@@ -14,9 +16,13 @@ public class RangedEnemy : MonoBehaviour
     public GameObject projectile;
     public Transform projectileSpawn;
 
+    [SerializeField] float maxHealth = 1f;
+    [SerializeField] float currentHealth;
+
     // Use this for initialization
     void Start()
     {
+        currentHealth = maxHealth;
         range = GetComponent<SphereCollider>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         //scaleDamage = maxDamage - minDamage;
@@ -29,7 +35,13 @@ public class RangedEnemy : MonoBehaviour
         {
             FaceTarget();
             if (!shooting)
-                Attack();
+                if (!isDying)
+                    Attack();
+        }
+
+        if (currentHealth < 1)
+        {
+            StartCoroutine("DelayedDeath");
         }
     }
 
@@ -57,5 +69,19 @@ public class RangedEnemy : MonoBehaviour
         yield return new WaitForSeconds(3);
         Debug.Log("end cooldown");
         shooting = false;
+    }
+
+    public void DoDamage()
+    {
+        currentHealth -= 1;
+        Debug.Log("health now " + currentHealth);
+    }
+
+    IEnumerator DelayedDeath()
+    {
+        isDying = true;
+        yield return new WaitForSeconds(1.5f);
+        Destroy(gameObject);
+        //Drop Loot
     }
 }

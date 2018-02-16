@@ -10,6 +10,10 @@ public class MeleeEnemy : MonoBehaviour {
     Vector3 playerLocation;
     bool attackCooldown = false;
     bool moveCooldown = false;
+    bool isDying = false;
+
+    [SerializeField] float maxHealth = 2f;
+    [SerializeField] float currentHealth;
 
     // Use this for initialization
     private void Awake()
@@ -23,6 +27,7 @@ public class MeleeEnemy : MonoBehaviour {
         agent.stoppingDistance = 1.1f;
         agent.speed = 1.5f;
         agent.acceleration = 0.75f;
+        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
@@ -33,9 +38,15 @@ public class MeleeEnemy : MonoBehaviour {
         {
             agent.SetDestination(playerLocation);
             if (Vector3.Distance(transform.position, player.position) < 1.1f && !attackCooldown)
-            {
-                Attack();
+            {  
+                if (!isDying)
+                    Attack();
             }
+        }
+
+        if (currentHealth < 1)
+        {
+            StartCoroutine("DelayedDeath");
         }
 
     }
@@ -78,11 +89,17 @@ public class MeleeEnemy : MonoBehaviour {
         moveCooldown = false;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void DoDamage()
     {
-        if (collision.transform.tag == "Bullet")
-        {
-            Destroy(gameObject);
-        }
+        currentHealth -= 1;
+        Debug.Log("health now " + currentHealth);
+    }
+
+    IEnumerator DelayedDeath()
+    {
+        isDying = true;
+        yield return new WaitForSeconds(1.5f);
+        Destroy(gameObject);
+        //Drop Loot
     }
 }
