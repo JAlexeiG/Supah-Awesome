@@ -6,10 +6,10 @@ TagManager:
   tags:
   - Environment
   - Enemy
-  - Pushable
   - Collectible
   - Floor
   - Bullet
+  - box
   layers:
   - Default
   - TransparentFX

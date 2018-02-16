@@ -15,7 +15,7 @@ public class SpiderStun : MonoBehaviour {
         player.GetComponent<Chara>().enabled = false;
         //player.GetComponent<Animator>().enabled = false; //dont need this just wanted a visual
         Debug.Log("start stun");
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
         player.GetComponent<Chara>().enabled = true;
         //player.GetComponent<Animator>().enabled = true;
         Debug.Log("end stun");

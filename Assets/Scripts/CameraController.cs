@@ -45,7 +45,7 @@ public class CameraController : MonoBehaviour
     }
     void ZoomIn()
     {
-        transform.position = player.transform.position + (offset + new Vector3(0, 0, 10));
+        transform.position = player.transform.position + (offset + new Vector3(0, 0, 0));
     }
     
 
