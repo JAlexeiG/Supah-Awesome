@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class Chara : MonoBehaviour
 {
+
+    public float gunPos;
+
     [SerializeField]
     private float feetDistance;
 
     public float speed;
+    public float airSpeed;
     public float jumpSpeed;
     public float gravity;
 
@@ -29,6 +33,7 @@ public class Chara : MonoBehaviour
     float right;
     
     private Vector3 mousePos;
+    private Vector3 dashPos;
 
     //What the mouse clicked
     private RaycastHit hit;
@@ -147,16 +152,16 @@ public class Chara : MonoBehaviour
         //A bunch of stuff to know where mouse is
         if (Input.GetButtonDown("Fire1"))
         {
+            //// CHANGE THE SHOOTING THING TO BE NON-RELYANT ON THE CROSSHAIR
             if (bulletLoaded != 0)
             {
                 //Mouse position (+20 because camera is -20) to find where to shoot something
-                mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, trans.position.z+30);
+                mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, trans.position.z+gunPos);
 
 
                 Vector3 potato = Camera.main.ScreenToWorldPoint(mousePos); //Gives world-coordinants of where you just fired
 
                 GameObject crosshair = Instantiate(crosshairPreFab, potato, Quaternion.Euler(0, 0, 0));
-
 
                 ///Updates for aiming
                 aimingOrigin.LookAt(crosshair.transform);
@@ -193,30 +198,25 @@ public class Chara : MonoBehaviour
             }
 
         }
-
-        bool dashMovement = Input.GetButtonDown("Dash");
-        if (dashMovement && SteamManager.instance.steamUsable == true)
-        {
-            dashing = true;
-            dashTimer = 0;
-            SteamManager.instance.steam -= 10;
-        }
+        
 
         if (dashing)
         {
             dashTimer += Time.deltaTime;
+            
 
-            if (Input.GetAxis("Dash") < 0)
+            if (dashPos.x < trans.position.x)
             {
                 rb.velocity = new Vector3(-dashStrength, 0, 0);
+                Debug.Log("Going left");
             }
-            else if (Input.GetAxis("Dash") > 0)
+            else if (dashPos.x > trans.position.x)
             {
                 rb.velocity = new Vector3(dashStrength, 0, 0);
+                Debug.Log("Going right");
             }
             //moveDirection = new Vector3(dashStrength, 0, 0); //Adds movement
-
-            ////FIX MOVING (Dash Movement)
+            
 
             if (dashTimer >= dashLength)
             {
@@ -231,6 +231,15 @@ public class Chara : MonoBehaviour
             canMove = true;
 
 
+            if (Input.GetButtonDown("Fire2"))
+            {
+                mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z);
+                dashPos = Camera.main.ScreenToWorldPoint(mousePos); //Gives world-coordinants of where you just fired
+
+                dashing = true;
+                dashTimer = 0;
+                SteamManager.instance.steam -= 10; // Lowers steam by a number
+            }
 
             if (Input.GetButtonDown("Jump") && checkGrounded())
             {
@@ -254,6 +263,7 @@ public class Chara : MonoBehaviour
             {
                 if (Input.GetButtonDown("Fire2"))
                 {
+
                     mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z);
 
                     Vector3 potato = Camera.main.ScreenToWorldPoint(mousePos); //Gives world-coordinants of where you just fired
@@ -266,21 +276,32 @@ public class Chara : MonoBehaviour
                     {
                         distance = (trans.position - potato).normalized;
                     }
-                    
+
+                    Debug.Log(distance);
 
                     SteamManager.instance.steam -= 25; // Lowers steam by a number
-                    doubleJump = false;//Turns it off
-                    rb.AddRelativeForce(distance * jumpSpeed, ForceMode.Impulse); ///// FIX THE DOUBLE JUMP.
+                    doubleJump = false;//Turns it of
+
+
+                    if((distance.x > 0 && rb.velocity.x > 0) || (distance.x < 0 && rb.velocity.x < 0))
+                    {
+                        rb.AddRelativeForce(distance * jumpSpeed, ForceMode.VelocityChange);
+                    }
+                    else
+                    {
+                        rb.velocity = Vector3.zero;
+                        rb.AddRelativeForce(distance * jumpSpeed, ForceMode.Impulse);
+                    }
                 }
             }
             
             if (Input.GetButtonDown("Glider"))
             {
-                rb.velocity = new Vector3(rb.velocity.x,rb.velocity.y/1.5f);
+                rb.velocity = new Vector3(rb.velocity.x/1.5f,rb.velocity.y/1.5f);
             }
             if (Input.GetButton("Glider") & SteamManager.instance.steamUsable == true) // Button is Shift
             {
-                canMove = true;
+                canMove = false;
                 gravity = OGravity / gliderStrength; // Lowers gravity
                 SteamManager.instance.steam--; //Loweres steam by one per frame
                 speed = OSpeed;
@@ -295,7 +316,7 @@ public class Chara : MonoBehaviour
 
 
 
-        if (canMove)
+        if (canMove && !dashing)
         {
             float input = Input.GetAxis("Horizontal");
 
@@ -310,6 +331,24 @@ public class Chara : MonoBehaviour
             else
             {
                 rb.velocity = new Vector3(0, rb.velocity.y);
+            }
+        }
+        else if(!dashing)
+        {
+            float input = Input.GetAxis("Horizontal");
+            if (input > 0.1f)
+            {
+                if (rb.velocity.x < speed)
+                {
+                    rb.velocity += new Vector3(airSpeed, 0) * Time.deltaTime;
+                }
+            }
+            else if (input < -0.1f)
+            {
+                if (rb.velocity.x > -speed)
+                {
+                    rb.velocity += new Vector3(-airSpeed, 0) * Time.deltaTime;
+                }
             }
         }
 
