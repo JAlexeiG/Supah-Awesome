@@ -74,9 +74,11 @@ public class Chara : MonoBehaviour
 
     public bool doubleJump;
 
+    bool isStunned;
+
     void Start()
     {
-
+        isStunned = false;
         feetDistance = 1.2f;
         trans = GetComponent<Transform>();
 
@@ -130,7 +132,10 @@ public class Chara : MonoBehaviour
 
     void Update()
     {
-
+        if (!isStunned)
+        {
+            PlayerInput();
+        }
         
 
         rb.AddRelativeForce(0, gravity, 0, ForceMode.Acceleration); //Adds gravity downwards towards the player's feet and only towards the player's feet
@@ -194,6 +199,73 @@ public class Chara : MonoBehaviour
 
         }
 
+        bool dashMovement = Input.GetButtonDown("Dash");
+        if (dashMovement && SteamManager.instance.steamUsable == true)
+        {
+            dashing = true;
+            dashTimer = 0;
+            SteamManager.instance.steam -= 10;
+        }
+    }
+
+
+    public void fire()
+    {
+        GameObject bullet = Instantiate(bulletPreFab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+        
+        bulletLoaded--;
+
+        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 10;
+
+        Destroy(bullet, 3.0f);
+
+    }
+
+    public void addBullets(int x)
+    {
+        playerBullets += x;
+    }
+
+    public bool onWall
+    {
+        get { return onWall_; }
+        set { onWall_ = value; }
+    }
+    public float angle
+    {
+        get { return angle_; }
+        set { angle_ = value; }
+    }
+
+    bool checkGrounded()
+    {
+        Ray ray = new Ray(trans.position, -trans.up);
+        RaycastHit hit;
+
+
+        return Physics.Raycast(ray, out hit, feetDistance);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        grounded = checkGrounded();
+    }
+
+    IEnumerator StunPlayer(float duration)
+    {
+        isStunned = true;
+        yield return new WaitForSeconds(duration);
+        isStunned = false;
+    }
+
+    public void callStun(float duration)
+    {
+        StopCoroutine("StunPlayer");
+        StartCoroutine("StunPlayer", duration);
+    }
+
+    void PlayerInput()
+    {
         bool dashMovement = Input.GetButtonDown("Dash");
         if (dashMovement && SteamManager.instance.steamUsable == true)
         {
@@ -266,17 +338,17 @@ public class Chara : MonoBehaviour
                     {
                         distance = (trans.position - potato).normalized;
                     }
-                    
+
 
                     SteamManager.instance.steam -= 25; // Lowers steam by a number
                     doubleJump = false;//Turns it off
                     rb.AddRelativeForce(distance * jumpSpeed, ForceMode.Impulse); ///// FIX THE DOUBLE JUMP.
                 }
             }
-            
+
             if (Input.GetButtonDown("Glider"))
             {
-                rb.velocity = new Vector3(rb.velocity.x,rb.velocity.y/1.5f);
+                rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y / 1.5f);
             }
             if (Input.GetButton("Glider") & SteamManager.instance.steamUsable == true) // Button is Shift
             {
@@ -290,7 +362,7 @@ public class Chara : MonoBehaviour
                 gravity = OGravity;
                 canMove = false;
             }
-            
+
         }
 
 
@@ -331,49 +403,4 @@ public class Chara : MonoBehaviour
             trans.eulerAngles = new Vector3(0, 0, angle);
         }
     }
-
-
-    public void fire()
-    {
-        GameObject bullet = Instantiate(bulletPreFab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-        
-        bulletLoaded--;
-
-        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 10;
-
-        Destroy(bullet, 3.0f);
-
-    }
-
-    public void addBullets(int x)
-    {
-        playerBullets += x;
-    }
-
-    public bool onWall
-    {
-        get { return onWall_; }
-        set { onWall_ = value; }
-    }
-    public float angle
-    {
-        get { return angle_; }
-        set { angle_ = value; }
-    }
-
-    bool checkGrounded()
-    {
-        Ray ray = new Ray(trans.position, -trans.up);
-        RaycastHit hit;
-
-
-        return Physics.Raycast(ray, out hit, feetDistance);
-
-
-    }
-    private void OnCollisionEnter(Collision collision)
-    {
-        grounded = checkGrounded();
-    }
-
 }
