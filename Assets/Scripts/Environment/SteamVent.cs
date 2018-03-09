@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SteamVent : MonoBehaviour {
+public class SteamVent : Power {
 
 	Chara player;
     [SerializeField]
     float strength;
-    public bool isPowered;
     Collider m_collider;
 
     // Use this for initialization
@@ -30,10 +29,4 @@ public class SteamVent : MonoBehaviour {
             //player.GetComponent<Rigidbody>().AddRelativeForce(transform.up * strength, ForceMode.Acceleration);
         }
 	}
-    public void PowerSwitch()
-    {
-        isPowered = !isPowered;
-        Debug.Log(gameObject + " power has been switched to " + isPowered);
-
-    }
 }

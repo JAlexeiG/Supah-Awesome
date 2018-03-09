@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovingPlatform : MonoBehaviour {
+public class MovingPlatform : Power {
 
 	public Transform movingPlatform;
 	public Transform position1;
@@ -11,8 +11,6 @@ public class MovingPlatform : MonoBehaviour {
 	public string currentState;
 	public float smooth;
 	public float resetTime;
-
-    public bool isPowered;
 
     // Use this for initialization
     void Start () {
@@ -46,11 +44,5 @@ public class MovingPlatform : MonoBehaviour {
 		}
 		Invoke("ChangeTarget", resetTime);
 	}
-
-    public void PowerSwitch()
-    {
-        isPowered = !isPowered;
-        Debug.Log(gameObject + " power has been switched to " + isPowered);
-
-    }
+    
 }

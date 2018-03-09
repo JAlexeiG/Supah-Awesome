@@ -2,16 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ElectricWater : MonoBehaviour {
-
-    private bool isPowered;
+public class ElectricWater : Power {
     
-
-	// Use this for initialization
-	void Start () {
-        isPowered = true;
-
-	}
 	
 	// Update is called once per frame
 	void Update () {
