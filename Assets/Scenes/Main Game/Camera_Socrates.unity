@@ -1373,7 +1373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85806a2939bf5d64597275b40e86c56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camNum: 0
+  camNum: 1
   transitionSpeed: 2
   tempFixLocation: {x: 0, y: 0, z: 0}
   exitingFixed: 0
@@ -2054,11 +2054,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4880394568739408, guid: 3bdd3a5d72b20f448ac1a167b846ab97, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 6.76
+      value: 12.37
       objectReference: {fileID: 0}
     - target: {fileID: 4880394568739408, guid: 3bdd3a5d72b20f448ac1a167b846ab97, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.88
       objectReference: {fileID: 0}
     - target: {fileID: 4880394568739408, guid: 3bdd3a5d72b20f448ac1a167b846ab97, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2096,7 +2096,7 @@ Prefab:
     - target: {fileID: 65415704287679206, guid: 3bdd3a5d72b20f448ac1a167b846ab97,
         type: 2}
       propertyPath: m_Center.x
-      value: 5.7795296
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114380577098793068, guid: 3bdd3a5d72b20f448ac1a167b846ab97,
         type: 2}
@@ -2430,17 +2430,21 @@ Prefab:
     - target: {fileID: 65415704287679206, guid: 3bdd3a5d72b20f448ac1a167b846ab97,
         type: 2}
       propertyPath: m_Size.z
-      value: 25.616957
+      value: 8.881536
       objectReference: {fileID: 0}
     - target: {fileID: 65415704287679206, guid: 3bdd3a5d72b20f448ac1a167b846ab97,
         type: 2}
       propertyPath: m_Center.z
-      value: 10.252601
+      value: 8.356083
       objectReference: {fileID: 0}
     - target: {fileID: 114380577098793068, guid: 3bdd3a5d72b20f448ac1a167b846ab97,
         type: 2}
       propertyPath: Angled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1475837833486732, guid: 3bdd3a5d72b20f448ac1a167b846ab97, type: 2}
+      propertyPath: m_Icon
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3bdd3a5d72b20f448ac1a167b846ab97, type: 2}
