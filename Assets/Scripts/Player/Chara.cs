@@ -208,12 +208,10 @@ public class Chara : MonoBehaviour
             if (dashPos.x < trans.position.x)
             {
                 rb.velocity = new Vector3(-dashStrength, 0, 0);
-                Debug.Log("Going left");
             }
             else if (dashPos.x > trans.position.x)
             {
                 rb.velocity = new Vector3(dashStrength, 0, 0);
-                Debug.Log("Going right");
             }
             //moveDirection = new Vector3(dashStrength, 0, 0); //Adds movement
             
