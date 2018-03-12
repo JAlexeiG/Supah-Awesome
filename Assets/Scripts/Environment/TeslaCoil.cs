@@ -29,7 +29,6 @@ public class TeslaCoil : MonoBehaviour {
         }
 	}
 
-    /*
     void OnTriggerEnter(Collider col)
     {
         if (col.tag == "Player")
@@ -42,5 +41,4 @@ public class TeslaCoil : MonoBehaviour {
             }
         }
     }
-    */
 }

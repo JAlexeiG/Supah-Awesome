@@ -78,10 +78,11 @@ public class Chara : MonoBehaviour
     private float rotationSpeed;
 
     public bool doubleJump;
+    bool isStunned;
 
     void Start()
     {
-
+        isStunned = false;
         feetDistance = 1.2f;
         trans = GetComponent<Transform>();
 
@@ -135,7 +136,8 @@ public class Chara : MonoBehaviour
 
     void Update()
     {
-
+        Debug.Log(isStunned);
+        PlayerInput();
         
 
         rb.AddRelativeForce(0, gravity, 0, ForceMode.Acceleration); //Adds gravity downwards towards the player's feet and only towards the player's feet
@@ -145,223 +147,6 @@ public class Chara : MonoBehaviour
         if (playerBullets > bulletCap)
         {
             playerBullets = bulletCap;
-        }
-        
-      
-
-        //A bunch of stuff to know where mouse is
-        if (Input.GetButtonDown("Fire1"))
-        {
-            //// CHANGE THE SHOOTING THING TO BE NON-RELYANT ON THE CROSSHAIR
-            if (bulletLoaded != 0)
-            {
-                //Mouse position (+20 because camera is -20) to find where to shoot something
-                mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, trans.position.z+gunPos);
-
-
-                Vector3 potato = Camera.main.ScreenToWorldPoint(mousePos); //Gives world-coordinants of where you just fired
-
-                GameObject crosshair = Instantiate(crosshairPreFab, potato, Quaternion.Euler(0, 0, 0));
-
-                ///Updates for aiming
-                aimingOrigin.LookAt(crosshair.transform);
-
-                GameObject bullet = Instantiate(bulletPreFab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-
-                bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 20;
-
-                Destroy(bullet, 3.0f);
-                Destroy(crosshair, 0.5f);
-
-                bulletLoaded--;
-            }
-            else
-            {
-                Debug.Log("You have no bullets loaded, re-loading");
-                if (playerBullets <= 0)
-                {
-                    Debug.Log("You have no bullets left");
-                }
-                else
-                {
-                    if (playerBullets < 5)
-                    {
-                        bulletLoaded = playerBullets;
-                        playerBullets = 0;
-                    }
-                    else
-                    {
-                        playerBullets -= 5;
-                        bulletLoaded += 5;
-                    }
-                }
-            }
-
-        }
-        
-
-        if (dashing)
-        {
-            dashTimer += Time.deltaTime;
-            
-
-            if (dashPos.x < trans.position.x)
-            {
-                rb.velocity = new Vector3(-dashStrength, 0, 0);
-            }
-            else if (dashPos.x > trans.position.x)
-            {
-                rb.velocity = new Vector3(dashStrength, 0, 0);
-            }
-            //moveDirection = new Vector3(dashStrength, 0, 0); //Adds movement
-            
-
-            if (dashTimer >= dashLength)
-            {
-                dashing = false;
-                rb.velocity = new Vector3(0, 0, 0);
-            }
-        }
-
-        if (grounded && !dashing)
-        {
-
-            float input = Input.GetAxis("Horizontal");
-
-            if (input > 0.1f)
-            {
-                rb.velocity = new Vector3(speed, rb.velocity.y);
-            }
-            else if (input < -0.1f)
-            {
-                rb.velocity = new Vector3(-speed, rb.velocity.y);
-            }
-            else
-            {
-                rb.velocity = new Vector3(0, rb.velocity.y);
-            }
-
-            doubleJump = true; //Makes jumping available again
-            canMove = true;
-
-
-            if (Input.GetButtonDown("Fire2"))
-            {
-                mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z);
-                dashPos = Camera.main.ScreenToWorldPoint(mousePos); //Gives world-coordinants of where you just fired
-
-                dashing = true;
-                dashTimer = 0;
-                SteamManager.instance.steam -= 10; // Lowers steam by a number
-            }
-
-            if (Input.GetButtonDown("Jump") && checkGrounded())
-            {
-                rb.AddRelativeForce(0, jumpSpeed, 0, ForceMode.Impulse);
-                grounded = false;
-            }
-
-            if (Input.GetButton("Glider") & SteamManager.instance.steamUsable == true) // Button is Shift
-            {
-                speed = OSpeed * 3f; // Increases the max speed
-                SteamManager.instance.steam--; //Lowers steam by 1 per frame
-            }
-            else
-            {
-                speed = OSpeed;
-            }
-        }
-        else if (!dashing)
-        {
-
-            float input = Input.GetAxis("Horizontal");
-            if (input > 0.1f)
-            {
-                if (rb.velocity.x < speed)
-                {
-                    rb.velocity += new Vector3(airSpeed, 0) * Time.deltaTime;
-                }
-            }
-            else if (input < -0.1f)
-            {
-                if (rb.velocity.x > -speed)
-                {
-                    rb.velocity += new Vector3(-airSpeed, 0) * Time.deltaTime;
-                }
-            }
-
-            if (doubleJump == true & SteamManager.instance.steamUsable == true)//Checks for double jump and jumps
-            {
-                if (Input.GetButtonDown("Fire2"))
-                {
-
-                    mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z);
-
-                    Vector3 potato = Camera.main.ScreenToWorldPoint(mousePos); //Gives world-coordinants of where you just fired
-                    Vector3 distance;
-                    if (!onWall)
-                    {
-                        distance = (potato - trans.position).normalized;
-                    }
-                    else
-                    {
-                        distance = (trans.position - potato).normalized;
-                    }
-
-                    Debug.Log(distance);
-
-                    SteamManager.instance.steam -= 25; // Lowers steam by a number
-                    doubleJump = false;//Turns it of
-
-
-                    if((distance.x > 0 && rb.velocity.x > 0) || (distance.x < 0 && rb.velocity.x < 0))
-                    {
-                        rb.AddRelativeForce(distance * jumpSpeed, ForceMode.VelocityChange);
-                    }
-                    else
-                    {
-                        rb.velocity = Vector3.zero;
-                        rb.AddRelativeForce(distance * jumpSpeed, ForceMode.Impulse);
-                    }
-                }
-            }
-            
-            if (Input.GetButtonDown("Glider"))
-            {
-                rb.velocity = new Vector3(rb.velocity.x/1.5f,rb.velocity.y/1.5f);
-            }
-            if (Input.GetButton("Glider") & SteamManager.instance.steamUsable == true) // Button is Shift
-            {
-                canMove = true;
-                gravity = OGravity / gliderStrength; // Lowers gravity
-                SteamManager.instance.steam--; //Loweres steam by one per frame
-                speed = OSpeed;
-            }
-            else
-            {
-                canMove = false;
-                gravity = OGravity;
-            }
-            
-        }
-
-        
-        float diff = Mathf.Abs(trans.eulerAngles.z - angle);
-        if (diff > 5f)
-        {
-            if (trans.eulerAngles.z < angle)
-            {
-                trans.eulerAngles += Vector3.Lerp(trans.eulerAngles, new Vector3(0, 0, angle), 5f) * Time.deltaTime * 5;
-            }
-
-            else if (trans.eulerAngles.z > angle)
-            {
-                trans.eulerAngles -= Vector3.Lerp(new Vector3(0, 0, angle), trans.eulerAngles, 5f) * Time.deltaTime * 5;
-            }
-        }
-        else
-        {
-            trans.eulerAngles = new Vector3(0, 0, angle);
         }
     }
 
@@ -408,4 +193,236 @@ public class Chara : MonoBehaviour
         grounded = checkGrounded();
     }
 
+    void PlayerInput()
+    {
+        if (!isStunned)
+        {
+            //A bunch of stuff to know where mouse is
+            if (Input.GetButtonDown("Fire1"))
+            {
+                //// CHANGE THE SHOOTING THING TO BE NON-RELYANT ON THE CROSSHAIR
+                if (bulletLoaded != 0)
+                {
+                    //Mouse position (+20 because camera is -20) to find where to shoot something
+                    mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, trans.position.z + gunPos);
+
+
+                    Vector3 potato = Camera.main.ScreenToWorldPoint(mousePos); //Gives world-coordinants of where you just fired
+
+                    GameObject crosshair = Instantiate(crosshairPreFab, potato, Quaternion.Euler(0, 0, 0));
+
+                    ///Updates for aiming
+                    aimingOrigin.LookAt(crosshair.transform);
+
+                    GameObject bullet = Instantiate(bulletPreFab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+
+                    bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 20;
+
+                    Destroy(bullet, 3.0f);
+                    Destroy(crosshair, 0.5f);
+
+                    bulletLoaded--;
+                }
+                else
+                {
+                    Debug.Log("You have no bullets loaded, re-loading");
+                    if (playerBullets <= 0)
+                    {
+                        Debug.Log("You have no bullets left");
+                    }
+                    else
+                    {
+                        if (playerBullets < 5)
+                        {
+                            bulletLoaded = playerBullets;
+                            playerBullets = 0;
+                        }
+                        else
+                        {
+                            playerBullets -= 5;
+                            bulletLoaded += 5;
+                        }
+                    }
+                }
+
+            }
+
+
+            if (dashing)
+            {
+                dashTimer += Time.deltaTime;
+
+
+                if (dashPos.x < trans.position.x)
+                {
+                    rb.velocity = new Vector3(-dashStrength, 0, 0);
+                }
+                else if (dashPos.x > trans.position.x)
+                {
+                    rb.velocity = new Vector3(dashStrength, 0, 0);
+                }
+                //moveDirection = new Vector3(dashStrength, 0, 0); //Adds movement
+
+
+                if (dashTimer >= dashLength)
+                {
+                    dashing = false;
+                    rb.velocity = new Vector3(0, 0, 0);
+                }
+            }
+
+            if (grounded && !dashing)
+            {
+
+                float input = Input.GetAxis("Horizontal");
+
+                if (input > 0.1f)
+                {
+                    rb.velocity = new Vector3(speed, rb.velocity.y);
+                }
+                else if (input < -0.1f)
+                {
+                    rb.velocity = new Vector3(-speed, rb.velocity.y);
+                }
+                else
+                {
+                    rb.velocity = new Vector3(0, rb.velocity.y);
+                }
+
+                doubleJump = true; //Makes jumping available again
+                canMove = true;
+
+
+                if (Input.GetButtonDown("Fire2"))
+                {
+                    mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z);
+                    dashPos = Camera.main.ScreenToWorldPoint(mousePos); //Gives world-coordinants of where you just fired
+
+                    dashing = true;
+                    dashTimer = 0;
+                    SteamManager.instance.steam -= 10; // Lowers steam by a number
+                }
+
+                if (Input.GetButtonDown("Jump") && checkGrounded())
+                {
+                    rb.AddRelativeForce(0, jumpSpeed, 0, ForceMode.Impulse);
+                    grounded = false;
+                }
+
+                if (Input.GetButton("Glider") & SteamManager.instance.steamUsable == true) // Button is Shift
+                {
+                    speed = OSpeed * 3f; // Increases the max speed
+                    SteamManager.instance.steam--; //Lowers steam by 1 per frame
+                }
+                else
+                {
+                    speed = OSpeed;
+                }
+            }
+            else if (!dashing)
+            {
+
+                float input = Input.GetAxis("Horizontal");
+                if (input > 0.1f)
+                {
+                    if (rb.velocity.x < speed)
+                    {
+                        rb.velocity += new Vector3(airSpeed, 0) * Time.deltaTime;
+                    }
+                }
+                else if (input < -0.1f)
+                {
+                    if (rb.velocity.x > -speed)
+                    {
+                        rb.velocity += new Vector3(-airSpeed, 0) * Time.deltaTime;
+                    }
+                }
+
+                if (doubleJump == true & SteamManager.instance.steamUsable == true)//Checks for double jump and jumps
+                {
+                    if (Input.GetButtonDown("Fire2"))
+                    {
+
+                        mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z);
+
+                        Vector3 potato = Camera.main.ScreenToWorldPoint(mousePos); //Gives world-coordinants of where you just fired
+                        Vector3 distance;
+                        if (!onWall)
+                        {
+                            distance = (potato - trans.position).normalized;
+                        }
+                        else
+                        {
+                            distance = (trans.position - potato).normalized;
+                        }
+
+                        Debug.Log(distance);
+
+                        SteamManager.instance.steam -= 25; // Lowers steam by a number
+                        doubleJump = false;//Turns it of
+
+
+                        if ((distance.x > 0 && rb.velocity.x > 0) || (distance.x < 0 && rb.velocity.x < 0))
+                        {
+                            rb.AddRelativeForce(distance * jumpSpeed, ForceMode.VelocityChange);
+                        }
+                        else
+                        {
+                            rb.velocity = Vector3.zero;
+                            rb.AddRelativeForce(distance * jumpSpeed, ForceMode.Impulse);
+                        }
+                    }
+                }
+
+                if (Input.GetButtonDown("Glider"))
+                {
+                    rb.velocity = new Vector3(rb.velocity.x / 1.5f, rb.velocity.y / 1.5f);
+                }
+                if (Input.GetButton("Glider") & SteamManager.instance.steamUsable == true) // Button is Shift
+                {
+                    canMove = true;
+                    gravity = OGravity / gliderStrength; // Lowers gravity
+                    SteamManager.instance.steam--; //Loweres steam by one per frame
+                    speed = OSpeed;
+                }
+                else
+                {
+                    canMove = false;
+                    gravity = OGravity;
+                }
+            }
+
+
+            float diff = Mathf.Abs(trans.eulerAngles.z - angle);
+            if (diff > 5f)
+            {
+                if (trans.eulerAngles.z < angle)
+                {
+                    trans.eulerAngles += Vector3.Lerp(trans.eulerAngles, new Vector3(0, 0, angle), 5f) * Time.deltaTime * 5;
+                }
+
+                else if (trans.eulerAngles.z > angle)
+                {
+                    trans.eulerAngles -= Vector3.Lerp(new Vector3(0, 0, angle), trans.eulerAngles, 5f) * Time.deltaTime * 5;
+                }
+            }
+            else
+            {
+                trans.eulerAngles = new Vector3(0, 0, angle);
+            }
+        }
+    }
+
+    public void callStun(float duration)
+    {
+        isStunned = true;
+        rb.velocity = new Vector3(rb.velocity.x * 0.3f, rb.velocity.y * 0.1f, rb.velocity.z);
+        StartCoroutine("stunTimer", duration);
+    }
+
+    IEnumerator stunTimer(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        isStunned = false;
+    }
 }
