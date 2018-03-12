@@ -38,7 +38,11 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+<<<<<<< HEAD
   m_IndirectSpecularColor: {r: 0.44537646, g: 0.48940045, b: 0.54369897, a: 1}
+=======
+  m_IndirectSpecularColor: {r: 0.44537592, g: 0.4893998, b: 0.54369813, a: 1}
+>>>>>>> 446c6c76cd853112b7fc88ef2929e6073cc10324
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1000,11 +1004,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &374158278 stripped
-SphereCollider:
-  m_PrefabParentObject: {fileID: 135458676220294976, guid: eddf7ae318faa1841bf2941329718c37,
-    type: 2}
-  m_PrefabInternal: {fileID: 2048540400}
 --- !u!1 &385452330
 GameObject:
   m_ObjectHideFlags: 0
@@ -3687,7 +3686,11 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1058440293}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: -422.3393, y: 210, z: 0}
+=======
+  m_LocalPosition: {x: -502.22003, y: 210, z: 0}
+>>>>>>> 446c6c76cd853112b7fc88ef2929e6073cc10324
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 565697899}
@@ -4806,8 +4809,13 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1478125720}
   m_LocalRotation: {x: -0.0019026523, y: -0.99809736, z: 0.043577887, w: -0.043577887}
+<<<<<<< HEAD
   m_LocalPosition: {x: 11.868378, y: 2.532837, z: 18.757597}
   m_LocalScale: {x: 0.0019930294, y: 0.0019930294, z: 0.0019930294}
+=======
+  m_LocalPosition: {x: 11.868408, y: 2.532837, z: 18.757597}
+  m_LocalScale: {x: 0.0022107053, y: 0.0022107053, z: 0.0022107053}
+>>>>>>> 446c6c76cd853112b7fc88ef2929e6073cc10324
   m_Children:
   - {fileID: 1058440294}
   - {fileID: 1633262045}
@@ -5289,7 +5297,11 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1633262044}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: -422.3393, y: 188, z: 0}
+=======
+  m_LocalPosition: {x: -502.22003, y: 188, z: 0}
+>>>>>>> 446c6c76cd853112b7fc88ef2929e6073cc10324
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2115650577}
@@ -6918,11 +6930,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 114844246872050782, guid: eddf7ae318faa1841bf2941329718c37,
-        type: 2}
-      propertyPath: range
-      value: 
-      objectReference: {fileID: 374158278}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eddf7ae318faa1841bf2941329718c37, type: 2}
   m_IsPrefabParent: 0

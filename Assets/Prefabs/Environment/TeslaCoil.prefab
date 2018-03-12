@@ -87,7 +87,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1326588796336876}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.08, y: 36.99, z: 0}
+  m_LocalPosition: {x: 63.26, y: 0.74, z: 1.55}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 4372864157352136}
@@ -244,15 +244,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teslaStunLength: 0.5
   range: {fileID: 135458676220294976}
+<<<<<<< HEAD
 --- !u!135 &135458676220294976
+=======
+--- !u!135 &135293123508505776
+>>>>>>> 446c6c76cd853112b7fc88ef2929e6073cc10324
 SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1668775103760054}
   m_Material: {fileID: 0}
+<<<<<<< HEAD
   m_IsTrigger: 0
   m_Enabled: 0
+=======
+  m_IsTrigger: 1
+  m_Enabled: 1
+>>>>>>> 446c6c76cd853112b7fc88ef2929e6073cc10324
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
