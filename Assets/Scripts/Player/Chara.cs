@@ -225,6 +225,22 @@ public class Chara : MonoBehaviour
 
         if (grounded && !dashing)
         {
+
+            float input = Input.GetAxis("Horizontal");
+
+            if (input > 0.1f)
+            {
+                rb.velocity = new Vector3(speed, rb.velocity.y);
+            }
+            else if (input < -0.1f)
+            {
+                rb.velocity = new Vector3(-speed, rb.velocity.y);
+            }
+            else
+            {
+                rb.velocity = new Vector3(0, rb.velocity.y);
+            }
+
             doubleJump = true; //Makes jumping available again
             canMove = true;
 
@@ -257,6 +273,23 @@ public class Chara : MonoBehaviour
         }
         else if (!dashing)
         {
+
+            float input = Input.GetAxis("Horizontal");
+            if (input > 0.1f)
+            {
+                if (rb.velocity.x < speed)
+                {
+                    rb.velocity += new Vector3(airSpeed, 0) * Time.deltaTime;
+                }
+            }
+            else if (input < -0.1f)
+            {
+                if (rb.velocity.x > -speed)
+                {
+                    rb.velocity += new Vector3(-airSpeed, 0) * Time.deltaTime;
+                }
+            }
+
             if (doubleJump == true & SteamManager.instance.steamUsable == true)//Checks for double jump and jumps
             {
                 if (Input.GetButtonDown("Fire2"))
@@ -299,57 +332,20 @@ public class Chara : MonoBehaviour
             }
             if (Input.GetButton("Glider") & SteamManager.instance.steamUsable == true) // Button is Shift
             {
-                canMove = false;
+                canMove = true;
                 gravity = OGravity / gliderStrength; // Lowers gravity
                 SteamManager.instance.steam--; //Loweres steam by one per frame
                 speed = OSpeed;
             }
             else
             {
-                gravity = OGravity;
                 canMove = false;
+                gravity = OGravity;
             }
             
         }
 
-
-
-        if (canMove && !dashing)
-        {
-            float input = Input.GetAxis("Horizontal");
-
-            if (input > 0.1f)
-            {
-                rb.velocity = new Vector3(speed, rb.velocity.y);
-            }
-            else if (input < -0.1f)
-            {
-                rb.velocity = new Vector3(-speed, rb.velocity.y);
-            }
-            else
-            {
-                rb.velocity = new Vector3(0, rb.velocity.y);
-            }
-        }
-        else if(!dashing)
-        {
-            float input = Input.GetAxis("Horizontal");
-            if (input > 0.1f)
-            {
-                if (rb.velocity.x < speed)
-                {
-                    rb.velocity += new Vector3(airSpeed, 0) * Time.deltaTime;
-                }
-            }
-            else if (input < -0.1f)
-            {
-                if (rb.velocity.x > -speed)
-                {
-                    rb.velocity += new Vector3(-airSpeed, 0) * Time.deltaTime;
-                }
-            }
-        }
-
+        
         float diff = Mathf.Abs(trans.eulerAngles.z - angle);
         if (diff > 5f)
         {
@@ -379,7 +375,6 @@ public class Chara : MonoBehaviour
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 10;
 
         Destroy(bullet, 3.0f);
-
     }
 
     public void addBullets(int x)
