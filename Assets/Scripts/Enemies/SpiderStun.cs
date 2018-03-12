@@ -26,7 +26,7 @@ public class SpiderStun : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            chara.callStun(spiderStunLength);
+            //chara.callStun(spiderStunLength);
         }
     }
 }
