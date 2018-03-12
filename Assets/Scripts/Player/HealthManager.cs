@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HealthManager : MonoBehaviour {
 
@@ -33,7 +34,7 @@ public class HealthManager : MonoBehaviour {
 
         if (health <=0)
         {
-            Debug.Log("You died");
+            SceneManager.LoadScene("Game_Justin");
             health = 5;
         }
     }
