@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[ExecuteInEditMode]
 public class ChangeCameraAngle : MonoBehaviour {
 
     [SerializeField]
@@ -12,12 +13,18 @@ public class ChangeCameraAngle : MonoBehaviour {
 
     GameObject MainCam;
     CameraController Cam;
+    Vector3 location;
+
+    BoxCollider boxCollider;
 
     // Use this for initialization
+   
     void Start () {
+        boxCollider = GetComponent<BoxCollider>();
         MainCam = GameObject.Find("Main Camera");
         Cam = MainCam.GetComponent<CameraController>();
         Cam.camNum = 1;
+        location = transform.position;
 	}
 	
 	// Update is called once per frame
@@ -34,9 +41,17 @@ public class ChangeCameraAngle : MonoBehaviour {
             }
             else if (Fixed)
             {
+                Cam.tempFixLocation = location;
                 Cam.camNum = 3;
+                Cam.exitingFixed = true;
             }
         }
+    }
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireCube(boxCollider.bounds.center, boxCollider.bounds.size);
+        Debug.Log("Size: " + boxCollider.bounds.size);
     }
     private void OnTriggerExit(Collider col)
     {

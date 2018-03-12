@@ -4,35 +4,41 @@ using UnityEngine;
 
 public class TeslaCoil : MonoBehaviour {
 
-    GameObject player;
+    Transform player;
+    Vector3 playerLocation;
+    public float teslaStunLength = 0.5f;
+    [SerializeField] SphereCollider range;
+    float attackSpeed = 4f;
+    float teslaDamage = 10f;
 
     // Use this for initialization
-    void Start () {
-        player = GameObject.FindGameObjectWithTag("Player");
-
+    void Start () 
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
-    void Update () {
-		
+    void Update () 
+    {
+        playerLocation = player.position;
+        Vector3 direction = (player.position - transform.position).normalized;
+
+        if (Vector3.Distance(transform.position, player.position) < range.radius)
+        {
+            //attack
+        }
 	}
-    void OnTriggerStay(Collider col)
+
+    void OnTriggerEnter(Collider col)
     {
         if (col.tag == "Player")
         {
             Debug.Log(col.name + " is near " + gameObject);
             {
-                HealthManager.instance.health -= 0.3f;
-                StartCoroutine("Stun");
+                HealthManager.instance.health -= teslaDamage;
+                Chara chara = player.gameObject.GetComponent<Chara>();
+                chara.callStun(teslaStunLength);
             }
         }
-    }
-    IEnumerator Stun()
-    {
-        player.GetComponent<Chara>().enabled = false;
-        Debug.Log("start stun");
-        yield return new WaitForSeconds(1);
-        player.GetComponent<Chara>().enabled = true;
-        Debug.Log("end stun");
     }
 }

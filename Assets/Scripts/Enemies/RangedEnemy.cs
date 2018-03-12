@@ -30,8 +30,8 @@ public class RangedEnemy : MonoBehaviour
 
     void Update()
     {
-        playerLocation = player.position;
-        if (Vector3.Distance(transform.position, player.position) < 10)
+        playerLocation = player.position; //players position
+        if (Vector3.Distance(transform.position, player.position) < 10) 
         {
             FaceTarget();
             if (!shooting)

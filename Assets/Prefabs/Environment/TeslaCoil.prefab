@@ -40,8 +40,8 @@ GameObject:
   - component: {fileID: 33976020173874886}
   - component: {fileID: 135458676220294976}
   - component: {fileID: 23150569608681396}
-  - component: {fileID: 65703579048765286}
   - component: {fileID: 114844246872050782}
+  - component: {fileID: 135293123508505776}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -87,7 +87,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1326588796336876}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 63.26, y: 0.74, z: 1.55}
+  m_LocalPosition: {x: 17.08, y: 36.99, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 4372864157352136}
@@ -231,18 +231,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1668775103760054}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &65703579048765286
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1668775103760054}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 8.581958, y: 8.581958, z: 8.581958}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114844246872050782
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -254,6 +242,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1e04c11ad0a46144bd2ac61f0c6ab53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  teslaStunLength: 0.5
+  range: {fileID: 135293123508505776}
+--- !u!135 &135293123508505776
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1668775103760054}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 6
+  m_Center: {x: -0.0000019073486, y: -1.75, z: 0}
 --- !u!135 &135458676220294976
 SphereCollider:
   m_ObjectHideFlags: 1
