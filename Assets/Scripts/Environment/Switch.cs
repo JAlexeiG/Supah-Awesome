@@ -21,25 +21,14 @@ public class Switch : MonoBehaviour {
         }
     }
 
-    /*void OnTriggerExit(Collider col)
+    void OnTriggerExit(Collider col)
     {
         if (col.tag == "Player" || col.tag == "box")
         {
+            foreach(GameObject i in pow)
             {
-                Debug.Log(col.name + " is standing on " + gameObject);
-                if (steamvent != null)
-                {
-                    steamvent.GetComponent<Power>().PowerSwitch();
-                }
-
-
-                Debug.Log(platform + " is stepped on");
-                if (platform != null)
-                {
-                    platform.GetComponent<MovingPlatform>().PowerSwitch();
-                }
+                i.GetComponent<Power>().PowerSwitch();
             }
         }
     }
-    */
 }

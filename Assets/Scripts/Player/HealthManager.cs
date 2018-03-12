@@ -12,9 +12,17 @@ public class HealthManager : MonoBehaviour {
     float healthScale;
     public RectTransform healthBar;
 
+    private Transform playerTrans;
+
     // Use this for initialization
     void Start ()
     {
+        playerTrans = FindObjectOfType<Chara>().gameObject.transform;
+
+        foreach (Transform trans in playerTrans)
+        {
+            Debug.Log(trans.name);
+        }
         instance = this;
         if (health <= 0)
         {

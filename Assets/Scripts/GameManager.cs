@@ -26,9 +26,17 @@ public class GameManager : MonoBehaviour {
 
     }
 
-    public void LoadGame()
+    public void LoadJustin()
     {
         SceneManager.LoadScene("Game_Justin");
+    }
+    public void LoadTim()
+    {
+        SceneManager.LoadScene("game_tim");
+    }
+    public void LoadCam()
+    {
+        SceneManager.LoadScene("Tim with Cam");
     }
     public void LoadMain()
     {

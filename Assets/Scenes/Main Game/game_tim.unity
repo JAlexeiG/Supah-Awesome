@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44537598, g: 0.4894001, b: 0.54369813, a: 1}
+  m_IndirectSpecularColor: {r: 0.44537646, g: 0.48940045, b: 0.54369897, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -3687,7 +3687,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1058440293}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -557.20435, y: 210, z: 0}
+  m_LocalPosition: {x: -422.3393, y: 210, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 565697899}
@@ -3999,7 +3999,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 1848686947}
   grounded: 0
-  walking: 0
+  walking: 1
 --- !u!4 &1224609755
 Transform:
   m_ObjectHideFlags: 0
@@ -4081,6 +4081,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camNum: 0
+  transitionSpeed: 2
+  tempFixLocation: {x: 0, y: 0, z: 0}
+  exitingFixed: 0
 --- !u!81 &1244384623
 AudioListener:
   m_ObjectHideFlags: 0
@@ -4803,8 +4806,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1478125720}
   m_LocalRotation: {x: -0.0019026523, y: -0.99809736, z: 0.043577887, w: -0.043577887}
-  m_LocalPosition: {x: 11.868408, y: 2.5328522, z: 18.757597}
-  m_LocalScale: {x: 0.0023537292, y: 0.0023537292, z: 0.0023537292}
+  m_LocalPosition: {x: 11.868378, y: 2.532837, z: 18.757597}
+  m_LocalScale: {x: 0.0019930294, y: 0.0019930294, z: 0.0019930294}
   m_Children:
   - {fileID: 1058440294}
   - {fileID: 1633262045}
@@ -5286,7 +5289,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1633262044}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -557.20435, y: 188, z: 0}
+  m_LocalPosition: {x: -422.3393, y: 188, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2115650577}
@@ -6044,8 +6047,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: debe82b494bc003478d7c1ea25d19153, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gunPos: 0
   feetDistance: 0
   speed: 6
+  airSpeed: 0
   jumpSpeed: 9
   gravity: 20
   boostStrength: 0
