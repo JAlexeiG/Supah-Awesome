@@ -200,6 +200,7 @@ public class Chara : MonoBehaviour
             //A bunch of stuff to know where mouse is
             if (Input.GetButtonDown("Fire1"))
             {
+                gunPos = -Camera.main.transform.position.z;
                 //// CHANGE THE SHOOTING THING TO BE NON-RELYANT ON THE CROSSHAIR
                 if (bulletLoaded != 0)
                 {
