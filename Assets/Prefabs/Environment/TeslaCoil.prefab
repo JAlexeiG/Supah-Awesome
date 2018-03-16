@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 135458676220294976}
   - component: {fileID: 23150569608681396}
   - component: {fileID: 114844246872050782}
-  - component: {fileID: 135566722774248654}
+  - component: {fileID: 135293123508505776}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -244,28 +244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teslaStunLength: 0.5
   range: {fileID: 135458676220294976}
-<<<<<<< HEAD
---- !u!135 &135458676220294976
-=======
 --- !u!135 &135293123508505776
->>>>>>> 446c6c76cd853112b7fc88ef2929e6073cc10324
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1668775103760054}
-  m_Material: {fileID: 0}
-<<<<<<< HEAD
-  m_IsTrigger: 0
-  m_Enabled: 0
-=======
-  m_IsTrigger: 1
-  m_Enabled: 1
->>>>>>> 446c6c76cd853112b7fc88ef2929e6073cc10324
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &135566722774248654
 SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -277,6 +256,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 6
   m_Center: {x: -0.0000019073486, y: -1.75, z: 0}
+--- !u!135 &135458676220294976
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1668775103760054}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136226515733171270
 CapsuleCollider:
   m_ObjectHideFlags: 1
