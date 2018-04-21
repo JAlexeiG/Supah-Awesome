@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Chara : MonoBehaviour
 {
@@ -38,7 +39,6 @@ public class Chara : MonoBehaviour
     //What the mouse clicked
     private RaycastHit hit;
 
-
     [SerializeField]
     private int bullets;
     [SerializeField]
@@ -66,7 +66,6 @@ public class Chara : MonoBehaviour
     [SerializeField]
     private bool canMove;
 
-
     Transform trans;
 
     static bool onWall_;
@@ -79,6 +78,9 @@ public class Chara : MonoBehaviour
 
     public bool doubleJump;
     bool isStunned;
+
+    [SerializeField]
+    private Text bulletText;
 
     void Start()
     {
@@ -136,6 +138,8 @@ public class Chara : MonoBehaviour
 
     void Update()
     {
+        bulletText.text = string.Format("Bullets Loaded: {0}\nAmmo: {1}" , bulletLoaded, playerBullets);
+
         Debug.Log(isStunned);
         PlayerInput();
         
