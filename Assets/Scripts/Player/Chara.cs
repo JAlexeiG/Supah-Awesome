@@ -421,12 +421,13 @@ public class Chara : MonoBehaviour
     public void callStun(float duration)
     {
         isStunned = true;
-        rb.velocity = new Vector3(rb.velocity.x * 0.3f, rb.velocity.y * 0.1f, rb.velocity.z);
         StartCoroutine("stunTimer", duration);
     }
 
     IEnumerator stunTimer(float duration)
     {
+        rb.velocity = Vector3.zero;
+        gravity = OGravity;
         yield return new WaitForSeconds(duration);
         isStunned = false;
     }
