@@ -63,12 +63,15 @@ public class CameraController : MonoBehaviour
 
     public bool exitingFixed = false;
 
+    
     // Use this for initialization
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         //Calculate and store the offset value by getting the distance between the player's position and camera's position.
         
+        
+
         //offset = pDefault - player.transform.position;
         offset = pDefault;
 
