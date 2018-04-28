@@ -35,7 +35,7 @@ public class TeslaCoil : Power {
     {
         playerLocation = player.position;
         Vector3 direction = (player.position - transform.position).normalized;
-        Debug.Log(Vector3.Distance(transform.position, player.position) + " " + range.radius);
+        //Debug.Log(Vector3.Distance(transform.position, player.position) + " " + range.radius);
 
         if (Vector3.Distance(transform.position, player.position) < range.radius && isActive && isPowered)
         {
@@ -81,7 +81,7 @@ public class TeslaCoil : Power {
             yield return new WaitForSeconds(offTimer);
             isActive = false;
             rend.material.color = Color.red;
-            Debug.Log("Tesla off");
+            //Debug.Log("Tesla off");
             StartCoroutine("SwitchPower");
         }
 
@@ -90,14 +90,14 @@ public class TeslaCoil : Power {
             yield return new WaitForSeconds(onTimer);
             isActive = true;
             rend.material.color = Color.green;
-            Debug.Log("Tesla on");
+            //Debug.Log("Tesla on");
             StartCoroutine("SwitchPower");
         }
 
         else
         {
             isActive = false;
-            Debug.Log("Tesla power turned off. No longer active.");
+            //Debug.Log("Tesla power turned off. No longer active.");
             yield return null;
         }
     }
