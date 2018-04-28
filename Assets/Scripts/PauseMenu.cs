@@ -12,7 +12,7 @@ public class PauseMenu : MonoBehaviour {
 
     private void Start()
     {
-        pauseMenuUI = this.gameObject;
+        pauseMenuUI.SetActive(false);
         activeScene = SceneManager.GetActiveScene();
     }
 
@@ -20,6 +20,7 @@ public class PauseMenu : MonoBehaviour {
     void Update () {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            Debug.Log("Escape is pressed.");
             if (GameIsPaused)
             {
                 Resume();
