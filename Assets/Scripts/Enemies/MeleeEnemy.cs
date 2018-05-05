@@ -7,7 +7,9 @@ public class MeleeEnemy : MonoBehaviour {
 
     Transform player;
     NavMeshAgent agent;
+    Vector3 destination;
     Vector3 playerLocation;
+    float agentHorizontalLocation;
     bool attackCooldown = false;
     bool moveCooldown = false;
     bool isDying = false;
@@ -33,14 +35,30 @@ public class MeleeEnemy : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        agentHorizontalLocation = transform.position.x;
         playerLocation = player.position;
         if (Vector3.Distance(transform.position, player.position) < 5 && !moveCooldown)
         {
-            agent.SetDestination(playerLocation);
-            if (Vector3.Distance(transform.position, player.position) < 1.1f && !attackCooldown)
-            {  
-                if (!isDying)
-                    Attack();
+            if (agentHorizontalLocation > playerLocation.x)
+            {
+                destination = new Vector3(playerLocation.x + 1.0f, playerLocation.y, playerLocation.z);
+                agent.SetDestination(destination);
+                if (Vector3.Distance(transform.position, player.position) < 1.1f && !attackCooldown)
+                {
+                    if (!isDying)
+                        Attack();
+                }
+            }
+
+            else if (agentHorizontalLocation < playerLocation.x)
+            {
+                destination = new Vector3(playerLocation.x - 1.0f, playerLocation.y, playerLocation.z);
+                agent.SetDestination(destination);
+                if (Vector3.Distance(transform.position, player.position) < 1.1f && !attackCooldown)
+                {
+                    if (!isDying)
+                        Attack();
+                }
             }
         }
 

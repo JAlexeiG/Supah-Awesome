@@ -40,7 +40,7 @@ public class TeslaCoil : Power {
         if (Vector3.Distance(transform.position, player.position) < range.radius && isActive && isPowered)
         {
             Attack();
-            Debug.Log("hello");
+            Debug.Log("tesla hit player");
         }
 	}
 
@@ -55,24 +55,6 @@ public class TeslaCoil : Power {
         line.SetPositions(linePositions);
         player.gameObject.GetComponent<Rigidbody>().AddExplosionForce(explosionStrength, gameObject.transform.position, 100, 1);
     }
-    /*
-    void OnTriggerEnter(Collider col)
-    {
-        if (col.tag == "Player" && isActive && isPowered)
-        {
-            Debug.Log(col.name + " is near " + gameObject);
-            {
-                linePositions = new Vector3[2];
-                linePositions[0] = gameObject.transform.position;
-                linePositions[1] = playerLocation;
-                HealthManager.instance.health -= teslaDamage;
-                Chara chara = player.gameObject.GetComponent<Chara>();
-                chara.callStun(teslaStunLength);
-                line.SetPositions(linePositions);
-            }
-        }
-    }
-    */
 
     IEnumerator SwitchPower()
     {
