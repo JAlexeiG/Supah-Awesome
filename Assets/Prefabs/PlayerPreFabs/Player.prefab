@@ -88,7 +88,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1082682790820268}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.1, y: 32.5, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4353762340486304}
@@ -260,7 +260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitForce: 0
-  hitRadius: 0
+  playerTrans: {fileID: 0}
 --- !u!114 &114965275735140902
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -272,6 +272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: debe82b494bc003478d7c1ea25d19153, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpawnPoint: {fileID: 0}
   gunPos: 0
   feetDistance: 1.2
   speed: 6
@@ -301,6 +302,7 @@ MonoBehaviour:
   doubleJump: 0
   bulletText: {fileID: 0}
   meleTime: 0.2
+  meleCoolDown: 0
   meleBox: {fileID: 1561959693531864}
 --- !u!136 &136778419590509062
 CapsuleCollider:

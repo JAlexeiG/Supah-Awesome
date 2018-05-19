@@ -6,6 +6,7 @@ public class SteamManager : MonoBehaviour {
 
     static SteamManager _instance = null;
 
+    public bool isPaused;
     public bool steamUsable = true;
 
     public float steam;
@@ -13,7 +14,7 @@ public class SteamManager : MonoBehaviour {
     public RectTransform steamBar;
     // Use this for initialization
     void Start () {
-
+        isPaused = false;
         instance = this;
         if (steam <= 0)
         {
@@ -31,18 +32,21 @@ public class SteamManager : MonoBehaviour {
 
 
         //If the steam is less than 0, it goes on cooldown. It also regenerates slowly.
-        if (steam < 50)
+        if (!isPaused)
         {
-            steam += 0.5f;
-        }
+            if (steam < 50)
+            {
+                steam += 0.5f;
+            }
 
-        if (steam <=0)
-        {
-            steamUsable = false;
-        }
-        if (steam >= 50)
-        {
-            steamUsable = true;
+            if (steam <= 0)
+            {
+                steamUsable = false;
+            }
+            if (steam >= 50)
+            {
+                steamUsable = true;
+            }
         }
     }
 

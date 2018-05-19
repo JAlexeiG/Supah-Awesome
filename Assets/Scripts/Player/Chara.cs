@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class Chara : MonoBehaviour
 {
-    
+    [SerializeField]
+    Transform SpawnPoint;
 
     public float gunPos;
 
@@ -79,6 +80,7 @@ public class Chara : MonoBehaviour
 
     public bool doubleJump;
     bool isStunned;
+    bool isPaused;
 
     [SerializeField]
     private Text bulletText;
@@ -99,6 +101,7 @@ public class Chara : MonoBehaviour
     {
         isMele = false;
         isStunned = false;
+        isPaused = false;
         feetDistance = 1.2f;
         trans = GetComponent<Transform>();
 
@@ -152,9 +155,12 @@ public class Chara : MonoBehaviour
 
     void Update()
     {
-        bulletText.text = string.Format("Bullets Loaded: {0}\nAmmo: {1}" , bulletLoaded, playerBullets);
+        if (transform.position.y < -10 || transform.position.y > 100)
+        {
+            transform.position = SpawnPoint.position;
+        }
 
-        //Debug.Log(isStunned);
+        bulletText.text = string.Format("Bullets Loaded: {0}\nAmmo: {1}" , bulletLoaded, playerBullets);
         PlayerInput();
         
 
@@ -213,7 +219,13 @@ public class Chara : MonoBehaviour
 
     void PlayerInput()
     {
-        if (!isStunned)
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SteamManager.instance.isPaused = !SteamManager.instance.isPaused;
+            isPaused = !isPaused;
+        }
+
+        if (!isStunned && !isPaused)
         {
             if(Input.GetKeyDown(KeyCode.Q))
             {

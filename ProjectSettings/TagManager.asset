@@ -12,6 +12,7 @@ TagManager:
   - box
   - MeleeEnemy
   - RangedEnemy
+  - OutOfBounds
   layers:
   - Default
   - TransparentFX

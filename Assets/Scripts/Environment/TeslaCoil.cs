@@ -9,7 +9,7 @@ public class TeslaCoil : Power {
     [SerializeField] float teslaStunLength;
     [SerializeField] SphereCollider range;
     float attackSpeed = 4f;
-    float teslaDamage = 0f;
+    float teslaDamage = 5f;
     LineRenderer line;
     Vector3[] linePositions;
     bool isActive;

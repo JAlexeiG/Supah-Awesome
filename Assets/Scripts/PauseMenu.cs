@@ -8,12 +8,14 @@ public class PauseMenu : MonoBehaviour {
     public static bool GameIsPaused = false;
 
     public GameObject pauseMenuUI;
+    public GameObject settingsPanel;
     Scene activeScene;
 
     private void Start()
     {
         pauseMenuUI.SetActive(false);
-        activeScene = SceneManager.GetActiveScene();
+        settingsPanel.SetActive(false);
+    activeScene = SceneManager.GetActiveScene();
     }
 
     // Update is called once per frame
@@ -29,7 +31,7 @@ public class PauseMenu : MonoBehaviour {
                 Pause();
         }
 	}
-    void Resume()
+    public void Resume()
     {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
@@ -42,35 +44,23 @@ public class PauseMenu : MonoBehaviour {
         GameIsPaused = true;
     }
 
-    public void Button(string command)
-    {
-        switch (command)
-        {
-            case "Resume":
-                Resume();
-                break;
-            case "Restart":
-                SceneManager.LoadScene(activeScene.name);
-                break;
-            case "Menu":
-                SceneManager.LoadScene(0);
-                //SceneManager.LoadScene("Main"); // Either or works.
-                break;
-            case "Settings":
-                //Does nothing at the moment.
-                Debug.Log("Settings not implemented yet.");
-                break;
-
-        }
-    }
-
     public void Restart()
     {
-
+        SceneManager.LoadScene(activeScene.name);
     }
+
 
     public void Menu()
     {
+        SceneManager.LoadScene(0);
+    }
 
+    public void Settings()
+    {
+        settingsPanel.SetActive(true);
+    }
+    public void Back()
+    {
+        settingsPanel.SetActive(false);
     }
 }

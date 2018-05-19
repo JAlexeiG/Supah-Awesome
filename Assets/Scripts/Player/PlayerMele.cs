@@ -18,5 +18,10 @@ public class PlayerMele : MonoBehaviour
             other.GetComponent<Rigidbody>().AddExplosionForce(hitForce, playerTrans.position, 300,2);
             Debug.Log("MeleEnemyhit");
         }
+
+        else if (other.tag == "RangedEnemy")
+        {
+            other.GetComponent<RangedEnemy>().DoDamage();
+        }
     }
 }
