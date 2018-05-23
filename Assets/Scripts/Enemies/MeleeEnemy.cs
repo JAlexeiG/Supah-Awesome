@@ -33,7 +33,7 @@ public class MeleeEnemy : MonoBehaviour {
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         agent.stoppingDistance = 1.1f;
-        agent.speed = 1.5f;
+        agent.speed = 1.9f;
         agent.acceleration = 0.75f;
         currentHealth = maxHealth;
     }
