@@ -95,6 +95,8 @@ public class Chara : MonoBehaviour
     private float meleCoolDownTimer;
     [SerializeField]
     private GameObject meleBox;
+    [SerializeField]
+    private GameObject glider;
 
 
     void Start()
@@ -454,11 +456,13 @@ public class Chara : MonoBehaviour
                     gravity = OGravity / gliderStrength; // Lowers gravity
                     SteamManager.instance.steam--; //Loweres steam by one per frame
                     speed = OSpeed;
+                    glider.SetActive(true);
                 }
                 else
                 {
                     canMove = false;
                     gravity = OGravity;
+                    glider.SetActive(false);
                 }
             }
 
