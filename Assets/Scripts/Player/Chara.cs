@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -40,9 +39,7 @@ public class Chara : MonoBehaviour
 
     //What the mouse clicked
     private RaycastHit hit;
-
-    [SerializeField]
-    private int bullets;
+    
     [SerializeField]
     private int playerBullets;
     [SerializeField]
@@ -500,5 +497,42 @@ public class Chara : MonoBehaviour
         gravity = OGravity;
         yield return new WaitForSeconds(duration);
         isStunned = false;
+    }
+
+    public class XMLPlayer
+    {
+        public bool isMele;
+        public float health;
+        public float steam;
+        public int loadedAmmo;
+        public int totalAmmo;
+        public Vector3 position;
+        public Vector3 velocity;
+    }
+
+    public XMLPlayer GetXMLPlayer()
+    {
+        XMLPlayer playerXML = new XMLPlayer();
+        playerXML.isMele = isMele;
+        playerXML.health = HealthManager.instance.health;
+        playerXML.steam = SteamManager.instance.steam;
+        playerXML.loadedAmmo = bulletLoaded;
+        playerXML.totalAmmo = playerBullets;
+        playerXML.position = trans.position;
+        playerXML.velocity = rb.velocity;
+
+        return playerXML;
+    }
+
+    public void SaveXMLPlayer(XMLPlayer playerXML)
+    {
+        isMele = playerXML.isMele;
+        HealthManager.instance.health = playerXML.health;
+        SteamManager.instance.steam = playerXML.steam;
+        bulletLoaded = playerXML.loadedAmmo;
+        playerBullets = playerXML.totalAmmo;
+        trans.position = playerXML.position;
+        rb.velocity = playerXML.velocity;
+
     }
 }
