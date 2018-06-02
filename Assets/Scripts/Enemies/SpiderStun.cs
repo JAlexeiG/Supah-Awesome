@@ -12,8 +12,8 @@ public class SpiderStun : MonoBehaviour
         chara = GameObject.FindGameObjectWithTag("Player").GetComponent<Chara>();
     }
 
-    //slow isnt needed anymore but i kept it in here in case we need it for something else
-    /*IEnumerator Slow()
+	//slow isnt needed anymore but i kept it in here in case we need it for something else
+	/*IEnumerator Slow()
     {
         float playerSpeed = player.GetComponent<SimpleCharacterControl>().m_moveSpeed;
         float startSpeed = player.GetComponent<SimpleCharacterControl>().m_moveSpeed;
@@ -22,11 +22,11 @@ public class SpiderStun : MonoBehaviour
         playerSpeed = startSpeed;
     }*/
 
-    private void OnTriggerEnter(Collider other)
+	private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            //chara.callStun(spiderStunLength);
+            chara.callStun(spiderStunLength);
         }
     }
 }

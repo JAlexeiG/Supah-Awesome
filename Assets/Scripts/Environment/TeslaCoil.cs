@@ -9,12 +9,15 @@ public class TeslaCoil : Power {
     [SerializeField] float teslaStunLength;
     [SerializeField] SphereCollider range;
     float attackSpeed = 4f;
-    float teslaDamage = 0f;
+    float teslaDamage = 5f;
     LineRenderer line;
     Vector3[] linePositions;
     bool isActive;
     Renderer rend;
     static float explosionStrength = 357f;
+
+    [SerializeField]
+    bool onCooldown;
 
     [SerializeField] float onTimer;
     [SerializeField] float offTimer;
@@ -28,6 +31,7 @@ public class TeslaCoil : Power {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         StartCoroutine("SwitchPower");
         teslaStunLength = 0.5f;
+        onCooldown = false;
     }
 
     // Update is called once per frame
@@ -39,13 +43,16 @@ public class TeslaCoil : Power {
 
         if (Vector3.Distance(transform.position, player.position) < range.radius && isActive && isPowered)
         {
-            Attack();
-            Debug.Log("hello");
+            if (!onCooldown)
+            {
+                Attack();
+            }
         }
 	}
 
     void Attack()
     {
+        onCooldown = true;
         linePositions = new Vector3[2];
         linePositions[0] = gameObject.transform.position;
         linePositions[1] = playerLocation;
@@ -54,6 +61,7 @@ public class TeslaCoil : Power {
         chara.callStun(teslaStunLength);
         line.SetPositions(linePositions);
         player.gameObject.GetComponent<Rigidbody>().AddExplosionForce(explosionStrength, gameObject.transform.position, 100, 1);
+        StartCoroutine("CooldownTimer");
     }
     /*
     void OnTriggerEnter(Collider col)
@@ -73,6 +81,13 @@ public class TeslaCoil : Power {
         }
     }
     */
+
+    IEnumerator CooldownTimer()
+    {
+        yield return new WaitForSeconds(2);
+        onCooldown = false;
+    }
+
 
     IEnumerator SwitchPower()
     {

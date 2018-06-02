@@ -39,7 +39,7 @@ public class RangedEnemy : MonoBehaviour
                     Attack();
         }
 
-        if (currentHealth < 1)
+        if (currentHealth <= 0)
         {
             StartCoroutine("DelayedDeath");
         }

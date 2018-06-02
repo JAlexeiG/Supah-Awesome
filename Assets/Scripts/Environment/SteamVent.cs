@@ -25,8 +25,8 @@ public class SteamVent : Power {
         {
             player = other.GetComponent<Chara>();
             Debug.Log(other.gameObject.name + " has stepped on " + gameObject.name);
-            player.GetComponent<Rigidbody>().AddExplosionForce(strength, transform.position ,strength);
-            //player.GetComponent<Rigidbody>().AddRelativeForce(transform.up * strength, ForceMode.Acceleration);
+            //player.GetComponent<Rigidbody>().AddExplosionForce(strength, transform.position ,strength);
+            player.GetComponent<Rigidbody>().AddRelativeForce(transform.up * strength, ForceMode.Acceleration);
         }
 	}
 }

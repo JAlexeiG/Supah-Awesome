@@ -2,14 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ElectricWater : Power {
-    
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
+public class ElectricWater : Power 
+{ 
     void OnTriggerStay(Collider col)
     {
         if (col.name == "Player")

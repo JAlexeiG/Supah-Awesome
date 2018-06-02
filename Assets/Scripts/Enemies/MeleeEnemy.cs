@@ -9,6 +9,8 @@ public class MeleeEnemy : MonoBehaviour {
     Transform player;
     NavMeshAgent agent;
     Vector3 playerLocation;
+
+    int meleeEnemyDamage = 15;
     bool attackCooldown = false;
     bool moveCooldown = false;
     bool isDying = false;
@@ -31,7 +33,7 @@ public class MeleeEnemy : MonoBehaviour {
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         agent.stoppingDistance = 1.1f;
-        agent.speed = 1.5f;
+        agent.speed = 1.9f;
         agent.acceleration = 0.75f;
         currentHealth = maxHealth;
     }
@@ -77,7 +79,7 @@ public class MeleeEnemy : MonoBehaviour {
 
     void Attack()
     {
-        Debug.Log("attack");
+        Debug.Log("Melee Enemy Attacked");
         StartCoroutine("MoveCooldown");
         StartCoroutine("AttackCooldown");
         attackCooldown = true;
@@ -86,6 +88,7 @@ public class MeleeEnemy : MonoBehaviour {
         playerLocation = player.position;
         if (Vector3.Distance(transform.position, player.position) < 1.8f)
         {
+            HealthManager.instance.health -= meleeEnemyDamage;
             Debug.Log("hit player");
         }
     }
@@ -109,7 +112,7 @@ public class MeleeEnemy : MonoBehaviour {
     public void DoDamage()
     {
         currentHealth -= 1;
-        Debug.Log("health now " + currentHealth);
+        Debug.Log("Melee Enemy has " + currentHealth + " health left.");
     }
 
     IEnumerator DelayedDeath()

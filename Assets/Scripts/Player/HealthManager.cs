@@ -14,6 +14,9 @@ public class HealthManager : MonoBehaviour {
 
     private Transform playerTrans;
 
+    [SerializeField]
+    Transform SpawnPoint;
+
     // Use this for initialization
     void Start ()
     {
@@ -42,8 +45,7 @@ public class HealthManager : MonoBehaviour {
 
         if (health <=0)
         {
-            SceneManager.LoadScene("Game_Justin");
-            health = 5;
+            SceneManager.LoadScene("May 19 Build");
         }
     }
     public static HealthManager instance

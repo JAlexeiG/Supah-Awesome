@@ -138,7 +138,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1604917563599328}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 101.62, y: 1.02, z: -0.05}
+  m_LocalPosition: {x: 24.8, y: 0.99, z: 0.053546906}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4335726155628350}
@@ -225,6 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aa3d154561573468658ef27330a610, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spiderStunLength: 3
 --- !u!114 &114852893641389478
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -249,7 +250,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1604917563599328}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.3
   m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50

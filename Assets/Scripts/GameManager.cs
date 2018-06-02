@@ -30,9 +30,9 @@ public class GameManager : MonoBehaviour {
     {
         SceneManager.LoadScene("Game_Justin");
     }
-    public void LoadTim()
+    public void LoadAlpha()
     {
-        SceneManager.LoadScene("game_tim");
+        SceneManager.LoadScene(3);
     }
     public void LoadCam()
     {
