@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Chara : MonoBehaviour
 {
+    
 
     public float gunPos;
 
@@ -82,8 +83,21 @@ public class Chara : MonoBehaviour
     [SerializeField]
     private Text bulletText;
 
+
+    private bool isMele;
+    [SerializeField]
+    private float meleTime;
+    private float meleTimer;
+    [SerializeField]
+    private float meleCoolDown;
+    private float meleCoolDownTimer;
+    [SerializeField]
+    private GameObject meleBox;
+
+
     void Start()
     {
+        isMele = false;
         isStunned = false;
         feetDistance = 1.2f;
         trans = GetComponent<Transform>();
@@ -140,7 +154,7 @@ public class Chara : MonoBehaviour
     {
         bulletText.text = string.Format("Bullets Loaded: {0}\nAmmo: {1}" , bulletLoaded, playerBullets);
 
-        Debug.Log(isStunned);
+        //Debug.Log(isStunned);
         PlayerInput();
         
 
@@ -201,13 +215,17 @@ public class Chara : MonoBehaviour
     {
         if (!isStunned)
         {
-            //A bunch of stuff to know where mouse is
-            if (Input.GetButtonDown("Fire1"))
+            if(Input.GetKeyDown(KeyCode.Q))
             {
-                gunPos = -Camera.main.transform.position.z;
-                //// CHANGE THE SHOOTING THING TO BE NON-RELYANT ON THE CROSSHAIR
-                if (bulletLoaded != 0)
+                isMele = !isMele;
+            }
+
+            if (isMele)
+            {
+                if (Input.GetButtonDown("Fire1") & meleCoolDownTimer <= 0)
                 {
+                    gunPos = -Camera.main.transform.position.z;
+                    meleTimer = meleTime;
                     //Mouse position (+20 because camera is -20) to find where to shoot something
                     mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, trans.position.z + gunPos);
 
@@ -218,40 +236,75 @@ public class Chara : MonoBehaviour
 
                     ///Updates for aiming
                     aimingOrigin.LookAt(crosshair.transform);
-
-                    GameObject bullet = Instantiate(bulletPreFab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-
-                    bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 20;
-
-                    Destroy(bullet, 3.0f);
                     Destroy(crosshair, 0.5f);
-
-                    bulletLoaded--;
+                }
+                if(meleTimer > 0)
+                {
+                    meleBox.SetActive(true);
+                    meleTimer -= Time.deltaTime;
+                    meleCoolDownTimer = meleCoolDown;
                 }
                 else
                 {
-                    Debug.Log("You have no bullets loaded, re-loading");
-                    if (playerBullets <= 0)
+                    meleBox.SetActive(false);
+                    meleCoolDownTimer -= Time.deltaTime;
+                }
+            }
+
+            if (!isMele)
+            {
+                meleBox.SetActive(false);
+                //A bunch of stuff to know where mouse is
+                if (Input.GetButtonDown("Fire1"))
+                {
+                    gunPos = -Camera.main.transform.position.z;
+                    //// CHANGE THE SHOOTING THING TO BE NON-RELYANT ON THE CROSSHAIR
+                    if (bulletLoaded != 0)
                     {
-                        Debug.Log("You have no bullets left");
+                        //Mouse position (+20 because camera is -20) to find where to shoot something
+                        mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, trans.position.z + gunPos);
+
+
+                        Vector3 potato = Camera.main.ScreenToWorldPoint(mousePos); //Gives world-coordinants of where you just fired
+
+                        GameObject crosshair = Instantiate(crosshairPreFab, potato, Quaternion.Euler(0, 0, 0));
+
+                        ///Updates for aiming
+                        aimingOrigin.LookAt(crosshair.transform);
+
+                        GameObject bullet = Instantiate(bulletPreFab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+
+                        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 20;
+
+                        Destroy(bullet, 3.0f);
+                        Destroy(crosshair, 0.5f);
+
+                        bulletLoaded--;
                     }
                     else
                     {
-                        if (playerBullets < 5)
+                        Debug.Log("You have no bullets loaded, re-loading");
+                        if (playerBullets <= 0)
                         {
-                            bulletLoaded = playerBullets;
-                            playerBullets = 0;
+                            Debug.Log("You have no bullets left");
                         }
                         else
                         {
-                            playerBullets -= 5;
-                            bulletLoaded += 5;
+                            if (playerBullets < 5)
+                            {
+                                bulletLoaded = playerBullets;
+                                playerBullets = 0;
+                            }
+                            else
+                            {
+                                playerBullets -= 5;
+                                bulletLoaded += 5;
+                            }
                         }
                     }
+
                 }
-
             }
-
 
             if (dashing)
             {
@@ -398,23 +451,28 @@ public class Chara : MonoBehaviour
             }
 
 
-            float diff = Mathf.Abs(trans.eulerAngles.z - angle);
-            if (diff > 5f)
-            {
-                if (trans.eulerAngles.z < angle)
-                {
-                    trans.eulerAngles += Vector3.Lerp(trans.eulerAngles, new Vector3(0, 0, angle), 5f) * Time.deltaTime * 5;
-                }
+        }
+        if (isStunned)
+        {
+            gravity = OGravity;
+        }
 
-                else if (trans.eulerAngles.z > angle)
-                {
-                    trans.eulerAngles -= Vector3.Lerp(new Vector3(0, 0, angle), trans.eulerAngles, 5f) * Time.deltaTime * 5;
-                }
-            }
-            else
+        float diff = Mathf.Abs(trans.eulerAngles.z - angle);
+        if (diff > 5f)
+        {
+            if (trans.eulerAngles.z < angle)
             {
-                trans.eulerAngles = new Vector3(0, 0, angle);
+                trans.eulerAngles += Vector3.Lerp(trans.eulerAngles, new Vector3(0, 0, angle), 5f) * Time.deltaTime * 5;
             }
+
+            else if (trans.eulerAngles.z > angle)
+            {
+                trans.eulerAngles -= Vector3.Lerp(new Vector3(0, 0, angle), trans.eulerAngles, 5f) * Time.deltaTime * 5;
+            }
+        }
+        else
+        {
+            trans.eulerAngles = new Vector3(0, 0, angle);
         }
     }
 

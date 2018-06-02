@@ -26,7 +26,7 @@ public class AudioManager : MonoBehaviour {
 
     private void Start()
     {
-        Play("Theme");
+        //Play("Theme");
     
     }
 
@@ -40,4 +40,55 @@ public class AudioManager : MonoBehaviour {
         }
         s.source.Play();
     }
+    void Pause(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound: " + name + " not found.");
+            return;
+        }
+        s.source.Pause();
+        
+    }
+    void UnPause(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound: " + name + " not found.");
+            return;
+        }
+        s.source.UnPause();
+
+    }
+    void Stop(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound: " + name + " not found.");
+            return;
+        }
+        s.source.Stop();
+
+    }
+
+    void PauseAll()
+    {
+        foreach (Sound s in sounds)
+        {
+            s.source.Pause();
+        }
+
+    }
+    void StopAll()
+    {
+        foreach (Sound s in sounds)
+        {
+            s.source.Stop();
+            
+        }
+    }
+    
 }

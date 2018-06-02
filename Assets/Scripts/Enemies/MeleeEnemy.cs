@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class MeleeEnemy : MonoBehaviour {
 
+    Rigidbody rb;
     Transform player;
     NavMeshAgent agent;
     Vector3 playerLocation;
@@ -15,9 +16,14 @@ public class MeleeEnemy : MonoBehaviour {
     [SerializeField] float maxHealth = 2f;
     [SerializeField] float currentHealth;
 
+    [SerializeField] float hitTimer;
+    float timer;
+    [SerializeField] bool isHit;
+
     // Use this for initialization
     private void Awake()
     {
+        rb = GetComponent<Rigidbody>();
         agent = GetComponent<NavMeshAgent>();
     }
 
@@ -33,14 +39,25 @@ public class MeleeEnemy : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        playerLocation = player.position;
-        if (Vector3.Distance(transform.position, player.position) < 5 && !moveCooldown)
+        if (!isHit)
         {
-            agent.SetDestination(playerLocation);
-            if (Vector3.Distance(transform.position, player.position) < 1.1f && !attackCooldown)
-            {  
-                if (!isDying)
-                    Attack();
+            playerLocation = player.position;
+            if (Vector3.Distance(transform.position, player.position) < 5 && !moveCooldown)
+            {
+                agent.SetDestination(playerLocation);
+                if (Vector3.Distance(transform.position, player.position) < 1.1f && !attackCooldown)
+                {
+                    if (!isDying)
+                        Attack();
+                }
+            }
+        }
+        else
+        {
+            timer -= Time.deltaTime;
+            if (timer <= 0)
+            {
+                getHit(false);
             }
         }
 
@@ -101,5 +118,22 @@ public class MeleeEnemy : MonoBehaviour {
         yield return new WaitForSeconds(1.5f);
         Destroy(gameObject);
         //Drop Loot
+    }
+
+    public void getHit(bool hit)
+    {
+        if (hit)
+        {
+            agent.enabled = false;
+            rb.isKinematic = false;
+            timer = hitTimer;
+            isHit = true;
+        }
+        else
+        {
+            agent.enabled = true;
+            rb.isKinematic = true;
+            isHit = false;
+        }
     }
 }
