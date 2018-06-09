@@ -499,7 +499,7 @@ public class Chara : MonoBehaviour
         isStunned = false;
     }
 
-    public class XMLPlayer
+    public struct XMLPlayer
     {
         public bool isMele;
         public float health;
@@ -533,6 +533,5 @@ public class Chara : MonoBehaviour
         playerBullets = playerXML.totalAmmo;
         trans.position = playerXML.position;
         rb.velocity = playerXML.velocity;
-
     }
 }

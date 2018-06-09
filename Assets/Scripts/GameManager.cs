@@ -7,6 +7,24 @@ public class GameManager : MonoBehaviour {
 
     static GameManager _instance = null;
 
+
+    public class CurrentScene
+    {
+        public int sceneNumber;
+    }
+
+    public CurrentScene GetScene()
+    {
+        CurrentScene scene = new CurrentScene();
+        scene.sceneNumber = SceneManager.GetActiveScene().buildIndex;
+        return scene;
+    }
+
+    public void SaveXMLPlayer(CurrentScene box)
+    {
+        SceneManager.LoadScene(box.sceneNumber);
+
+    }
     // Use this for initialization
     void Start () {
         if (!instance)
