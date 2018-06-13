@@ -63,6 +63,9 @@ public class Chara : MonoBehaviour
     float dashTimer;
     [SerializeField]
     private bool gliderStarted;
+    [SerializeField]
+    private float minGliderSpeed;
+
 
     [SerializeField]
     private bool canMove;
@@ -95,6 +98,7 @@ public class Chara : MonoBehaviour
     [SerializeField]
     private GameObject meleBox;
     
+
     void Start()
     {
         isMele = false;
@@ -441,6 +445,11 @@ public class Chara : MonoBehaviour
                             SteamManager.instance.steam--; //Lowers steam by 1 per frame
                         }
                     }
+                    else
+                    {
+
+                        rb.velocity -= new Vector3(rb.velocity.x * 0.7f, 0) * Time.deltaTime;
+                    }
                 }
 
                 //if (doubleJump == true & SteamManager.instance.steamUsable == true)//Checks for double jump and jumps
@@ -483,8 +492,19 @@ public class Chara : MonoBehaviour
                 {
                     if (!gliderStarted)
                     {
-                        rb.velocity = new Vector3(rb.velocity.x, 0);
-                        gliderStarted = true;
+                        if (trans.eulerAngles.z % 180 == 0)
+                        {
+                            if (rb.velocity.y * trans.up.y > 0)
+                            {
+                                rb.velocity = new Vector3(rb.velocity.x / 2, 0);
+                                gliderStarted = true;
+                            }
+                            if (Vector3.Magnitude(rb.velocity) > minGliderSpeed)
+                            {
+                                rb.velocity = new Vector3(rb.velocity.x / 2, rb.velocity.y / 2);
+                                gliderStarted = true;
+                            }
+                        }
                     }
                     canMove = true;
                     gravity = OGravity / gliderStrength; // Lowers gravity

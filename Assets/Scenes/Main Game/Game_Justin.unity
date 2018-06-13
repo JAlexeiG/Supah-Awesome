@@ -5334,6 +5334,11 @@ Prefab:
       propertyPath: SpawnPoint
       value: 
       objectReference: {fileID: 207154942}
+    - target: {fileID: 114965275735140902, guid: 7582cf7aaf66a6d4ab2d4f68eab706f2,
+        type: 2}
+      propertyPath: minGliderSpeed
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7582cf7aaf66a6d4ab2d4f68eab706f2, type: 2}
   m_IsPrefabParent: 0
