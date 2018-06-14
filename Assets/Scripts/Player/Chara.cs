@@ -401,7 +401,7 @@ public class Chara : MonoBehaviour
                         }
                     }
                 }
-                else if (Input.GetButtonUp("Glider") )
+                else
                 {
                     speed = OSpeed;
                 }
