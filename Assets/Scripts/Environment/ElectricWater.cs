@@ -3,8 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ElectricWater : Power 
-{ 
-    void OnTriggerStay(Collider col)
+{
+    Renderer rend;
+
+	private void Start()
+	{
+        rend = GetComponent<Renderer>();
+	}
+
+	private void Update()
+	{
+        if (isPowered)
+        {
+            rend.material.color = Color.cyan;
+        }
+        else rend.material.color = Color.blue;
+	}
+
+	void OnTriggerStay(Collider col)
     {
         if (col.name == "Player")
         {

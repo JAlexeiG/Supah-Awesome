@@ -18,10 +18,11 @@ public class SpiderAI : MonoBehaviour
 
     IEnumerator NewWanderPoint()
     {
+        yield return new WaitForSeconds(0.1f); //ensure wander points are locked in
         agent.SetDestination(Wanderpoints[Random.Range(0, 4)].position); //pick random wander point
-        Debug.Log("wandering.. waiting");
-        yield return new WaitForSeconds(Random.Range(6, 13)); //wait 6-12s
-        Debug.Log("done waiting");
+        //Debug.Log("wandering.. waiting");
+        yield return new WaitForSeconds(Random.Range(4, 10)); //wait 4-9s
+        //Debug.Log("done waiting");
         StartCoroutine("NewWanderPoint"); //do it again
     }
 }

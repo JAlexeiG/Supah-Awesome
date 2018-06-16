@@ -38,18 +38,15 @@ public class TimeSwitch : Power {
 
     void OnTriggerEnter(Collider col)
     {
-        if (timer == 0)
+        if (col.tag == "Player") //add && melee input
         {
-            if (col.tag == "Player") //add && melee input
+            timer = 0;
+            switchOn = !switchOn;
+            foreach (GameObject i in pow)
             {
-                timer = 0;
-                switchOn = true;
-                foreach (GameObject i in pow)
-                {
-                    i.GetComponent<Power>().isPowered = !i.GetComponent<Power>().isPowered;
-                    Debug.Log(i.gameObject.name + " is powered: " + i.GetComponent<Power>().isPowered);
-                }
+                i.GetComponent<Power>().isPowered = !i.GetComponent<Power>().isPowered;
+                Debug.Log(i.gameObject.name + " is powered: " + i.GetComponent<Power>().isPowered);
             }
         }
-    }
+    }       
 }

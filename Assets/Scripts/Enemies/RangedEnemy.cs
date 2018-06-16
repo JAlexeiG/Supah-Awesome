@@ -31,9 +31,12 @@ public class RangedEnemy : MonoBehaviour
     void Update()
     {
         playerLocation = player.position; //players position
-        if (Vector3.Distance(transform.position, player.position) < 10) 
+        if (Vector3.Distance(transform.position, player.position) < (range.radius * 1.2f))
         {
             FaceTarget();
+        }
+        if (Vector3.Distance(transform.position, player.position) < range.radius) 
+        {
             if (!shooting)
                 if (!isDying)
                     Attack();

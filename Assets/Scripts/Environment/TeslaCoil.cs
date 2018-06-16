@@ -54,7 +54,7 @@ public class TeslaCoil : Power {
     {
         onCooldown = true;
         linePositions = new Vector3[2];
-        linePositions[0] = gameObject.transform.position;
+        linePositions[0] = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 3, gameObject.transform.position.z);
         linePositions[1] = playerLocation;
         HealthManager.instance.health -= teslaDamage;
         Chara chara = player.gameObject.GetComponent<Chara>();
@@ -95,7 +95,7 @@ public class TeslaCoil : Power {
         {
             yield return new WaitForSeconds(offTimer);
             isActive = false;
-            rend.material.color = Color.red;
+            rend.material.color = Color.green;
             //Debug.Log("Tesla off");
             StartCoroutine("SwitchPower");
         }
@@ -104,7 +104,7 @@ public class TeslaCoil : Power {
         {
             yield return new WaitForSeconds(onTimer);
             isActive = true;
-            rend.material.color = Color.green;
+            rend.material.color = Color.red;
             //Debug.Log("Tesla on");
             StartCoroutine("SwitchPower");
         }
@@ -112,6 +112,7 @@ public class TeslaCoil : Power {
         else
         {
             isActive = false;
+            rend.material.color = Color.green;
             //Debug.Log("Tesla power turned off. No longer active.");
             yield return null;
         }

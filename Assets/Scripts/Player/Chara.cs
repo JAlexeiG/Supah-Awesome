@@ -160,7 +160,7 @@ public class Chara : MonoBehaviour
 
     void Update()
     {
-        if (transform.position.y < -10 || transform.position.y > 100)
+        if (transform.position.y < -20 || transform.position.y > 200)
         {
             transform.position = SpawnPoint.position;
         }
