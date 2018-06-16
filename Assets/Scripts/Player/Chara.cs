@@ -97,6 +97,8 @@ public class Chara : MonoBehaviour
     private float meleCoolDownTimer;
     [SerializeField]
     private GameObject meleBox;
+    [SerializeField]
+    private GameObject glider;
     
 
     void Start()
@@ -395,7 +397,9 @@ public class Chara : MonoBehaviour
                     {
                         speed = OSpeed * 3f; // Increases the max speed
                         SteamManager.instance.steam--; //Lowers steam by 1 per frame
-                        if(!grounded)
+                        Debug.Log("asdf");
+
+                        if (!grounded)
                         {
                             gliderStarted = true;
                         }
@@ -509,17 +513,21 @@ public class Chara : MonoBehaviour
                     canMove = true;
                     gravity = OGravity / gliderStrength; // Lowers gravity
                     speed = OSpeed;
+                    glider.SetActive(true);
                 }
                 else if (Input.GetButtonUp("Glider"))
                 {
                     gliderStarted = false;
                     gravity = OGravity;
+                    glider.SetActive(false);
+
                 }
                 else
                 {
                     gliderStarted = false;
                     canMove = false;
                     gravity = OGravity;
+                    glider.SetActive(false);
                 }
             }
 
