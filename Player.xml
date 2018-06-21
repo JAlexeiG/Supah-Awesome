@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="us-ascii"?>
 <XMLPlayer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <isMele>false</isMele>
-  <health>11.20002</health>
+  <health>100</health>
   <steam>50</steam>
   <loadedAmmo>0</loadedAmmo>
-  <totalAmmo>0</totalAmmo>
+  <totalAmmo>5</totalAmmo>
   <position>
-    <x>681.408752</x>
+    <x>681.244</x>
     <y>5.5</y>
-    <z>100.12088</z>
+    <z>100</z>
   </position>
   <velocity>
-    <x>5.52912045</x>
+    <x>5.76456</x>
     <y>0</y>
     <z>0</z>
   </velocity>
