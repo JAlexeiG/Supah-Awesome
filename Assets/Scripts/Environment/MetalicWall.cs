@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MetalicWall : MonoBehaviour
+public class MetalicWall : Power
 {
 
     Chara player;
@@ -19,12 +19,15 @@ public class MetalicWall : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         Debug.Log(other.tag);
-        if (other.name == "Player")
+        if (isPowered)
         {
-            player.angle = trans.eulerAngles.z;
-            player.onWall = true;
-            Debug.Log("Player has hit the wall");
-        
+            if (other.name == "Player")
+            {
+                player.angle = trans.eulerAngles.z;
+                player.onWall = true;
+                Debug.Log("Player has hit the wall");
+
+            }
         }
     }
     

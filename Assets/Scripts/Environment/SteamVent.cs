@@ -8,16 +8,26 @@ public class SteamVent : Power {
     [SerializeField]
     float strength;
     Collider m_collider;
+    public ParticleSystem steam;
 
     // Use this for initialization
     void Start () {
         m_collider = GetComponent<Collider>();
         m_collider.enabled = isPowered;
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
         m_collider.enabled = isPowered;
+        if (isPowered)
+        {
+            steam.Play();
+        }
+        else
+        {
+            steam.Stop();
+        }
     }
     void OnTriggerStay(Collider other) 
 	{

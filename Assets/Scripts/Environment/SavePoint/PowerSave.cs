@@ -15,7 +15,7 @@ public class PowerSave : MonoBehaviour {
     {
         powerOn power = new powerOn();
         power.powOn = new List<bool>();
-        foreach (Power item in powerObjects)
+        foreach (Power item in FindObjectsOfType<Power>())
         {
             power.powOn.Add(item.isPowered);
         }

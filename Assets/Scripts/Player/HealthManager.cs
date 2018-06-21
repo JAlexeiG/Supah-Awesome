@@ -45,7 +45,7 @@ public class HealthManager : MonoBehaviour {
 
         if (health <=0)
         {
-            SceneManager.LoadScene("May 19 Build");
+            SceneManager.LoadScene("June 16 Build");
         }
     }
     public static HealthManager instance
