@@ -2,16 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 using System;
 
 public class AudioManager : MonoBehaviour {
 
     public Sound[] sounds;
     List <string> activeAudio;
+    Scene activeScene;
+    public string sceneCheck;
 
-
-	// Use this for initialization
-	void Awake () {
+    //public bool playMenuTheme;
+    //public bool playGameTheme;
+    bool musicPlaying;
+    
+    // Use this for initialization
+    void Awake () {
+        DontDestroyOnLoad(this.gameObject);
         activeAudio = new List<string>();
         foreach (Sound s in sounds)
         {
@@ -27,13 +34,37 @@ public class AudioManager : MonoBehaviour {
 
     private void Start()
     {
-       
+        musicPlaying = false;
+        activeScene = SceneManager.GetActiveScene();
+        sceneCheck = activeScene.name;
+
+        PlayTheme();
     
     }
     
     private void Update()
     {
+        activeScene = SceneManager.GetActiveScene();
+        if (sceneCheck != activeScene.name)
+        {
+            musicPlaying = false;
+            StopAll();
+            PlayTheme();
+            sceneCheck = activeScene.name;
+        }
+        /*
+        activeScene = SceneManager.GetActiveScene();
+
+        if (activeScene)
+        {
+            Play("Menu Theme");
+        }
+        else if (playMenuTheme)
+        {
+            Play("Game Theme");
+        }
         //For Testing **********************************************
+        
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             Play("Theme");
@@ -78,7 +109,22 @@ public class AudioManager : MonoBehaviour {
         {
             StopAll();
         }
+        */
         //For Testing **********************************************
+    }
+    public void PlayTheme()
+    {
+        if (activeScene.name == "Main")
+        {
+            Play("Menu Theme");
+            //musicPlaying = true;
+        }
+        if (activeScene.name == "June 16 Build")
+        {
+            Play("Game Theme");
+            //musicPlaying = true;
+        }
+        musicPlaying = true;
     }
 
     public void Play(string name)

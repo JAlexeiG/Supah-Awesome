@@ -48,9 +48,9 @@ public class GameManager : MonoBehaviour {
     {
         SceneManager.LoadScene("Game_Justin");
     }
-    public void LoadAlpha()
+    public void LoadAlpha(int num)
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(num);
     }
     public void LoadCam()
     {
