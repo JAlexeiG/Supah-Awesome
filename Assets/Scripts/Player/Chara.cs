@@ -391,15 +391,8 @@ public class Chara : MonoBehaviour
 
                 if (Input.GetButton("Glider") & SteamManager.instance.steamUsable == true) // Button is Shift
                 {
-                    if (!gliderStarted)
-                    {
-                        speed = OSpeed * 3f; // Increases the max speed
-                        SteamManager.instance.steam--; //Lowers steam by 1 per frame
-                        if(!grounded)
-                        {
-                            gliderStarted = true;
-                        }
-                    }
+                    speed = OSpeed * 3f; // Increases the max speed
+                    SteamManager.instance.steam--; //Lowers steam by 1 per frame
                 }
                 else
                 {
@@ -429,25 +422,32 @@ public class Chara : MonoBehaviour
                 }
                 else
                 {
-                    if (input > 0.1f)
+                    if (input > 0.1f && SteamManager.instance.steamUsable)
                     {
                         if (rb.velocity.x < speed * 1.5)
                         {
                             rb.velocity += new Vector3(airSpeed * 2, 0) * Time.deltaTime;
                             SteamManager.instance.steam--; //Lowers steam by 1 per frame
                         }
+                        else
+                        {
+                            SteamManager.instance.steam--; //Lowers steam by 1 per frame
+                        }
                     }
-                    else if (input < -0.1f)
+                    else if (input < -0.1f && SteamManager.instance.steamUsable)
                     {
                         if (rb.velocity.x > -speed * 1.5)
                         {
                             rb.velocity += new Vector3(-airSpeed * 2, 0) * Time.deltaTime;
                             SteamManager.instance.steam--; //Lowers steam by 1 per frame
                         }
+                        else
+                        {
+                            SteamManager.instance.steam--; //Lowers steam by 1 per frame
+                        }
                     }
                     else
                     {
-
                         rb.velocity -= new Vector3(rb.velocity.x * 0.7f, 0) * Time.deltaTime;
                     }
                 }
@@ -496,13 +496,23 @@ public class Chara : MonoBehaviour
                         {
                             if (rb.velocity.y * trans.up.y > 0)
                             {
-                                rb.velocity = new Vector3(rb.velocity.x / 2, 0);
+                                rb.velocity = new Vector3(rb.velocity.x / 2,rb.velocity.y / 2);
                                 gliderStarted = true;
                             }
-                            if (Vector3.Magnitude(rb.velocity) > minGliderSpeed)
+                            else if (-rb.velocity.y > minGliderSpeed)
                             {
                                 rb.velocity = new Vector3(rb.velocity.x / 2, rb.velocity.y / 2);
                                 gliderStarted = true;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (trans.eulerAngles.z % 180 == 0)
+                        {
+                            if (rb.velocity.y > minGliderSpeed || -rb.velocity.y < minGliderSpeed)
+                            {
+                                rb.velocity -= new Vector3(0, rb.velocity.y) * Time.deltaTime;
                             }
                         }
                     }
