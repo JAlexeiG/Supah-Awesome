@@ -67,8 +67,8 @@ public class Chara : MonoBehaviour
     private float minGliderSpeed;
 
 
-    [SerializeField]
-    private bool canMove;
+    //[SerializeField]
+    // private bool canMove;
 
     Transform trans;
 
@@ -97,7 +97,10 @@ public class Chara : MonoBehaviour
     private float meleCoolDownTimer;
     [SerializeField]
     private GameObject meleBox;
-    
+
+    [SerializeField]
+    private GameObject glider;
+
 
     void Start()
     {
@@ -152,7 +155,7 @@ public class Chara : MonoBehaviour
 
         onWall = false;
         grounded = false;
-        canMove = true;
+        //canMove = true;
 
         doubleJump = false;
         gliderStarted = false;
@@ -370,7 +373,7 @@ public class Chara : MonoBehaviour
                 }
 
                 //doubleJump = true; //Makes jumping available again
-                canMove = true;
+                //canMove = true;
 
 
                 //if (Input.GetButtonDown("Fire2"))
@@ -516,20 +519,23 @@ public class Chara : MonoBehaviour
                             }
                         }
                     }
-                    canMove = true;
+                    //canMove = true;
                     gravity = OGravity / gliderStrength; // Lowers gravity
                     speed = OSpeed;
+                    glider.SetActive(true);
                 }
                 else if (Input.GetButtonUp("Glider"))
                 {
                     gliderStarted = false;
                     gravity = OGravity;
+                    glider.SetActive(false);
                 }
                 else
                 {
                     gliderStarted = false;
-                    canMove = false;
+                    //canMove = false;
                     gravity = OGravity;
+                    glider.SetActive(false);
                 }
             }
 
