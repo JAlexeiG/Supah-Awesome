@@ -42,10 +42,13 @@ public class HealthManager : MonoBehaviour {
 	void Update ()
     {
         healthBar.sizeDelta = new Vector2(health * healthScale, healthBar.sizeDelta.y);
-
+        if (health > maxHealth)
+        {
+            health = maxHealth;
+        }
         if (health <=0)
         {
-            SceneManager.LoadScene("June 16 Build");
+            SceneManager.LoadScene("June 23 Build");
         }
     }
     public static HealthManager instance

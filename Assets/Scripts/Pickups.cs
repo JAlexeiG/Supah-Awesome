@@ -33,19 +33,19 @@ public class Pickups : MonoBehaviour {
                 case 1:
                     if (healthMGR.health < healthMGR.maxHealth)
                     {
-                        healthMGR.health += 1;
+                        healthMGR.health += 10;
                     }
                     break;
                 case 2:
                     if (healthMGR.health < healthMGR.maxHealth)
                     {
-                        healthMGR.health += 3;
+                        healthMGR.health += 15;
                     }
                     break;
                 case 3:
                     if (healthMGR.health < healthMGR.maxHealth)
                     {
-                        healthMGR.health += 5;
+                        healthMGR.health += 25;
                     }
                     break;
                 case 4:

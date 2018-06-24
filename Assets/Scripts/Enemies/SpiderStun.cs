@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpiderStun : MonoBehaviour 
 {
     Chara chara;
-    public float spiderStunLength = 3f;
+    [SerializeField] float spiderStunLength = 2f;
 
     private void Start()
     {
