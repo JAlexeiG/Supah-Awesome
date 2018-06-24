@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="us-ascii"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Box xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <position>
-    <x>319.00415</x>
-    <y>-3.09500122</y>
-    <z>99.90961</z>
+    <x>227.803482</x>
+    <y>19.8659286</y>
+    <z>0</z>
   </position>
 </Box>
