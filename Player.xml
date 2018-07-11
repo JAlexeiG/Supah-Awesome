@@ -1,18 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="us-ascii"?>
 <XMLPlayer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <isMele>false</isMele>
-  <health>55.9997559</health>
+  <health>100</health>
   <steam>50</steam>
-  <loadedAmmo>3</loadedAmmo>
-  <totalAmmo>0</totalAmmo>
+  <loadedAmmo>0</loadedAmmo>
+  <totalAmmo>10</totalAmmo>
   <position>
-    <x>1498.0918</x>
-    <y>32.2253151</y>
+    <x>22.64289</x>
+    <y>6.16114</y>
     <z>100</z>
   </position>
   <velocity>
-    <x>-5.29368</x>
-    <y>0</y>
+    <x>6</x>
+    <y>10.6266</y>
     <z>0</z>
   </velocity>
 </XMLPlayer>
