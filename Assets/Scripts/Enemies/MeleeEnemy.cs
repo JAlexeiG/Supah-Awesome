@@ -33,7 +33,7 @@ public class MeleeEnemy : MonoBehaviour {
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         agent.stoppingDistance = 1.1f;
-        agent.speed = 1.9f;
+        agent.speed = 1.25f;
         agent.acceleration = 0.75f;
         currentHealth = maxHealth;
     }
@@ -44,7 +44,7 @@ public class MeleeEnemy : MonoBehaviour {
         if (!isHit)
         {
             playerLocation = player.position;
-            if (Vector3.Distance(transform.position, player.position) < 5 && !moveCooldown)
+            if (Vector3.Distance(transform.position, player.position) < 5 && !moveCooldown && !isDying)
             {
                 agent.SetDestination(playerLocation);
                 if (Vector3.Distance(transform.position, player.position) < 1.1f && !attackCooldown)
@@ -79,17 +79,19 @@ public class MeleeEnemy : MonoBehaviour {
 
     void Attack()
     {
-        Debug.Log("Melee Enemy Attacked");
-        StartCoroutine("MoveCooldown");
-        StartCoroutine("AttackCooldown");
-        attackCooldown = true;
-        moveCooldown = true;
-        //play attacking animation
-        playerLocation = player.position;
-        if (Vector3.Distance(transform.position, player.position) < 1.8f)
+        if (!isDying)
         {
-            HealthManager.instance.health -= meleeEnemyDamage;
-            Debug.Log("hit player");
+            StartCoroutine("MoveCooldown");
+            StartCoroutine("AttackCooldown");
+            attackCooldown = true;
+            moveCooldown = true;
+            //play attacking animation
+            playerLocation = player.position;
+            if (Vector3.Distance(transform.position, player.position) < 1.9f)
+            {
+                HealthManager.instance.health -= meleeEnemyDamage;
+                Debug.Log("hit player");
+            }
         }
     }
 
@@ -118,7 +120,7 @@ public class MeleeEnemy : MonoBehaviour {
     IEnumerator DelayedDeath()
     {
         isDying = true;
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
         //Drop Loot
     }

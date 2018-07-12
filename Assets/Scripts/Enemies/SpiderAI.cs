@@ -7,7 +7,7 @@ public class SpiderAI : MonoBehaviour
 {
     NavMeshAgent agent;
 
-    public Transform[] Wanderpoints = new Transform[4];
+    public Transform[] Wanderpoints = new Transform[2];
 
 	// Use this for initialization
 	void Start ()
@@ -19,10 +19,19 @@ public class SpiderAI : MonoBehaviour
     IEnumerator NewWanderPoint()
     {
         yield return new WaitForSeconds(0.1f); //ensure wander points are locked in
-        agent.SetDestination(Wanderpoints[Random.Range(0, 4)].position); //pick random wander point
-        //Debug.Log("wandering.. waiting");
-        yield return new WaitForSeconds(Random.Range(4, 10)); //wait 4-9s
-        //Debug.Log("done waiting");
-        StartCoroutine("NewWanderPoint"); //do it again
+        agent.SetDestination(Wanderpoints[0].position); //walk to point A
+        yield return new WaitForSeconds(2); //wait 3s
+        agent.SetDestination(Wanderpoints[1].position); //walk to point B
+        yield return new WaitForSeconds(2); //wait 3s
+        StartCoroutine("ContinueWandering"); //repeat
+    }
+
+    IEnumerator ContinueWandering()
+    {
+        agent.SetDestination(Wanderpoints[0].position); //walk to point A
+        yield return new WaitForSeconds(2); //wait 3s
+        agent.SetDestination(Wanderpoints[1].position); //walk to point B
+        yield return new WaitForSeconds(2); //wait 3s
+        StartCoroutine("ContinueWandering"); //repeat
     }
 }

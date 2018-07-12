@@ -7,6 +7,9 @@ public class Chara : MonoBehaviour
     [SerializeField]
     Transform SpawnPoint;
 
+    public ParticleSystem ammoPE;
+    public ParticleSystem healthPE;
+
     public float gunPos;
 
     [SerializeField]
@@ -613,5 +616,26 @@ public class Chara : MonoBehaviour
         playerBullets = playerXML.totalAmmo;
         trans.position = playerXML.position;
         rb.velocity = playerXML.velocity;
+    }
+
+	private void OnTriggerEnter(Collider other)
+	{
+		if (other.tag == "CollectibleAmmo")
+        {
+            StartCoroutine(PlayParticleEffect(ammoPE, 0.5f));
+        }
+
+        else if (other.tag == "CollectibleHealth")
+        {
+            StartCoroutine(PlayParticleEffect(healthPE, 0.5f));
+            Debug.Log("REEEEE");
+        }
+	}
+
+    IEnumerator PlayParticleEffect(ParticleSystem ps, float duration)
+    {
+        ps.Play();
+        yield return new WaitForSeconds(duration);
+        ps.Stop();
     }
 }
