@@ -2,16 +2,16 @@
 <XMLPlayer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <isMele>false</isMele>
   <health>100</health>
-  <steam>50</steam>
+  <steam>46.5</steam>
   <loadedAmmo>0</loadedAmmo>
-  <totalAmmo>5</totalAmmo>
+  <totalAmmo>10</totalAmmo>
   <position>
-    <x>1498.13757</x>
-    <y>32.2253151</y>
+    <x>23.13466</x>
+    <y>5.5</y>
     <z>100</z>
   </position>
   <velocity>
-    <x>-5.76456</x>
+    <x>17.76456</x>
     <y>0</y>
     <z>0</z>
   </velocity>
