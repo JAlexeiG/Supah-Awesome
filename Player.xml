@@ -2,17 +2,17 @@
 <XMLPlayer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <isMele>false</isMele>
   <health>100</health>
-  <steam>43</steam>
-  <loadedAmmo>5</loadedAmmo>
+  <steam>50</steam>
+  <loadedAmmo>0</loadedAmmo>
   <totalAmmo>5</totalAmmo>
   <position>
-    <x>704.8934</x>
-    <y>4.109957</y>
-    <z>0</z>
+    <x>1498.13757</x>
+    <y>32.2253151</y>
+    <z>100</z>
   </position>
   <velocity>
-    <x>17.14742</x>
-    <y>-1.37404186E-08</y>
+    <x>-5.76456</x>
+    <y>0</y>
     <z>0</z>
   </velocity>
 </XMLPlayer>
