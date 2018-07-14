@@ -15,6 +15,7 @@ TagManager:
   - OutOfBounds
   - CollectibleAmmo
   - CollectibleHealth
+  - Spider
   layers:
   - Default
   - TransparentFX

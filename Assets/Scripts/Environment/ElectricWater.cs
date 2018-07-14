@@ -30,5 +30,13 @@ public class ElectricWater : Power
                 HealthManager.instance.health -= 0.3f;
             }
         }
+
+        if (col.gameObject.tag == "Spider")
+        {
+            if (!isPowered)
+            {
+                isPowered = true;
+            }
+        }
     }
 }

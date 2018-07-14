@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour 
 {
+    [SerializeField]AudioSource clinkClip;
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "MeleeEnemy")
         {
             MeleeEnemy meleeEnemy = collision.gameObject.GetComponent<MeleeEnemy>();
-            meleeEnemy.DoDamage();
-            Destroy(gameObject);
+            clinkClip.Play();
+            Destroy(gameObject, 0.3f);
         }
         else if (collision.gameObject.tag == "RangedEnemy")
         {

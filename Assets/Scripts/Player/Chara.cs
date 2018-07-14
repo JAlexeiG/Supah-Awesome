@@ -50,6 +50,9 @@ public class Chara : MonoBehaviour
     [SerializeField]
     private int bulletLoaded;
 
+
+    [SerializeField]
+    Transform tempMeleeAim;
     [SerializeField]
     Transform aimingOrigin;
     [SerializeField]
@@ -263,7 +266,7 @@ public class Chara : MonoBehaviour
                     GameObject crosshair = Instantiate(crosshairPreFab, potato, Quaternion.Euler(0, 0, 0));
 
                     ///Updates for aiming
-                    aimingOrigin.LookAt(crosshair.transform);
+                    tempMeleeAim.LookAt(crosshair.transform);
                     Destroy(crosshair, 0.5f);
                 }
                 if (meleTimer > 0)
@@ -628,7 +631,6 @@ public class Chara : MonoBehaviour
         else if (other.tag == "CollectibleHealth")
         {
             StartCoroutine(PlayParticleEffect(healthPE, 0.5f));
-            Debug.Log("REEEEE");
         }
 	}
 

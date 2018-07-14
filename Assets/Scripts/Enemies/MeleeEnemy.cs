@@ -19,7 +19,7 @@ public class MeleeEnemy : MonoBehaviour {
     [SerializeField] float currentHealth;
 
     [SerializeField] float hitTimer;
-    float timer;
+    //float timer;
     [SerializeField] bool isHit;
 
     // Use this for initialization
@@ -54,14 +54,14 @@ public class MeleeEnemy : MonoBehaviour {
                 }
             }
         }
-        else
+        /*else
         {
             timer -= Time.deltaTime;
             if (timer <= 0)
             {
                 getHit(false);
             }
-        }
+        }*/
 
         if (currentHealth < 1)
         {
@@ -125,7 +125,7 @@ public class MeleeEnemy : MonoBehaviour {
         //Drop Loot
     }
 
-    public void getHit(bool hit)
+    /*public void getHit(bool hit)
     {
         if (hit)
         {
@@ -140,5 +140,5 @@ public class MeleeEnemy : MonoBehaviour {
             rb.isKinematic = true;
             isHit = false;
         }
-    }
+    }*/
 }

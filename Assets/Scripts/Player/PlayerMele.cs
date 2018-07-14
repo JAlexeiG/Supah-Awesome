@@ -14,7 +14,7 @@ public class PlayerMele : MonoBehaviour
         if(other.tag == "MeleeEnemy")
         {
             other.GetComponent<MeleeEnemy>().DoDamage();
-            other.GetComponent<MeleeEnemy>().getHit(true);
+            //other.GetComponent<MeleeEnemy>().getHit(true);
             other.GetComponent<Rigidbody>().AddExplosionForce(hitForce, playerTrans.position, 300,2);
             Debug.Log("MeleEnemyhit");
         }
