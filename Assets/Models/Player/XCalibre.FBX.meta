@@ -1,0 +1,183 @@
+fileFormatVersion: 2
+guid: 7336dd5dc66c34b91bdde7481c628e55
+timeCreated: 1531630244
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: AccordionBack_low
+    100002: AccordionFront_low
+    100004: Barrel_low
+    100006: Barrel_low 1
+    100008: Blade_low
+    100010: Blade_low 1
+    100012: BladeTipBottom_low
+    100014: BladeTipTop_low
+    100016: Grip_low
+    100018: Lock_low
+    100020: LockBolt_low
+    100022: Reciever_low
+    100024: Reciever_low 1
+    100026: Sword_low
+    100028: Sword_low 1
+    100030: SwordPommel_low
+    100032: Trigger_low
+    100034: Trigger_low 1
+    100036: //RootNode
+    400000: AccordionBack_low
+    400002: AccordionFront_low
+    400004: Barrel_low
+    400006: Barrel_low 1
+    400008: Blade_low
+    400010: Blade_low 1
+    400012: BladeTipBottom_low
+    400014: BladeTipTop_low
+    400016: Grip_low
+    400018: Lock_low
+    400020: LockBolt_low
+    400022: Reciever_low
+    400024: Reciever_low 1
+    400026: Sword_low
+    400028: Sword_low 1
+    400030: SwordPommel_low
+    400032: Trigger_low
+    400034: Trigger_low 1
+    400036: //RootNode
+    2300000: AccordionBack_low
+    2300002: AccordionFront_low
+    2300004: Barrel_low
+    2300006: Barrel_low 1
+    2300008: Blade_low
+    2300010: Blade_low 1
+    2300012: BladeTipBottom_low
+    2300014: BladeTipTop_low
+    2300016: Grip_low
+    2300018: Lock_low
+    2300020: LockBolt_low
+    2300022: Reciever_low
+    2300024: Reciever_low 1
+    2300026: Sword_low
+    2300028: Sword_low 1
+    2300030: SwordPommel_low
+    2300032: Trigger_low
+    2300034: Trigger_low 1
+    3300000: AccordionBack_low
+    3300002: AccordionFront_low
+    3300004: Barrel_low
+    3300006: Barrel_low 1
+    3300008: Blade_low
+    3300010: Blade_low 1
+    3300012: BladeTipBottom_low
+    3300014: BladeTipTop_low
+    3300016: Grip_low
+    3300018: Lock_low
+    3300020: LockBolt_low
+    3300022: Reciever_low
+    3300024: Reciever_low 1
+    3300026: Sword_low
+    3300028: Sword_low 1
+    3300030: SwordPommel_low
+    3300032: Trigger_low
+    3300034: Trigger_low 1
+    4300000: AccordionFront_low
+    4300002: Lock_low
+    4300004: Sword_low
+    4300006: AccordionBack_low
+    4300008: Blade_low
+    4300010: Trigger_low
+    4300012: Reciever_low
+    4300014: Barrel_low
+    4300016: Trigger_low
+    4300018: Reciever_low
+    4300020: BladeTipTop_low
+    4300022: Blade_low
+    4300024: LockBolt_low
+    4300026: Sword_low
+    4300028: Barrel_low
+    4300030: BladeTipBottom_low
+    4300032: Grip_low
+    4300034: SwordPommel_low
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 02 - Default
+    second: {fileID: 2100000, guid: 0fd0131b68f734a6f850d8b7bc745199, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
