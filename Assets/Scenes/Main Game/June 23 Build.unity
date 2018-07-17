@@ -13439,6 +13439,7 @@ MonoBehaviour:
   isPowered: 0
   teslaStunLength: 0
   range: {fileID: 538819868}
+  explosionStrength: 0
   onCooldown: 0
   onTimer: 5
   offTimer: 5
@@ -15712,12 +15713,12 @@ Prefab:
     - target: {fileID: 224933378456568212, guid: c78a0fca1ab28204baaff381f37ebe1e,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 408
+      value: 453
       objectReference: {fileID: 0}
     - target: {fileID: 224933378456568212, guid: c78a0fca1ab28204baaff381f37ebe1e,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 208.5
+      value: 211.5
       objectReference: {fileID: 0}
     - target: {fileID: 224933378456568212, guid: c78a0fca1ab28204baaff381f37ebe1e,
         type: 2}
@@ -42025,7 +42026,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4244735346671014, guid: 678e352e40d88410bbddda71ad85c146, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4244735346671014, guid: 678e352e40d88410bbddda71ad85c146, type: 2}
       propertyPath: m_LocalPosition.z
@@ -42061,6 +42062,14 @@ Prefab:
       propertyPath: bulletText
       value: 
       objectReference: {fileID: 658373617}
+    - target: {fileID: 4244735346671014, guid: 678e352e40d88410bbddda71ad85c146, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4244735346671014, guid: 678e352e40d88410bbddda71ad85c146, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 678e352e40d88410bbddda71ad85c146, type: 2}
   m_IsPrefabParent: 0

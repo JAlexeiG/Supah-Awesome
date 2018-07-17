@@ -16,6 +16,7 @@ TagManager:
   - CollectibleAmmo
   - CollectibleHealth
   - Spider
+  - V Wall
   layers:
   - Default
   - TransparentFX

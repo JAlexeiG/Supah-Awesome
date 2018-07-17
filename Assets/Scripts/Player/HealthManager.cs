@@ -48,7 +48,7 @@ public class HealthManager : MonoBehaviour {
         }
         if (health <=0)
         {
-            SceneManager.LoadScene("June 23 Build");
+            XMLCheckpointManager.instance.load();
         }
     }
     public static HealthManager instance

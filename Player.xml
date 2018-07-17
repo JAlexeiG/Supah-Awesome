@@ -6,13 +6,13 @@
   <loadedAmmo>0</loadedAmmo>
   <totalAmmo>5</totalAmmo>
   <position>
-    <x>23.6646519</x>
-    <y>5.5</y>
+    <x>24</x>
+    <y>8.160071</y>
     <z>100</z>
   </position>
   <velocity>
     <x>0</x>
-    <y>0</y>
+    <y>-2.96095943</y>
     <z>0</z>
   </velocity>
 </XMLPlayer>

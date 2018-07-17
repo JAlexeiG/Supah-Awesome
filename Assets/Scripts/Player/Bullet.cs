@@ -20,5 +20,9 @@ public class Bullet : MonoBehaviour
             rangedEnemy.DoDamage();
             Destroy(gameObject);
         }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }
