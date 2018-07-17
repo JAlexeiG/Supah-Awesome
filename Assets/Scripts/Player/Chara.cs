@@ -176,9 +176,10 @@ public class Chara : MonoBehaviour
 
     void Update()
     {
+        /// DROP DEATH
         if (transform.position.y < -30 || transform.position.y > 150)
         {
-            transform.position = SpawnPoint.position;
+            XMLCheckpointManager.instance.load();
         }
 
         bulletText.text = string.Format("Bullets Loaded: {0}\nAmmo: {1}" , bulletLoaded, playerBullets);

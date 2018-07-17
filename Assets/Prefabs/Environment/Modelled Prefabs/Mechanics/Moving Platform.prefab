@@ -331,7 +331,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1604293567672682}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 260, z: 0}
+  m_LocalPosition: {x: -550, y: 5, z: 0}
   m_LocalScale: {x: 65, y: 6, z: 52.5}
   m_Children: []
   m_Father: {fileID: 4981445955875744}
@@ -440,7 +440,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1148705576586820}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 30.204258, y: 6.856477, z: 100}
+  m_LocalPosition: {x: 15.391052, y: -19.209957, z: 0}
   m_LocalScale: {x: 0.04, y: 0.05, z: 0.05}
   m_Children:
   - {fileID: 4048582412855224}
@@ -927,7 +927,7 @@ BoxCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1808094771775468}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 784c3c2bb47820e47903320cef3037c9, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -1005,11 +1005,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f731d6d8cfe4bd242acd035e60f9d294, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPowered: 0
+  isPowered: 1
   movingPlatform: {fileID: 4413390192442058}
   position1: {fileID: 4048582412855224}
   position2: {fileID: 4311422568545612}
   newposition: {x: 0, y: 0, z: 0}
   currentState: 
   smooth: 8
-  resetTime: 4
+  resetTime: 5
