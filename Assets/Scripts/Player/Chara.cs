@@ -185,7 +185,7 @@ public class Chara : MonoBehaviour
         PlayerInput();
         
 
-        rb.AddRelativeForce(0, gravity, 0, ForceMode.Acceleration); //Adds gravity downwards towards the player's feet and only towards the player's feet
+        rb.AddRelativeForce(0, gravity * 2, 0, ForceMode.Acceleration); //Adds gravity downwards towards the player's feet and only towards the player's feet
 
 
         //Updates to make sure everything is not over the cap
@@ -242,17 +242,11 @@ public class Chara : MonoBehaviour
     }
     private void OnCollisionStay(Collision collision)
     {
-        if(collision.transform.tag == "Floor")
-        {
             grounded = true;
-        }
     }
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.transform.tag == "Floor")
-        {
             grounded = false;
-        }
     }
     
     void PlayerInput()
