@@ -27,12 +27,15 @@ public class Checkpoints : MonoBehaviour {
             Destroy(gameObject);
         }
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if(other.tag == "Player")
         {
-            manager.save();
-            Destroy(gameObject);
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                manager.save();
+                Destroy(gameObject);
+            }
         }
     }
 }
