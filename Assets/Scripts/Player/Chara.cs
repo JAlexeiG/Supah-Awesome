@@ -62,6 +62,9 @@ public class Chara : MonoBehaviour
     [SerializeField]
     GameObject crosshairPreFab;
 
+    [SerializeField]
+    GameObject[] weaponComponents;
+
 
     public bool dashing;
     public float dashLength;
@@ -185,6 +188,19 @@ public class Chara : MonoBehaviour
         if (playerBullets > bulletCap)
         {
             playerBullets = bulletCap;
+        }
+
+        if (isMele)
+        {
+            for (int i = 0; i < weaponComponents.Length; i++)
+            {
+                weaponComponents[i].SetActive(true);
+            }
+        }
+        else
+            for (int i = 0; i < weaponComponents.Length; i++)
+        {
+                weaponComponents[i].SetActive(false);
         }
     }
 
