@@ -14,7 +14,8 @@ public class TeslaCoil : Power {
     Vector3[] linePositions;
     bool isActive;
     Renderer rend;
-    static float explosionStrength = 357f;
+    [SerializeField]
+    private float explosionStrength;
 
     [SerializeField]
     bool onCooldown;
@@ -23,8 +24,9 @@ public class TeslaCoil : Power {
     [SerializeField] float offTimer;
 
     // Use this for initialization
-    void Start () 
+    void Start ()
     {
+       explosionStrength = 357f;
         isPowered = true;
         rend = GetComponent<Renderer>();
         line = GetComponent<LineRenderer>();
