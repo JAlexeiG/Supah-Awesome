@@ -32,6 +32,9 @@ public class Chara : MonoBehaviour
 
     [SerializeField]
     private bool grounded;
+    [SerializeField]
+    private bool grounded2;
+
 
     //Left and right for booster via arrow keys
     float up;
@@ -164,6 +167,7 @@ public class Chara : MonoBehaviour
 
         onWall = false;
         grounded = false;
+        grounded2 = false;
         //canMove = true;
 
         doubleJump = false;
@@ -232,24 +236,23 @@ public class Chara : MonoBehaviour
         set { angle_ = value; }
     }
 
-    bool checkGrounded()
+    public void setGrounded(bool set)
     {
-        Ray ray = new Ray(trans.position, -trans.up);
-        RaycastHit hit;
-
-
-        return Physics.Raycast(ray, out hit, feetDistance);
-
-
+        grounded2 = set;
     }
     private void OnCollisionStay(Collision collision)
     {
-        grounded = checkGrounded();
-        
+        if(collision.transform.tag == "Floor")
+        {
+            grounded = true;
+        }
     }
     private void OnCollisionExit(Collision collision)
     {
-        grounded = false;
+        if (collision.transform.tag == "Floor")
+        {
+            grounded = false;
+        }
     }
     
     void PlayerInput()
@@ -376,7 +379,7 @@ public class Chara : MonoBehaviour
                 //    }
             }
 
-            if (grounded && !dashing)
+            if (grounded && grounded2 && !dashing)
             {
 
                 float input = Input.GetAxis("Horizontal");
@@ -408,7 +411,7 @@ public class Chara : MonoBehaviour
                 //    SteamManager.instance.steam -= 10; // Lowers steam by a number
                 //}
 
-                if (Input.GetButtonDown("Jump") && checkGrounded())
+                if (Input.GetButtonDown("Jump") && grounded)
                 {
                     rb.AddRelativeForce(0, jumpSpeed, 0, ForceMode.Impulse);
                     gliderStarted = false;
@@ -656,4 +659,5 @@ public class Chara : MonoBehaviour
         yield return new WaitForSeconds(duration);
         ps.Stop();
     }
+
 }
