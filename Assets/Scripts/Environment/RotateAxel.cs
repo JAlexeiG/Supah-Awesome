@@ -17,6 +17,6 @@ public class RotateAxel : MonoBehaviour {
 	void Update () 
     {
         if (parentPlatform.isPowered)
-            transform.Rotate(0, Time.deltaTime * rotationStrength, 0);
+            transform.Rotate(0, 0, Time.deltaTime * rotationStrength);
 	}
 }
