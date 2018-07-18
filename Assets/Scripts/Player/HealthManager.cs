@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -48,7 +49,15 @@ public class HealthManager : MonoBehaviour {
         }
         if (health <=0)
         {
-            XMLCheckpointManager.instance.load();
+            if (Directory.Exists("SaveFile"))
+            {
+                XMLCheckpointManager.instance.load();
+            }
+            else
+            {
+                playerTrans.position = SpawnPoint.position;
+                health = 100;
+            }
         }
     }
     public static HealthManager instance

@@ -20,6 +20,12 @@ public class TeslaCoil : Power {
     [SerializeField]
     bool onCooldown;
 
+    [SerializeField]
+    GameObject baseObject;
+
+    [SerializeField]
+    Material[] baseMaterials;
+
     [SerializeField] float onTimer;
     [SerializeField] float offTimer;
 
@@ -97,8 +103,8 @@ public class TeslaCoil : Power {
         {
             yield return new WaitForSeconds(offTimer);
             isActive = false;
-            rend.material.color = Color.green;
-            //Debug.Log("Tesla off");
+            MeshRenderer meshRend = baseObject.GetComponent<MeshRenderer>();
+            meshRend.material = baseMaterials[1];
             StartCoroutine("SwitchPower");
         }
 
@@ -106,16 +112,16 @@ public class TeslaCoil : Power {
         {
             yield return new WaitForSeconds(onTimer);
             isActive = true;
-            rend.material.color = Color.red;
-            //Debug.Log("Tesla on");
+            MeshRenderer meshRend = baseObject.GetComponent<MeshRenderer>();
+            meshRend.material = baseMaterials[0];
             StartCoroutine("SwitchPower");
         }
 
         else
         {
             isActive = false;
-            rend.material.color = Color.green;
-            //Debug.Log("Tesla power turned off. No longer active.");
+            MeshRenderer meshRend = baseObject.GetComponent<MeshRenderer>();
+            meshRend.material = baseMaterials[1];
             yield return null;
         }
     }

@@ -42,9 +42,7 @@ public class Chara : MonoBehaviour
     
     private Vector3 mousePos;
     private Vector3 dashPos;
-
-    //What the mouse clicked
-    private RaycastHit hit;
+    
     
     [SerializeField]
     private int playerBullets;
@@ -306,6 +304,8 @@ public class Chara : MonoBehaviour
                     //// CHANGE THE SHOOTING THING TO BE NON-RELYANT ON THE CROSSHAIR
                     if (bulletLoaded != 0)
                     {
+
+
                         //Mouse position (+20 because camera is -20) to find where to shoot something
                         mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, trans.position.z + gunPos);
 
@@ -317,14 +317,26 @@ public class Chara : MonoBehaviour
                         ///Updates for aiming
                         aimingOrigin.LookAt(crosshair.transform);
 
-                        GameObject bullet = Instantiate(bulletPreFab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+                        //POTATOES// 
+                        int layercast = ~(1 << 11);
+                        RaycastHit hit;
+                        Ray newRay = new Ray(aimingOrigin.position, aimingOrigin.forward);
+                        if (Physics.Raycast(newRay, out hit, 2.2f, layercast))
+                        {
+                            Debug.Log("Object in the way of shooting: " + hit.transform.name);
+                        }
+                        else
+                        {
 
-                        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 20;
+                            GameObject bullet = Instantiate(bulletPreFab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
 
-                        Destroy(bullet, 3.0f);
-                        Destroy(crosshair, 0.5f);
+                            bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 20;
 
-                        bulletLoaded--;
+                            Destroy(bullet, 3.0f);
+                            Destroy(crosshair, 0.5f);
+
+                            bulletLoaded--;
+                        }
                     }
                     else
                     {
@@ -634,6 +646,7 @@ public class Chara : MonoBehaviour
         trans.position = playerXML.position;
         rb.velocity = playerXML.velocity;
     }
+    
 
 	private void OnTriggerEnter(Collider other)
 	{

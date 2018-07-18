@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="us-ascii"?>
 <XMLPlayer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <isMele>false</isMele>
-  <health>100</health>
+  <health>70</health>
   <steam>50</steam>
   <loadedAmmo>0</loadedAmmo>
-  <totalAmmo>5</totalAmmo>
+  <totalAmmo>10</totalAmmo>
   <position>
-    <x>23.932579</x>
+    <x>24.188839</x>
     <y>5.5</y>
     <z>100</z>
   </position>

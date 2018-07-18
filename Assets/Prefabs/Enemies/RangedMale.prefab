@@ -18,17 +18,46 @@ GameObject:
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
+<<<<<<< HEAD
+  - component: {fileID: 4033815014884826}
+  - component: {fileID: 33338413193070914}
+  - component: {fileID: 23829044834174306}
+  - component: {fileID: 65668297225001648}
+  - component: {fileID: 114151041942665718}
+  - component: {fileID: 135658340695622698}
+  m_Layer: 11
+=======
   - component: {fileID: 4436973222216960}
   - component: {fileID: 33641970068278098}
   - component: {fileID: 23534477725329702}
   m_Layer: 0
+>>>>>>> 8d50f7c383bf19befa2abb24ceec22422b58bfa0
   m_Name: RangedMale
   m_TagString: RangedEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
+--- !u!1 &1655968372813310
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4790782904826362}
+  m_Layer: 2
+  m_Name: Projectile Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4033815014884826
+=======
 --- !u!4 &4436973222216960
+>>>>>>> 8d50f7c383bf19befa2abb24ceec22422b58bfa0
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
