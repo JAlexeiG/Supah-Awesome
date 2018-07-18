@@ -280,7 +280,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 14e47506eecb0484587d2dd0b6b1b013, type: 2}
+  - {fileID: 2100000, guid: 2636f045fdf6047028d0f798ce326e5d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -436,6 +436,10 @@ MonoBehaviour:
   range: {fileID: 135465035222258430}
   explosionStrength: 0
   onCooldown: 0
+  baseObject: {fileID: 1188624426558262}
+  baseMaterials:
+  - {fileID: 2100000, guid: 2636f045fdf6047028d0f798ce326e5d, type: 2}
+  - {fileID: 2100000, guid: 14e47506eecb0484587d2dd0b6b1b013, type: 2}
   onTimer: 5
   offTimer: 5
 --- !u!120 &120232916259043374

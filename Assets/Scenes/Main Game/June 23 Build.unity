@@ -20726,40 +20726,6 @@ Prefab:
       propertyPath: m_Name
       value: SteamVent
       objectReference: {fileID: 0}
-    - target: {fileID: 4667309662131582, guid: b528dc76f6e684990991508862ee3bf1, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 65502757774913106, guid: b528dc76f6e684990991508862ee3bf1,
-        type: 2}
-      propertyPath: m_Size.x
-      value: 0.9999999
-      objectReference: {fileID: 0}
-    - target: {fileID: 65502757774913106, guid: b528dc76f6e684990991508862ee3bf1,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 35.904793
-      objectReference: {fileID: 0}
-    - target: {fileID: 65502757774913106, guid: b528dc76f6e684990991508862ee3bf1,
-        type: 2}
-      propertyPath: m_Size.z
-      value: 1.2678932
-      objectReference: {fileID: 0}
-    - target: {fileID: 65502757774913106, guid: b528dc76f6e684990991508862ee3bf1,
-        type: 2}
-      propertyPath: m_Center.x
-      value: 1.1956103e-16
-      objectReference: {fileID: 0}
-    - target: {fileID: 65502757774913106, guid: b528dc76f6e684990991508862ee3bf1,
-        type: 2}
-      propertyPath: m_Center.y
-      value: 17.452385
-      objectReference: {fileID: 0}
-    - target: {fileID: 65502757774913106, guid: b528dc76f6e684990991508862ee3bf1,
-        type: 2}
-      propertyPath: m_Center.z
-      value: -0.042668313
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b528dc76f6e684990991508862ee3bf1, type: 2}
   m_IsPrefabParent: 0
@@ -47462,7 +47428,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4782144471450468, guid: 82ebebdead90148cbb19737ff979fbae, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -27.832556
+      value: -27.4
       objectReference: {fileID: 0}
     - target: {fileID: 4782144471450468, guid: 82ebebdead90148cbb19737ff979fbae, type: 2}
       propertyPath: m_LocalPosition.y
