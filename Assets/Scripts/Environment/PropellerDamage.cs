@@ -8,7 +8,7 @@ public class PropellerDamage : MonoBehaviour
     {
         if (col.name == "Player")
         {
-            HealthManager.instance.health -= 0.75f;
+            HealthManager.instance.health -= 0.5f;
         }
     }
 }
