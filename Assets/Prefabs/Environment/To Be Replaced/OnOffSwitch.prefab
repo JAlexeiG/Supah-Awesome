@@ -110,3 +110,7 @@ MonoBehaviour:
   isPowered: 0
   pow:
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
