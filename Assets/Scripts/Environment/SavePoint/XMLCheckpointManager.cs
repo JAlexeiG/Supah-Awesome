@@ -165,13 +165,20 @@ public class XMLCheckpointManager : MonoBehaviour
     {
         // FOR SCENE
 
-        XmlSerializer sceneSerializer = new XmlSerializer(typeof(GameManager.CurrentScene));
-        StreamReader sceneReader = new StreamReader("SaveFiles/Scene.xml");
-        GameManager.CurrentScene loadedScene = (GameManager.CurrentScene)sceneSerializer.Deserialize(sceneReader.BaseStream);
-        sceneReader.Close();
+        if (Directory.Exists("SaveFiles"))
+        {
+            XmlSerializer sceneSerializer = new XmlSerializer(typeof(GameManager.CurrentScene));
+            StreamReader sceneReader = new StreamReader("SaveFiles/Scene.xml");
+            GameManager.CurrentScene loadedScene = (GameManager.CurrentScene)sceneSerializer.Deserialize(sceneReader.BaseStream);
+            sceneReader.Close();
 
-        SceneManager.LoadScene(loadedScene.sceneNumber);
-        
+            SceneManager.LoadScene(loadedScene.sceneNumber);
+        }
+        else
+        {
+            Debug.Log("No Save File to load");
+            HealthManager.instance.respawn();
+        }
 
     }
     
