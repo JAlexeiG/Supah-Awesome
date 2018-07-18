@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4885489361367060}
   - component: {fileID: 33193130423170730}
   - component: {fileID: 23887746104101006}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: cloth_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4601662677492800}
   - component: {fileID: 33748324189171608}
   - component: {fileID: 23508767776081626}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: skin_low 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 4622201852233408}
   - component: {fileID: 33824167786359484}
   - component: {fileID: 23007382193514604}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: coat_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4169110792133678}
   - component: {fileID: 95691100491605650}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: HumanEnemyMale
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 4239348739420696}
   - component: {fileID: 33777533655437412}
   - component: {fileID: 23727348592487088}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: skin_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
