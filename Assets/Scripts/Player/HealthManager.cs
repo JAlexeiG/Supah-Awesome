@@ -60,6 +60,12 @@ public class HealthManager : MonoBehaviour {
             }
         }
     }
+
+    public void respawn()
+    {
+        playerTrans.position = SpawnPoint.position;
+        health = 100; 
+    }
     public static HealthManager instance
     {
         get;

@@ -54,7 +54,7 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Glider
+    m_Name: Sprint
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -70,11 +70,11 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Dash
+    m_Name: Glider
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: mouse 2
+    positiveButton: mouse 1
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
@@ -198,7 +198,7 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Fire2
+    m_Name: Fire 2
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 

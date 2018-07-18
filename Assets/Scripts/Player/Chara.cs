@@ -424,7 +424,7 @@ public class Chara : MonoBehaviour
                     gliderStarted = false;
                 }
 
-                if (Input.GetButton("Glider") & SteamManager.instance.steamUsable == true) // Button is Shift
+                if (Input.GetButton("Sprint") & SteamManager.instance.steamUsable == true) // Button is Shift
                 {
                     speed = OSpeed * 3f; // Increases the max speed
                     SteamManager.instance.steam--; //Lowers steam by 1 per frame
