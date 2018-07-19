@@ -28,6 +28,9 @@ public class TeslaCoil : Power {
 
     [SerializeField] float onTimer;
     [SerializeField] float offTimer;
+    
+
+    public Transform raycastTransform;
 
     // Use this for initialization
     void Start ()
@@ -49,11 +52,16 @@ public class TeslaCoil : Power {
         Vector3 direction = (player.position - transform.position).normalized;
         //Debug.Log(Vector3.Distance(transform.position, player.position) + " " + range.radius);
 
+        RaycastHit hit;
+
         if (Vector3.Distance(transform.position, player.position) < range.radius && isActive && isPowered)
         {
-            if (!onCooldown)
+            if (Physics.Raycast(raycastTransform.position, direction, ~(1 << 12)))
             {
-                Attack();
+                if (!onCooldown)
+                {
+                    Attack();
+                }
             }
         }
 	}
