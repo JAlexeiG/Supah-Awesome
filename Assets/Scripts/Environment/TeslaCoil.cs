@@ -104,7 +104,7 @@ public class TeslaCoil : Power {
             yield return new WaitForSeconds(offTimer);
             isActive = false;
             MeshRenderer meshRend = baseObject.GetComponent<MeshRenderer>();
-            meshRend.material = baseMaterials[1];
+            meshRend.material = baseMaterials[0];
             StartCoroutine("SwitchPower");
         }
 
@@ -113,7 +113,7 @@ public class TeslaCoil : Power {
             yield return new WaitForSeconds(onTimer);
             isActive = true;
             MeshRenderer meshRend = baseObject.GetComponent<MeshRenderer>();
-            meshRend.material = baseMaterials[0];
+            meshRend.material = baseMaterials[1];
             StartCoroutine("SwitchPower");
         }
 
@@ -121,7 +121,7 @@ public class TeslaCoil : Power {
         {
             isActive = false;
             MeshRenderer meshRend = baseObject.GetComponent<MeshRenderer>();
-            meshRend.material = baseMaterials[1];
+            meshRend.material = baseMaterials[0];
             yield return null;
         }
     }
