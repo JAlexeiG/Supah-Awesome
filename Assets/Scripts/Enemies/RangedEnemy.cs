@@ -8,7 +8,8 @@ public class RangedEnemy : MonoBehaviour
     float damage = 5;
 
     bool isDying = false;
-    private SphereCollider range;
+    [SerializeField]
+    float range;
     private Transform player;
     private Vector3 playerLocation;
     private bool shooting = false;
@@ -23,7 +24,8 @@ public class RangedEnemy : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        range = GetComponent<SphereCollider>();
+        if (range < 0.1)
+            range = 10;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         //scaleDamage = maxDamage - minDamage;
     }
@@ -31,11 +33,11 @@ public class RangedEnemy : MonoBehaviour
     void Update()
     {
         playerLocation = player.position; //players position
-        if (Vector3.Distance(transform.position, player.position) < (range.radius * 1.2f))
+        if (Vector3.Distance(transform.position, player.position) < (range * 1.2f))
         {
             FaceTarget();
         }
-        if (Vector3.Distance(transform.position, player.position) < range.radius) 
+        if (Vector3.Distance(transform.position, player.position) < range) 
         {
             if (!shooting)
                 if (!isDying)
@@ -83,7 +85,7 @@ public class RangedEnemy : MonoBehaviour
     IEnumerator DelayedDeath()
     {
         isDying = true;
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.25f);
         Destroy(gameObject);
         //Drop Loot
     }

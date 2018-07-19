@@ -1,0 +1,513 @@
+fileFormatVersion: 2
+guid: 014be3386d3264971bad897121049b02
+timeCreated: 1531349848
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Body
+    100002: //RootNode
+    100004: Eyes
+    100006: Eyes_Red
+    100008: Fangs
+    100010: H2
+    100012: H2 1
+    100014: H2 2
+    100016: H2 3
+    100018: H2 4
+    100020: H2 5
+    100022: H2 6
+    100024: H2 7
+    100026: ikHandle1
+    100028: ikHandle10
+    100030: ikHandle11
+    100032: ikHandle12
+    100034: ikHandle13
+    100036: ikHandle14
+    100038: ikHandle15
+    100040: ikHandle16
+    100042: ikHandle17
+    100044: ikHandle18
+    100046: ikHandle19
+    100048: ikHandle2
+    100050: ikHandle20
+    100052: ikHandle21
+    100054: ikHandle22
+    100056: ikHandle23
+    100058: ikHandle24
+    100060: ikHandle3
+    100062: ikHandle4
+    100064: ikHandle5
+    100066: ikHandle6
+    100068: ikHandle7
+    100070: ikHandle8
+    100072: ikHandle9
+    100074: J_Base
+    100076: J_L_Leg_1
+    100078: J_L_Leg_2
+    100080: J_L_Leg_2 1
+    100082: J_L_Leg_2 2
+    100084: J_L_Leg_2 3
+    100086: J_L_Leg_3
+    100088: J_L_Leg_3 1
+    100090: J_L_Leg_3 2
+    100092: J_L_Leg_3 3
+    100094: J_L_Leg_4
+    100096: J_L_Leg_4 1
+    100098: J_L_Leg_4 2
+    100100: J_L_Leg_4 3
+    100102: J_L_Leg_5
+    100104: J_L_Leg_6
+    100106: J_L_Leg_7
+    100108: J_L_Leg_Tip
+    100110: J_L_Leg_Tip 1
+    100112: J_L_Leg_Tip 2
+    100114: J_L_Leg_Tip 3
+    100116: J_R_Leg_1
+    100118: J_R_Leg_2
+    100120: J_R_Leg_2 1
+    100122: J_R_Leg_2 2
+    100124: J_R_Leg_2 3
+    100126: J_R_Leg_3
+    100128: J_R_Leg_3 1
+    100130: J_R_Leg_3 2
+    100132: J_R_Leg_3 3
+    100134: J_R_Leg_4
+    100136: J_R_Leg_4 1
+    100138: J_R_Leg_4 2
+    100140: J_R_Leg_4 3
+    100142: J_R_Leg_5
+    100144: J_R_Leg_6
+    100146: J_R_Leg_7
+    100148: J_R_Leg_Tip
+    100150: J_R_Leg_Tip 1
+    100152: J_R_Leg_Tip 2
+    100154: J_R_Leg_Tip 3
+    100156: L_Leg_1_1
+    100158: L_Leg_1_2
+    100160: L_Leg_1_3
+    100162: L_Leg_1_B
+    100164: L_Leg_1_Tip
+    100166: L_Leg_2_1
+    100168: L_Leg_2_2
+    100170: L_Leg_2_3
+    100172: L_Leg_2_B
+    100174: L_Leg_2_Tip
+    100176: L_Leg_3_1
+    100178: L_Leg_3_2
+    100180: L_Leg_3_3
+    100182: L_Leg_3_B
+    100184: L_Leg_3_Tip
+    100186: L_Leg_4_1
+    100188: L_Leg_4_2
+    100190: L_Leg_4_3
+    100192: L_Leg_4_B
+    100194: L_Leg_4_Tip
+    100196: R_Leg_1_1
+    100198: R_Leg_1_2
+    100200: R_Leg_1_3
+    100202: R_Leg_1_B
+    100204: R_Leg_1_Tip
+    100206: R_Leg_2_1
+    100208: R_Leg_2_2
+    100210: R_Leg_2_3
+    100212: R_Leg_2_B
+    100214: R_Leg_2_Tip
+    100216: R_Leg_3_1
+    100218: R_Leg_3_2
+    100220: R_Leg_3_3
+    100222: R_Leg_3_B
+    100224: R_Leg_3_Tip
+    100226: R_Leg_4_1
+    100228: R_Leg_4_2
+    100230: R_Leg_4_3
+    100232: R_Leg_4_B
+    100234: R_Leg_4_Tip
+    100236: Tip
+    100238: Tip 1
+    100240: Tip 2
+    100242: Tip 3
+    100244: Tip 4
+    100246: Tip 5
+    100248: Tip 6
+    100250: Tip 7
+    100252: transform1
+    100254: transform2
+    400000: Body
+    400002: //RootNode
+    400004: Eyes
+    400006: Eyes_Red
+    400008: Fangs
+    400010: H2
+    400012: H2 1
+    400014: H2 2
+    400016: H2 3
+    400018: H2 4
+    400020: H2 5
+    400022: H2 6
+    400024: H2 7
+    400026: ikHandle1
+    400028: ikHandle10
+    400030: ikHandle11
+    400032: ikHandle12
+    400034: ikHandle13
+    400036: ikHandle14
+    400038: ikHandle15
+    400040: ikHandle16
+    400042: ikHandle17
+    400044: ikHandle18
+    400046: ikHandle19
+    400048: ikHandle2
+    400050: ikHandle20
+    400052: ikHandle21
+    400054: ikHandle22
+    400056: ikHandle23
+    400058: ikHandle24
+    400060: ikHandle3
+    400062: ikHandle4
+    400064: ikHandle5
+    400066: ikHandle6
+    400068: ikHandle7
+    400070: ikHandle8
+    400072: ikHandle9
+    400074: J_Base
+    400076: J_L_Leg_1
+    400078: J_L_Leg_2
+    400080: J_L_Leg_2 1
+    400082: J_L_Leg_2 2
+    400084: J_L_Leg_2 3
+    400086: J_L_Leg_3
+    400088: J_L_Leg_3 1
+    400090: J_L_Leg_3 2
+    400092: J_L_Leg_3 3
+    400094: J_L_Leg_4
+    400096: J_L_Leg_4 1
+    400098: J_L_Leg_4 2
+    400100: J_L_Leg_4 3
+    400102: J_L_Leg_5
+    400104: J_L_Leg_6
+    400106: J_L_Leg_7
+    400108: J_L_Leg_Tip
+    400110: J_L_Leg_Tip 1
+    400112: J_L_Leg_Tip 2
+    400114: J_L_Leg_Tip 3
+    400116: J_R_Leg_1
+    400118: J_R_Leg_2
+    400120: J_R_Leg_2 1
+    400122: J_R_Leg_2 2
+    400124: J_R_Leg_2 3
+    400126: J_R_Leg_3
+    400128: J_R_Leg_3 1
+    400130: J_R_Leg_3 2
+    400132: J_R_Leg_3 3
+    400134: J_R_Leg_4
+    400136: J_R_Leg_4 1
+    400138: J_R_Leg_4 2
+    400140: J_R_Leg_4 3
+    400142: J_R_Leg_5
+    400144: J_R_Leg_6
+    400146: J_R_Leg_7
+    400148: J_R_Leg_Tip
+    400150: J_R_Leg_Tip 1
+    400152: J_R_Leg_Tip 2
+    400154: J_R_Leg_Tip 3
+    400156: L_Leg_1_1
+    400158: L_Leg_1_2
+    400160: L_Leg_1_3
+    400162: L_Leg_1_B
+    400164: L_Leg_1_Tip
+    400166: L_Leg_2_1
+    400168: L_Leg_2_2
+    400170: L_Leg_2_3
+    400172: L_Leg_2_B
+    400174: L_Leg_2_Tip
+    400176: L_Leg_3_1
+    400178: L_Leg_3_2
+    400180: L_Leg_3_3
+    400182: L_Leg_3_B
+    400184: L_Leg_3_Tip
+    400186: L_Leg_4_1
+    400188: L_Leg_4_2
+    400190: L_Leg_4_3
+    400192: L_Leg_4_B
+    400194: L_Leg_4_Tip
+    400196: R_Leg_1_1
+    400198: R_Leg_1_2
+    400200: R_Leg_1_3
+    400202: R_Leg_1_B
+    400204: R_Leg_1_Tip
+    400206: R_Leg_2_1
+    400208: R_Leg_2_2
+    400210: R_Leg_2_3
+    400212: R_Leg_2_B
+    400214: R_Leg_2_Tip
+    400216: R_Leg_3_1
+    400218: R_Leg_3_2
+    400220: R_Leg_3_3
+    400222: R_Leg_3_B
+    400224: R_Leg_3_Tip
+    400226: R_Leg_4_1
+    400228: R_Leg_4_2
+    400230: R_Leg_4_3
+    400232: R_Leg_4_B
+    400234: R_Leg_4_Tip
+    400236: Tip
+    400238: Tip 1
+    400240: Tip 2
+    400242: Tip 3
+    400244: Tip 4
+    400246: Tip 5
+    400248: Tip 6
+    400250: Tip 7
+    400252: transform1
+    400254: transform2
+    2300000: Body
+    2300002: Eyes
+    2300004: Eyes_Red
+    2300006: Fangs
+    2300008: L_Leg_1_1
+    2300010: L_Leg_1_2
+    2300012: L_Leg_1_3
+    2300014: L_Leg_1_Tip
+    2300016: L_Leg_2_1
+    2300018: L_Leg_2_2
+    2300020: L_Leg_2_3
+    2300022: L_Leg_2_Tip
+    2300024: L_Leg_3_1
+    2300026: L_Leg_3_2
+    2300028: L_Leg_3_3
+    2300030: L_Leg_3_Tip
+    2300032: L_Leg_4_1
+    2300034: L_Leg_4_2
+    2300036: L_Leg_4_3
+    2300038: L_Leg_4_Tip
+    2300040: R_Leg_1_1
+    2300042: R_Leg_1_2
+    2300044: R_Leg_1_3
+    2300046: R_Leg_1_Tip
+    2300048: R_Leg_2_1
+    2300050: R_Leg_2_2
+    2300052: R_Leg_2_3
+    2300054: R_Leg_2_Tip
+    2300056: R_Leg_3_1
+    2300058: R_Leg_3_2
+    2300060: R_Leg_3_3
+    2300062: R_Leg_3_Tip
+    2300064: R_Leg_4_1
+    2300066: R_Leg_4_2
+    2300068: R_Leg_4_3
+    2300070: R_Leg_4_Tip
+    3300000: Body
+    3300002: Eyes
+    3300004: Eyes_Red
+    3300006: Fangs
+    3300008: L_Leg_1_1
+    3300010: L_Leg_1_2
+    3300012: L_Leg_1_3
+    3300014: L_Leg_1_Tip
+    3300016: L_Leg_2_1
+    3300018: L_Leg_2_2
+    3300020: L_Leg_2_3
+    3300022: L_Leg_2_Tip
+    3300024: L_Leg_3_1
+    3300026: L_Leg_3_2
+    3300028: L_Leg_3_3
+    3300030: L_Leg_3_Tip
+    3300032: L_Leg_4_1
+    3300034: L_Leg_4_2
+    3300036: L_Leg_4_3
+    3300038: L_Leg_4_Tip
+    3300040: R_Leg_1_1
+    3300042: R_Leg_1_2
+    3300044: R_Leg_1_3
+    3300046: R_Leg_1_Tip
+    3300048: R_Leg_2_1
+    3300050: R_Leg_2_2
+    3300052: R_Leg_2_3
+    3300054: R_Leg_2_Tip
+    3300056: R_Leg_3_1
+    3300058: R_Leg_3_2
+    3300060: R_Leg_3_3
+    3300062: R_Leg_3_Tip
+    3300064: R_Leg_4_1
+    3300066: R_Leg_4_2
+    3300068: R_Leg_4_3
+    3300070: R_Leg_4_Tip
+    4300000: L_Leg_1_Tip
+    4300002: L_Leg_1_3
+    4300004: L_Leg_1_2
+    4300006: L_Leg_1_1
+    4300008: L_Leg_2_Tip
+    4300010: L_Leg_2_3
+    4300012: L_Leg_2_2
+    4300014: L_Leg_2_1
+    4300016: L_Leg_3_Tip
+    4300018: L_Leg_3_3
+    4300020: L_Leg_3_2
+    4300022: L_Leg_3_1
+    4300024: L_Leg_4_Tip
+    4300026: L_Leg_4_3
+    4300028: L_Leg_4_2
+    4300030: L_Leg_4_1
+    4300032: R_Leg_4_Tip
+    4300034: R_Leg_4_3
+    4300036: R_Leg_4_2
+    4300038: R_Leg_4_1
+    4300040: R_Leg_3_Tip
+    4300042: R_Leg_3_3
+    4300044: R_Leg_3_2
+    4300046: R_Leg_3_1
+    4300048: R_Leg_2_Tip
+    4300050: R_Leg_2_3
+    4300052: R_Leg_2_2
+    4300054: R_Leg_2_1
+    4300056: R_Leg_1_Tip
+    4300058: R_Leg_1_3
+    4300060: R_Leg_1_2
+    4300062: R_Leg_1_1
+    4300064: Body
+    4300066: Fangs
+    4300068: Eyes
+    4300070: Eyes_Red
+    7400000: Idle
+    7400002: Walk
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: d00645aeaf8a54ecb8717f485a8845e6, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 8
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Walk
+      takeName: Take 001
+      firstFrame: 9
+      lastFrame: 21
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
