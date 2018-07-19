@@ -108,11 +108,11 @@ public class XMLCheckpointManager : MonoBehaviour
 
     private void OnLevelWasLoaded(int level)
     {
-        StartCoroutine("Wait");
+        StartCoroutine("LevelBuffer");
 
     }
 
-    IEnumerator Wait()
+    IEnumerator LevelBuffer()
     {
         Debug.Log("Starting wait");
         yield return new WaitForSeconds(0.00005f);
@@ -196,8 +196,13 @@ public class XMLCheckpointManager : MonoBehaviour
                 dir.Delete(true);
             }
 
-            Directory.Delete("SaveFiles");
+            StartCoroutine("SaveBuffer");
         }
+    }
+    IEnumerator SaveBuffer()
+    {
+        yield return new WaitForSeconds(0.00005f);
+        Directory.Delete("SaveFiles");
     }
 
     public void loadScene()
