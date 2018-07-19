@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4393413839027172}
   - component: {fileID: 33542109603506122}
   - component: {fileID: 23454627126015820}
+  - component: {fileID: 114617106895913040}
   m_Layer: 0
   m_Name: Permanent Button
   m_TagString: Untagged
@@ -35,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1978075722844950}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 19.782143, y: 0.5, z: 0}
+  m_LocalPosition: {x: 10.357828, y: 0.5, z: 0.1}
   m_LocalScale: {x: 9, y: 9, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -82,3 +83,16 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1978075722844950}
   m_Mesh: {fileID: 4300000, guid: 4aa7832e24216417e93e31839980b1b2, type: 3}
+--- !u!114 &114617106895913040
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1978075722844950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 254a9d3f6cbd98c458fa07246ff53c86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPowered: 0
+  pow: []

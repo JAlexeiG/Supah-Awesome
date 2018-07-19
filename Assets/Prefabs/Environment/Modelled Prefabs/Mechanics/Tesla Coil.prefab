@@ -81,6 +81,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1332621674662872
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4893754475873432}
+  m_Layer: 0
+  m_Name: Tesla Raycast Trans
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1415583848370480
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,6 +182,19 @@ Transform:
   m_Father: {fileID: 4957463554451346}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4893754475873432
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1332621674662872}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 3, z: -1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4957463554451346}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4920065408733830
 Transform:
   m_ObjectHideFlags: 1
@@ -195,6 +223,7 @@ Transform:
   - {fileID: 4370222430979586}
   - {fileID: 4920065408733830}
   - {fileID: 4161470890500590}
+  - {fileID: 4893754475873432}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -442,6 +471,8 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 14e47506eecb0484587d2dd0b6b1b013, type: 2}
   onTimer: 5
   offTimer: 5
+  raycastChecker: {fileID: 4893754475873432}
+  raycastTransform: {fileID: 0}
 --- !u!120 &120232916259043374
 LineRenderer:
   m_ObjectHideFlags: 1
