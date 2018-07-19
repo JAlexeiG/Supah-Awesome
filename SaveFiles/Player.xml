@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <XMLPlayer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <isMele>false</isMele>
-  <health>100</health>
+  <isMele>true</isMele>
+  <health>85</health>
   <steam>50</steam>
   <loadedAmmo>0</loadedAmmo>
   <totalAmmo>5</totalAmmo>
   <position>
-    <x>58.9017372</x>
-    <y>9.38</y>
+    <x>1.69628847</x>
+    <y>25.74</y>
     <z>0</z>
   </position>
   <velocity>
