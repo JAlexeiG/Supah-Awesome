@@ -114,12 +114,12 @@ public class AudioManager : MonoBehaviour {
     }
     public void PlayTheme()
     {
-        if (activeScene.name == "Main")
+        if (activeScene.name == "MainMenu")
         {
             Play("Menu Theme");
             //musicPlaying = true;
         }
-        if (activeScene.name == "June 16 Build")
+        if (activeScene.name == "Main")
         {
             Play("Game Theme");
             //musicPlaying = true;
