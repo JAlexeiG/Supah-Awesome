@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour {
 
     static GameManager _instance = null;
 
+    [SerializeField]
+    private bool loadOn;
 
     public class CurrentScene
     {
@@ -20,11 +22,12 @@ public class GameManager : MonoBehaviour {
         return scene;
     }
 
-    public void SaveXMLPlayer(CurrentScene box)
+    public void loadSave(CurrentScene XMLScene)
     {
-        SceneManager.LoadScene(box.sceneNumber);
-
+        SceneManager.LoadScene(XMLScene.sceneNumber);
     }
+
+
     // Use this for initialization
     void Start () {
         if (!instance)
@@ -44,17 +47,14 @@ public class GameManager : MonoBehaviour {
 
     }
 
-    public void LoadJustin()
+    public void QuitGame()
     {
-        SceneManager.LoadScene("Game_Justin");
+        Application.Quit();
+        Debug.Log("Game has Quit");
     }
     public void LoadAlpha(int num)
     {
         SceneManager.LoadScene(num);
-    }
-    public void LoadCam()
-    {
-        SceneManager.LoadScene("Tim with Cam");
     }
     public void LoadMain()
     {

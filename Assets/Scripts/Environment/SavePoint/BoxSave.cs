@@ -10,12 +10,13 @@ public class BoxSave : MonoBehaviour {
     }
     public struct Box
     {
-
+        public string name;
         public Vector3 position;
     }
     public Box GetBox()
     {
         Box box = new Box();
+        box.name = name;
         box.position = transform.position;
         return box;
     }
