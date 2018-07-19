@@ -25310,11 +25310,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4755702487109440, guid: 5829cb1186d5549518a71a1669bb2721,
     type: 2}
   m_PrefabInternal: {fileID: 666899606}
---- !u!4 &669130351 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4244735346671014, guid: 678e352e40d88410bbddda71ad85c146,
-    type: 2}
-  m_PrefabInternal: {fileID: 1713015802}
 --- !u!1 &673001127 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: e78fb0867a8e5432caf4d763a4cce852, type: 3}
@@ -26397,10 +26392,15 @@ Prefab:
         type: 2}
       propertyPath: raycastTransform
       value: 
-      objectReference: {fileID: 669130351}
+      objectReference: {fileID: 703081233}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 05c2a1e4f215841b6b78fbcb0a845482, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &703081233 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4920065408733830, guid: 05c2a1e4f215841b6b78fbcb0a845482,
+    type: 2}
+  m_PrefabInternal: {fileID: 703081232}
 --- !u!1 &703839085
 GameObject:
   m_ObjectHideFlags: 0
@@ -74586,15 +74586,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4957728819926120, guid: e6051b443ab5a46b7bb69f1f9e2bdf90, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 7.9968057
+      value: 2.4
       objectReference: {fileID: 0}
     - target: {fileID: 4957728819926120, guid: e6051b443ab5a46b7bb69f1f9e2bdf90, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.3150601
+      value: 1.76
       objectReference: {fileID: 0}
     - target: {fileID: 4957728819926120, guid: e6051b443ab5a46b7bb69f1f9e2bdf90, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -3.8871064
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4957728819926120, guid: e6051b443ab5a46b7bb69f1f9e2bdf90, type: 2}
       propertyPath: m_LocalRotation.x
@@ -74618,7 +74618,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4957728819926120, guid: e6051b443ab5a46b7bb69f1f9e2bdf90, type: 2}
       propertyPath: m_LocalScale.x
-      value: 2.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4957728819926120, guid: e6051b443ab5a46b7bb69f1f9e2bdf90, type: 2}
       propertyPath: m_LocalScale.z
