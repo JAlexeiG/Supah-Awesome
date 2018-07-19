@@ -28,9 +28,9 @@ public class TeslaCoil : Power {
 
     [SerializeField] float onTimer;
     [SerializeField] float offTimer;
-    
 
-    public Transform raycastTransform;
+    [SerializeField]
+    private Transform raycastChecker;
 
     // Use this for initialization
     void Start ()
@@ -49,6 +49,9 @@ public class TeslaCoil : Power {
     void Update () 
     {
         playerLocation = player.position;
+
+        raycastChecker.LookAt(player.position);
+
         Vector3 direction = (player.position - transform.position).normalized;
         //Debug.Log(Vector3.Distance(transform.position, player.position) + " " + range.radius);
 
@@ -56,11 +59,15 @@ public class TeslaCoil : Power {
 
         if (Vector3.Distance(transform.position, player.position) < range.radius && isActive && isPowered)
         {
-            if (Physics.Raycast(raycastTransform.position, direction, ~(1 << 12)))
+            if (Physics.Raycast(raycastChecker.position, raycastChecker.forward, out hit))
             {
-                if (!onCooldown)
+                if (hit.transform.tag == "Player")
                 {
-                    Attack();
+                    Debug.Log("Can see player");
+                    if (!onCooldown)
+                    {
+                        Attack();
+                    }
                 }
             }
         }
@@ -112,7 +119,7 @@ public class TeslaCoil : Power {
             yield return new WaitForSeconds(offTimer);
             isActive = false;
             MeshRenderer meshRend = baseObject.GetComponent<MeshRenderer>();
-            meshRend.material = baseMaterials[1];
+            meshRend.material = baseMaterials[0];
             StartCoroutine("SwitchPower");
         }
 
@@ -121,7 +128,7 @@ public class TeslaCoil : Power {
             yield return new WaitForSeconds(onTimer);
             isActive = true;
             MeshRenderer meshRend = baseObject.GetComponent<MeshRenderer>();
-            meshRend.material = baseMaterials[0];
+            meshRend.material = baseMaterials[1];
             StartCoroutine("SwitchPower");
         }
 
@@ -129,7 +136,7 @@ public class TeslaCoil : Power {
         {
             isActive = false;
             MeshRenderer meshRend = baseObject.GetComponent<MeshRenderer>();
-            meshRend.material = baseMaterials[1];
+            meshRend.material = baseMaterials[0];
             yield return null;
         }
     }

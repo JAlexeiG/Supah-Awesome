@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
 using UnityEngine;
@@ -6,6 +7,9 @@ using UnityEngine.SceneManagement;
 
 public class XMLCheckpointManager : MonoBehaviour
 {
+
+    [SerializeField]
+    private float loadBuffer;
 
     static XMLCheckpointManager _instance = null;
     private Chara player;
@@ -16,7 +20,7 @@ public class XMLCheckpointManager : MonoBehaviour
 
     private void Awake()
     {
-    
+
         if (!instance)
         {
             instance = this;
@@ -82,11 +86,10 @@ public class XMLCheckpointManager : MonoBehaviour
         int i = 0;
         foreach (BoxSave box in boxlist)
         {
-
             BoxSave.Box boxXML = box.GetBox();
-            
+
             XmlSerializer boxSerializer = new XmlSerializer(typeof(BoxSave.Box));
-            StreamWriter boxWriter = new StreamWriter("SaveFiles/BoxSaves/Boxes.xml" + i);
+            StreamWriter boxWriter = new StreamWriter("SaveFiles/BoxSaves/" + box.name + ".xml");
             boxSerializer.Serialize(boxWriter.BaseStream, boxXML);
             boxWriter.Close();
             i++;
@@ -103,27 +106,42 @@ public class XMLCheckpointManager : MonoBehaviour
 
     }
 
-    public void load()
+    private void OnLevelWasLoaded(int level)
     {
-        if (Directory.Exists("SaveFiles"))
+        StartCoroutine("LevelBuffer");
+
+    }
+
+    IEnumerator LevelBuffer()
+    {
+        Debug.Log("Starting wait");
+        yield return new WaitForSeconds(0.00005f);
+
+        Debug.Log("Wait finished");
+        // FOR OBJECTS
+        BoxSave[] boxlist = FindObjectsOfType<BoxSave>();
+
+        int i = 0;
+        foreach (BoxSave box in boxlist)
         {
-            // FOR OBJECTS
-            BoxSave[] boxlist = FindObjectsOfType<BoxSave>();
-
-            int i = 0;
-            foreach (BoxSave box in boxlist)
+            foreach (BoxSave boxCheck in boxlist)
             {
-                XmlSerializer boxSerializer = new XmlSerializer(typeof(BoxSave.Box));
-                StreamReader boxReader = new StreamReader("SaveFiles/BoxSaves/Boxes.xml" + i);
-                BoxSave.Box loadedBox = (BoxSave.Box)boxSerializer.Deserialize(boxReader.BaseStream);
-                boxReader.Close();
+                if (box.name == boxCheck.name)
+                {
+                    Debug.Log(box.name + boxCheck.name);
+                    XmlSerializer boxSerializer = new XmlSerializer(typeof(BoxSave.Box));
+                    StreamReader boxReader = new StreamReader("SaveFiles/BoxSaves/" + box.name + ".xml");
+                    BoxSave.Box loadedBox = (BoxSave.Box)boxSerializer.Deserialize(boxReader.BaseStream);
+                    boxReader.Close();
 
-                box.SaveXMLPlayer(loadedBox);
-                i++;
+                    box.SaveXMLPlayer(loadedBox);
+                    i++;
+                }
             }
             // FOR PLAYER //
             player = FindObjectOfType<Chara>();
 
+            Debug.Log(player.transform.name);
             XmlSerializer playerSerializer = new XmlSerializer(typeof(Chara.XMLPlayer));
             StreamReader playerReader = new StreamReader("SaveFiles/Player.xml");
             Chara.XMLPlayer loadedPlayer = (Chara.XMLPlayer)playerSerializer.Deserialize(playerReader.BaseStream);
@@ -135,6 +153,7 @@ public class XMLCheckpointManager : MonoBehaviour
             PowerSave power = FindObjectOfType<PowerSave>();
 
 
+            Debug.Log(power.transform.name);
             XmlSerializer powerSerializer = new XmlSerializer(typeof(PowerSave.powerOn));
             StreamReader powerReader = new StreamReader("SaveFiles/PowOn.xml");
             PowerSave.powerOn loadedPower = (PowerSave.powerOn)powerSerializer.Deserialize(powerReader.BaseStream);
@@ -145,19 +164,44 @@ public class XMLCheckpointManager : MonoBehaviour
     }
 
 
+    public void load()
+    {
+        if (Directory.Exists("SaveFiles"))
+        {
+            // FOR SCENE
+            XmlSerializer sceneSerializer = new XmlSerializer(typeof(GameManager.CurrentScene));
+            StreamReader sceneReader = new StreamReader("SaveFiles/Scene.xml");
+            GameManager.CurrentScene sceneLoad = (GameManager.CurrentScene)sceneSerializer.Deserialize(sceneReader.BaseStream);
+            sceneReader.Close();
+
+            GameManager.instance.loadSave(sceneLoad);
+
+            OnLevelWasLoaded(sceneLoad.sceneNumber);
+        }
+    }
+
+
     public void delete()
     {
         DirectoryInfo newDirectory = new DirectoryInfo("SaveFiles");
 
-        foreach (FileInfo file in newDirectory.GetFiles())
+        if (Directory.Exists("SaveFiles"))
         {
-            file.Delete();
-        }
-        foreach (DirectoryInfo dir in newDirectory.GetDirectories())
-        {
-            dir.Delete(true);
-        }
+            foreach (FileInfo file in newDirectory.GetFiles())
+            {
+                file.Delete();
+            }
+            foreach (DirectoryInfo dir in newDirectory.GetDirectories())
+            {
+                dir.Delete(true);
+            }
 
+            StartCoroutine("SaveBuffer");
+        }
+    }
+    IEnumerator SaveBuffer()
+    {
+        yield return new WaitForSeconds(0.00005f);
         Directory.Delete("SaveFiles");
     }
 

@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour {
 
     static GameManager _instance = null;
 
+    [SerializeField]
+    private bool loadOn;
 
     public class CurrentScene
     {
@@ -20,11 +22,12 @@ public class GameManager : MonoBehaviour {
         return scene;
     }
 
-    public void SaveXMLPlayer(CurrentScene box)
+    public void loadSave(CurrentScene XMLScene)
     {
-        SceneManager.LoadScene(box.sceneNumber);
-
+        SceneManager.LoadScene(XMLScene.sceneNumber);
     }
+
+
     // Use this for initialization
     void Start () {
         if (!instance)

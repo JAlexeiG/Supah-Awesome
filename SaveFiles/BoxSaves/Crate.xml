@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Box xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <name>Crate</name>
+  <position>
+<<<<<<< HEAD:SaveFiles/BoxSaves/Boxes.xml2
+    <x>71.7582</x>
+    <y>24.74</y>
+    <z>0.0439176559</z>
+=======
+    <x>0.7758541</x>
+    <y>0.5</y>
+    <z>0</z>
+>>>>>>> a38cbd13a9274e00bad116c40d24c120bba8bcb2:SaveFiles/BoxSaves/Crate.xml
+  </position>
+</Box>
