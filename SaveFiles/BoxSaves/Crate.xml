@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="Windows-1252"?>
-<Box xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <name>Crate</name>
-  <position>
-    <x>6.176027</x>
-    <y>24.9203415</y>
-    <z>0.0439176559</z>
-  </position>
-</Box>
