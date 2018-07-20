@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour {
     }
     public void LoadMain()
     {
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadSceneAsync("Main");
     }
     public static GameManager instance
     {
