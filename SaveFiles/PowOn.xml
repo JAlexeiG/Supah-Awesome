@@ -1,54 +1,7 @@
-<?xml version="1.0" encoding="Windows-1252"?>
+<?xml version="1.0" encoding="us-ascii"?>
 <powerOn xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <powOn>
-    <boolean>false</boolean>
-<<<<<<< HEAD
-=======
     <boolean>true</boolean>
-    <boolean>false</boolean>
-    <boolean>false</boolean>
->>>>>>> a38cbd13a9274e00bad116c40d24c120bba8bcb2
-    <boolean>true</boolean>
-    <boolean>false</boolean>
-    <boolean>false</boolean>
-    <boolean>false</boolean>
-    <boolean>false</boolean>
-    <boolean>false</boolean>
-    <boolean>false</boolean>
-    <boolean>false</boolean>
-    <boolean>false</boolean>
-    <boolean>true</boolean>
-    <boolean>false</boolean>
-    <boolean>true</boolean>
-    <boolean>false</boolean>
-    <boolean>false</boolean>
-    <boolean>false</boolean>
-    <boolean>false</boolean>
-    <boolean>false</boolean>
-    <boolean>true</boolean>
-    <boolean>false</boolean>
-    <boolean>false</boolean>
-    <boolean>false</boolean>
-    <boolean>true</boolean>
-    <boolean>false</boolean>
-    <boolean>false</boolean>
-    <boolean>true</boolean>
-    <boolean>false</boolean>
-    <boolean>true</boolean>
-    <boolean>false</boolean>
-    <boolean>true</boolean>
-    <boolean>false</boolean>
-    <boolean>true</boolean>
-    <boolean>false</boolean>
-    <boolean>true</boolean>
-    <boolean>false</boolean>
-    <boolean>false</boolean>
-    <boolean>false</boolean>
-    <boolean>false</boolean>
-    <boolean>false</boolean>
-    <boolean>false</boolean>
-    <boolean>false</boolean>
-    <boolean>false</boolean>
     <boolean>true</boolean>
     <boolean>true</boolean>
     <boolean>true</boolean>
@@ -56,24 +9,23 @@
     <boolean>false</boolean>
     <boolean>true</boolean>
     <boolean>true</boolean>
-<<<<<<< HEAD
-    <boolean>true</boolean>
-=======
->>>>>>> a38cbd13a9274e00bad116c40d24c120bba8bcb2
     <boolean>true</boolean>
     <boolean>true</boolean>
     <boolean>true</boolean>
     <boolean>false</boolean>
-    <boolean>false</boolean>
-    <boolean>false</boolean>
-    <boolean>false</boolean>
-    <boolean>false</boolean>
-    <boolean>false</boolean>
+    <boolean>true</boolean>
     <boolean>true</boolean>
     <boolean>false</boolean>
     <boolean>false</boolean>
+    <boolean>true</boolean>
+    <boolean>true</boolean>
+    <boolean>true</boolean>
+    <boolean>true</boolean>
+    <boolean>true</boolean>
     <boolean>false</boolean>
-    <boolean>false</boolean>
+    <boolean>true</boolean>
+    <boolean>true</boolean>
+    <boolean>true</boolean>
     <boolean>false</boolean>
     <boolean>false</boolean>
     <boolean>true</boolean>
@@ -82,30 +34,9 @@
     <boolean>true</boolean>
     <boolean>true</boolean>
     <boolean>true</boolean>
+    <boolean>false</boolean>
+    <boolean>false</boolean>
     <boolean>true</boolean>
-    <boolean>true</boolean>
-    <boolean>true</boolean>
-    <boolean>true</boolean>
-    <boolean>true</boolean>
-    <boolean>true</boolean>
-    <boolean>true</boolean>
-    <boolean>true</boolean>
-    <boolean>true</boolean>
-    <boolean>true</boolean>
-    <boolean>true</boolean>
-    <boolean>true</boolean>
-    <boolean>true</boolean>
-    <boolean>true</boolean>
-    <boolean>true</boolean>
-    <boolean>true</boolean>
-    <boolean>true</boolean>
-    <boolean>true</boolean>
-    <boolean>true</boolean>
-    <boolean>true</boolean>
-    <boolean>true</boolean>
-    <boolean>true</boolean>
-    <boolean>true</boolean>
-    <boolean>true</boolean>
-    <boolean>true</boolean>
+    <boolean>false</boolean>
   </powOn>
 </powerOn>
