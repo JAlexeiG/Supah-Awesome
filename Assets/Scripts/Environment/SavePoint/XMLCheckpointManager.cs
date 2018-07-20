@@ -18,9 +18,19 @@ public class XMLCheckpointManager : MonoBehaviour
 
     public bool deleteXML;
 
+    [SerializeField]
+    private GameObject[] checkpoints;
+
+    public int checkpointNumber;
+
+    public class XMLCheckpointNum
+    {
+        public int checkNum;
+    }
+
     private void Awake()
     {
-
+        checkpointNumber = -1;
         if (!instance)
         {
             instance = this;
@@ -63,6 +73,15 @@ public class XMLCheckpointManager : MonoBehaviour
                 Directory.CreateDirectory("SaveFiles/BoxSaves");
             }
         }
+
+        // FOR CHECKPOINT
+        XMLCheckpointNum checkpointXML = new XMLCheckpointNum();
+        checkpointXML.checkNum = checkpointNumber;
+        XmlSerializer checkpointSerializer = new XmlSerializer(typeof(XMLCheckpointNum));
+        StreamWriter checkWriter = new StreamWriter("SaveFiles/Checkpointnum.xml");
+        checkpointSerializer.Serialize(checkWriter.BaseStream, checkpointXML);
+        checkWriter.Close();
+
 
         // FOR SCENE
         GameManager.CurrentScene sceneXML = GameManager.instance.GetScene();
@@ -118,6 +137,8 @@ public class XMLCheckpointManager : MonoBehaviour
         yield return new WaitForSeconds(0.00005f);
 
         Debug.Log("Wait finished");
+
+        
         // FOR OBJECTS
         BoxSave[] boxlist = FindObjectsOfType<BoxSave>();
 
@@ -138,6 +159,19 @@ public class XMLCheckpointManager : MonoBehaviour
                     i++;
                 }
             }
+
+            // FOR CHECKPOINT
+            XMLCheckpointNum checkpointXML = new XMLCheckpointNum();
+            XmlSerializer checkpointSerializer = new XmlSerializer(typeof(XMLCheckpointNum));
+            StreamReader checkReader = new StreamReader("SaveFiles/Checkpointnum.xml");
+            XMLCheckpointNum loadedCheckpoint = (XMLCheckpointNum)checkpointSerializer.Deserialize(checkReader.BaseStream);
+            checkReader.Close();
+
+            checkpointNumber = loadedCheckpoint.checkNum;
+
+            destroyCheckpoint();
+
+
             // FOR PLAYER //
             player = FindObjectOfType<Chara>();
 
@@ -226,6 +260,25 @@ public class XMLCheckpointManager : MonoBehaviour
 
     }
     
+    public void setCheckpoint(GameObject x)
+    {
+        int i = 0;
+        foreach(GameObject check in checkpoints)
+        {
+            if (x == check)
+            {
+                checkpointNumber = i;
+            }
+            i++;
+        }
+    }
+    public void destroyCheckpoint()
+    {
+        if(checkpointNumber >= 0)
+        {
+            Destroy(checkpoints[checkpointNumber]);
+        }
+    }
     public static XMLCheckpointManager instance
     {
         get;
