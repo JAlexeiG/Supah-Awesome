@@ -10,10 +10,16 @@ public class GroundedHelper : MonoBehaviour {
     }
     private void OnTriggerStay(Collider other)
     {
+        if(other.tag == "Floor" || other.tag == "box")
+        {
             charaScript.setGrounded(true);
+        }
     }
     private void OnTriggerExit(Collider other)
     {
+        if (other.tag == "Floor" || other.tag == "box")
+        {
             charaScript.setGrounded(false);
+        }
     }
 }
