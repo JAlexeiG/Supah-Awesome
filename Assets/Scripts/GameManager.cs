@@ -47,21 +47,18 @@ public class GameManager : MonoBehaviour {
 
     }
 
-    public void LoadJustin()
+    public void QuitGame()
     {
-        SceneManager.LoadScene("Game_Justin");
+        Application.Quit();
+        Debug.Log("Game has Quit");
     }
     public void LoadAlpha(int num)
     {
         SceneManager.LoadScene(num);
     }
-    public void LoadCam()
-    {
-        SceneManager.LoadScene("Tim with Cam");
-    }
     public void LoadMain()
     {
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadSceneAsync("Main");
     }
     public static GameManager instance
     {
