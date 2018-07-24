@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TimeSwitch : Power {
+public class TimeSwitch : MonoBehaviour {
 
     public GameObject[] pow;
     [SerializeField]

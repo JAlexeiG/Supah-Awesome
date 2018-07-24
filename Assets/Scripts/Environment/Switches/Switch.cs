@@ -6,15 +6,31 @@ public class Switch : MonoBehaviour {
 
     public GameObject[] pow;
 
-	// Update is called once per frame
-	void Update () {
-		
+    [SerializeField]
+    Material[] materials;
+
+    Renderer rend;
+    bool switchOn;
+
+	private void Start()
+	{
+        rend = GetComponent<Renderer>();
 	}
-    void OnTriggerEnter(Collider col)
+
+	private void Update()
+    {
+        if (switchOn)
+            rend.material = materials[0];
+        else
+            rend.material = materials[1];
+    }
+
+	void OnTriggerEnter(Collider col)
     {
         if (col.tag == "Player" || col.tag == "box")
         {
-            foreach(GameObject i in pow)
+            switchOn = true;
+            foreach (GameObject i in pow)
             {
                 i.GetComponent<Power>().PowerSwitch();
             }
@@ -25,6 +41,7 @@ public class Switch : MonoBehaviour {
     {
         if (col.tag == "Player" || col.tag == "box")
         {
+            switchOn = false;
             foreach(GameObject i in pow)
             {
                 i.GetComponent<Power>().PowerSwitch();
