@@ -33,6 +33,7 @@ public class Checkpoints : MonoBehaviour {
         {
             if (Input.GetKeyDown(KeyCode.C))
             {
+                XMLCheckpointManager.instance.setCheckpoint(gameObject);
                 manager.save();
                 Destroy(gameObject);
             }

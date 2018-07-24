@@ -49,22 +49,21 @@ public class HealthManager : MonoBehaviour {
         }
         if (health <=0)
         {
-            if (Directory.Exists("SaveFile"))
-            {
-                XMLCheckpointManager.instance.load();
-            }
-            else
-            {
-                playerTrans.position = SpawnPoint.position;
-                health = 100;
-            }
+            respawn();
         }
     }
 
     public void respawn()
     {
-        playerTrans.position = SpawnPoint.position;
-        health = 100; 
+        if (Directory.Exists("SaveFiles"))
+        {
+            XMLCheckpointManager.instance.load();
+        }
+        else
+        {
+            playerTrans.position = SpawnPoint.position;
+            health = 100;
+        }
     }
     public static HealthManager instance
     {
