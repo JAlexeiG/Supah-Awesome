@@ -21,7 +21,7 @@ public class BoxSave : MonoBehaviour {
         return box;
     }
 
-    public void SaveXMLPlayer(Box box)
+    public void SaveXML(Box box)
     { 
         trans.position = box.position;
     }
