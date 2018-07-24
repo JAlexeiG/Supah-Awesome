@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Box xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <name>Box - MODEL</name>
+  <position>
+    <x>1037.15039</x>
+    <y>44.5766</y>
+    <z>100</z>
+  </position>
+</Box>

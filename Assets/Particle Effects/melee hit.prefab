@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 198707811742137670}
   - component: {fileID: 199859143933135190}
   m_Layer: 0
-  m_Name: melee hit
+  m_Name: Melee Hit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
