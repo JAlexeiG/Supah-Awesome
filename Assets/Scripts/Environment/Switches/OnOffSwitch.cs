@@ -2,40 +2,46 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OnOffSwitch : MonoBehaviour {
-
-    public GameObject[] pow;
-    private bool switchOn;
+public class OnOffSwitch : XMLSwitch {
+    
     Renderer rend;
     [SerializeField]PowerBulbSequence pbs;
 
     // Use this for initialization
     void Start()
     {
-        switchOn = false;
         rend = GetComponent<Renderer>();
-
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (switchOn)
+        if (powOn)
             rend.material.color = Color.green;
         else rend.material.color = Color.red;
+
+        foreach (Power i in pow)
+        {
+            i.PowerSwitch(powOn);
+        }
     }
 
     void OnTriggerEnter(Collider col)
     {
         if (col.tag == "Player")
         {
-            switchOn = !switchOn;
-            pbs.StartCoroutine("PowerSequence");
-
-            foreach (GameObject i in pow)
+            powOn = !powOn;
+            if (pbs != null)
             {
-                i.GetComponent<Power>().PowerSwitch();
+                pbs.StartCoroutine("PowerSequence");
             }
+            else
+            {
+                Debug.Log("No PBS system attatched");
+            }
+            
         }
     }
+
+
 }

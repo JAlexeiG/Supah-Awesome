@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Box xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <name>Box (1)</name>
+  <position>
+    <x>2471.278</x>
+    <y>33.3489265</y>
+    <z>100</z>
+  </position>
+</Box>

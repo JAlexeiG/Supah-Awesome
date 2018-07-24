@@ -114,14 +114,16 @@ public class XMLCheckpointManager : MonoBehaviour
             i++;
         }
 
-        //For Powerable Objects
-        PowerSave power = FindObjectOfType<PowerSave>();
 
-        PowerSave.powerOn powerXML = power.GetPower();
-        XmlSerializer pwrSerializer = new XmlSerializer(typeof(PowerSave.powerOn));
-        StreamWriter powerWriter = new StreamWriter("SaveFiles/PowOn.xml");
-        pwrSerializer.Serialize(powerWriter.BaseStream, powerXML);
-        powerWriter.Close();
+        //For Switches
+        SwitchSave switches = FindObjectOfType<SwitchSave>();
+
+        SwitchSave.switchXML switchXML = switches.GetSwitch();
+
+        XmlSerializer switchSerializer = new XmlSerializer(typeof(SwitchSave.switchXML));
+        StreamWriter switchWriter = new StreamWriter("SaveFiles/SwitchOn.xml");
+        switchSerializer.Serialize(switchWriter.BaseStream, switchXML);
+        switchWriter.Close();
 
     }
 
@@ -149,13 +151,13 @@ public class XMLCheckpointManager : MonoBehaviour
             {
                 if (box.name == boxCheck.name)
                 {
-                    Debug.Log(box.name + boxCheck.name);
+                    Debug.Log(box.name + " " + boxCheck.name);
                     XmlSerializer boxSerializer = new XmlSerializer(typeof(BoxSave.Box));
                     StreamReader boxReader = new StreamReader("SaveFiles/BoxSaves/" + box.name + ".xml");
                     BoxSave.Box loadedBox = (BoxSave.Box)boxSerializer.Deserialize(boxReader.BaseStream);
                     boxReader.Close();
 
-                    box.SaveXMLPlayer(loadedBox);
+                    box.SaveXML(loadedBox);
                     i++;
                 }
             }
@@ -181,19 +183,17 @@ public class XMLCheckpointManager : MonoBehaviour
             Chara.XMLPlayer loadedPlayer = (Chara.XMLPlayer)playerSerializer.Deserialize(playerReader.BaseStream);
             playerReader.Close();
 
-            player.SaveXMLPlayer(loadedPlayer);
+            player.SaveXML(loadedPlayer);
 
             //For Powerable Objects
-            PowerSave power = FindObjectOfType<PowerSave>();
+            SwitchSave switches = FindObjectOfType<SwitchSave>();
 
+            XmlSerializer switchSerializer = new XmlSerializer(typeof(SwitchSave.switchXML));
+            StreamReader switchReader = new StreamReader("SaveFiles/SwitchOn.xml");
+            SwitchSave.switchXML loadedSwitch = (SwitchSave.switchXML)switchSerializer.Deserialize(switchReader.BaseStream);
+            switchReader.Close();
 
-            Debug.Log(power.transform.name);
-            XmlSerializer powerSerializer = new XmlSerializer(typeof(PowerSave.powerOn));
-            StreamReader powerReader = new StreamReader("SaveFiles/PowOn.xml");
-            PowerSave.powerOn loadedPower = (PowerSave.powerOn)powerSerializer.Deserialize(powerReader.BaseStream);
-            powerReader.Close();
-
-            power.SaveXMLPlayer(loadedPower);
+            switches.SaveXML(loadedSwitch);
         }
     }
 

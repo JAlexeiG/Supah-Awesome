@@ -636,7 +636,7 @@ public class Chara : MonoBehaviour
         return playerXML;
     }
 
-    public void SaveXMLPlayer(XMLPlayer playerXML)
+    public void SaveXML(XMLPlayer playerXML)
     {
         isMele = playerXML.isMele;
         HealthManager.instance.health = playerXML.health;
