@@ -11,6 +11,7 @@ public class Switch : MonoBehaviour {
 
     Renderer rend;
     bool switchOn;
+    
 
 	private void Start()
 	{
@@ -25,14 +26,14 @@ public class Switch : MonoBehaviour {
             rend.material = materials[1];
     }
 
-	void OnTriggerEnter(Collider col)
+	void OnTriggerStay(Collider col)
     {
         if (col.tag == "Player" || col.tag == "box")
         {
             switchOn = true;
             foreach (GameObject i in pow)
             {
-                i.GetComponent<Power>().PowerSwitch();
+                i.GetComponent<Power>().PowerSwitch(true);
             }
         }
     }
@@ -44,7 +45,7 @@ public class Switch : MonoBehaviour {
             switchOn = false;
             foreach(GameObject i in pow)
             {
-                i.GetComponent<Power>().PowerSwitch();
+                i.GetComponent<Power>().PowerSwitch(false);
             }
         }
     }

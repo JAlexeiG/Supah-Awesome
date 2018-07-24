@@ -4,10 +4,10 @@
   <health>100</health>
   <steam>50</steam>
   <loadedAmmo>0</loadedAmmo>
-  <totalAmmo>5</totalAmmo>
+  <totalAmmo>10</totalAmmo>
   <position>
-    <x>59.8750725</x>
-    <y>9.380026</y>
+    <x>3.90360141</x>
+    <y>1.5</y>
     <z>0</z>
   </position>
   <velocity>
