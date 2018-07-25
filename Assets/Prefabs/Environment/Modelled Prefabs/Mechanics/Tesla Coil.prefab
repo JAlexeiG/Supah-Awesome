@@ -521,12 +521,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1069498404563928}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b525c7b54926564391211cc691d6089, type: 3}
+  m_Script: {fileID: 11500000, guid: 194935da8f49ec7438710d0bb557c97c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partSystem: {fileID: 198608838464109838}
-  velMultiplyer: 20
-  playerObject: {fileID: 0}
+  velocityForce: 20
 --- !u!114 &114646341535350128
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -560,12 +558,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1212635042198854}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b525c7b54926564391211cc691d6089, type: 3}
+  m_Script: {fileID: 11500000, guid: 194935da8f49ec7438710d0bb557c97c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partSystem: {fileID: 198477734935990404}
-  velMultiplyer: 20
-  playerObject: {fileID: 0}
+  velocityForce: 20
 --- !u!120 &120232916259043374
 LineRenderer:
   m_ObjectHideFlags: 1
@@ -726,7 +722,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1261631480
+  randomSeed: -226626256
   InitialModule:
     serializedVersion: 3
     enabled: 1
