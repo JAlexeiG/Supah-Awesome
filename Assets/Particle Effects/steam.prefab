@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 198608244199055762}
   - component: {fileID: 199904148194891776}
   m_Layer: 0
-  m_Name: Steam
+  m_Name: steam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
