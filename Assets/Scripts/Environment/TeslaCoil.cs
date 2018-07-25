@@ -32,6 +32,11 @@ public class TeslaCoil : Power {
     [SerializeField]
     private Transform raycastChecker;
 
+    [SerializeField]
+    GameObject electricityCharging;
+    [SerializeField]
+    GameObject electricityAttack;
+
     // Use this for initialization
     void Start ()
     {
@@ -61,28 +66,35 @@ public class TeslaCoil : Power {
         {
             if (Physics.Raycast(raycastChecker.position, raycastChecker.forward, out hit))
             {
+                electricityCharging.SetActive(true);
                 if (hit.transform.tag == "Player")
                 {
                     Debug.Log("Can see player");
                     if (!onCooldown)
                     {
+                        electricityAttack.SetActive(false);
                         Attack();
+                        electricityAttack.SetActive(true);
                     }
                 }
             }
+        }
+        else
+        {
+            electricityCharging.SetActive(false);
         }
 	}
 
     void Attack()
     {
         onCooldown = true;
-        linePositions = new Vector3[2];
-        linePositions[0] = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 3, gameObject.transform.position.z);
-        linePositions[1] = playerLocation;
+        //linePositions = new Vector3[2];
+        //linePositions[0] = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 3, gameObject.transform.position.z);
+        //linePositions[1] = playerLocation;
         HealthManager.instance.health -= teslaDamage;
         Chara chara = player.gameObject.GetComponent<Chara>();
         chara.callStun(teslaStunLength);
-        line.SetPositions(linePositions);
+        //line.SetPositions(linePositions);
         player.gameObject.GetComponent<Rigidbody>().AddExplosionForce(explosionStrength, gameObject.transform.position, 100, 1);
         StartCoroutine("CooldownTimer");
     }
