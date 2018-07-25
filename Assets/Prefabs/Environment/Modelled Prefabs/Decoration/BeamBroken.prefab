@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 64973657998845546}
   m_Layer: 0
   m_Name: BeamBroken
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,13 +36,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1606487831838526}
-  m_LocalRotation: {x: 0.5000001, y: -0.49999988, z: 0.49999994, w: 0.50000006}
-  m_LocalPosition: {x: 11.930291, y: 2.73, z: 0.54537904}
+  m_LocalRotation: {x: 0.036323946, y: -0.70617324, z: 0.0363238, w: 0.7061732}
+  m_LocalPosition: {x: 4.06, y: -2.58, z: 0.54537904}
   m_LocalScale: {x: 1, y: 0.68320304, z: 0.7881623}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 5.8890004, y: -90.00001, z: 0}
 --- !u!23 &23871784556870550
 MeshRenderer:
   m_ObjectHideFlags: 1
