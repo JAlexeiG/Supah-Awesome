@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class OnOffSwitch : XMLSwitch {
-    
+
+    [SerializeField]
+    Material[] materials;
     Renderer rend;
     [SerializeField]PowerBulbSequence pbs;
 
@@ -17,8 +19,8 @@ public class OnOffSwitch : XMLSwitch {
     void FixedUpdate()
     {
         if (powOn)
-            rend.material.color = Color.green;
-        else rend.material.color = Color.red;
+            rend.material = materials[0];
+        else rend.material = materials[1];
 
         foreach (Power i in pow)
         {
@@ -39,7 +41,6 @@ public class OnOffSwitch : XMLSwitch {
             {
                 Debug.Log("No PBS system attatched");
             }
-            
         }
     }
 

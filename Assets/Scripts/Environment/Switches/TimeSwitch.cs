@@ -13,10 +13,15 @@ public class TimeSwitch : MonoBehaviour {
     bool activated = false;
 
     [SerializeField]
+    Material[] materials;
+    Renderer rend;
+
+    [SerializeField]
     Text timerText;
     // Use this for initialization
     void Start () 
     {
+        rend = GetComponent<Renderer>();
         switchOn = false;
         timer = switchTime;
 	}
@@ -27,6 +32,7 @@ public class TimeSwitch : MonoBehaviour {
         timerText.text = timer + " ";
         if (switchOn)
         {
+            rend.material = materials[0];
             Debug.Log(timer);
             if (timer < 1)
             {
@@ -40,6 +46,7 @@ public class TimeSwitch : MonoBehaviour {
                 }
             }
         }
+        else rend.material = materials[1];
     }
 
     void OnTriggerEnter(Collider col)

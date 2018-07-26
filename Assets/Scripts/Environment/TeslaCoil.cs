@@ -66,6 +66,7 @@ public class TeslaCoil : Power {
         {
             if (Physics.Raycast(raycastChecker.position, raycastChecker.forward, out hit))
             {
+                Debug.Log(hit.transform.tag);
                 if (hit.transform.tag == "Player")
                 {
                     electricityCharging.SetActive(true);

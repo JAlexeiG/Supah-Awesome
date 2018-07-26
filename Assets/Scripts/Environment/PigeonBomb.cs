@@ -29,6 +29,9 @@ public class PigeonBomb : MonoBehaviour
     SphereCollider sphereCollider;
 
     [SerializeField]
+    Transform raycastChecker;
+
+    [SerializeField]
     float distance;
 
     bool started;
@@ -46,6 +49,8 @@ public class PigeonBomb : MonoBehaviour
 
 	private void Update()
 	{
+        RaycastHit hit;
+
         if (!huntPlayer)
             playerTrans = playerTrans.transform;
         if (huntPlayer) //check if the player got close to pigeon
@@ -56,9 +61,17 @@ public class PigeonBomb : MonoBehaviour
         distance = Vector3.Distance(gameObject.transform.position, playerTrans.position);
         if (distance <= 18)
         {
-            huntPlayer = true;
-            if (!started)
-                TargetPlayer();
+            if (Physics.Raycast(raycastChecker.position, raycastChecker.forward, out hit))
+            {
+                Debug.Log(hit.transform.name);
+                Debug.DrawRay(raycastChecker.position, raycastChecker.forward);
+                if (hit.transform.name == "Player")
+                {
+                    huntPlayer = true;
+                    if (!started)
+                        TargetPlayer();
+                }
+            }
         }
 	}
 
