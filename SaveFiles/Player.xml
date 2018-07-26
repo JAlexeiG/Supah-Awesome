@@ -6,8 +6,13 @@
   <loadedAmmo>0</loadedAmmo>
   <totalAmmo>5</totalAmmo>
   <position>
+<<<<<<< HEAD
     <x>36.0003967</x>
     <y>17.6936741</y>
+=======
+    <x>-1.00821662</x>
+    <y>0.9179796</y>
+>>>>>>> f2cbf8b06614b345325d06872cce57a51e5a78da
     <z>0</z>
   </position>
   <velocity>
