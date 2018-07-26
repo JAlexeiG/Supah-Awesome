@@ -7,9 +7,9 @@ public class PigeonBomb : MonoBehaviour
     float speed;
 
     [SerializeField]
-    bool huntPlayer;
-    bool wasHit;    //so player can't 
-    bool isExploding; //variable to prevent it from moving while particle effects play
+    bool huntPlayer;  //to know when to start calling bombsaway function
+    bool wasHit;      //so player can't get hit twice while its invisible/exploding
+    bool isExploding; //to prevent it from moving while particle effects play
 
     [SerializeField]
     ParticleSystem explosionParticles;
@@ -17,44 +17,65 @@ public class PigeonBomb : MonoBehaviour
     [SerializeField]
     Transform playerTrans;
     [SerializeField]
-    Transform targetPosition;
+    Vector3 targetPosition;
 
+
+    [SerializeField]
+    GameObject pigeonDestination;
     [SerializeField]
     GameObject[] objects;
 
+    [SerializeField]
+    SphereCollider sphereCollider;
+
+    [SerializeField]
+    float distance;
+
+    bool started;
+
 	// Use this for initialization
-	void Start () 
+	private void Start () 
     {
         playerTrans = GameObject.FindWithTag("Player").transform;
-        speed = 6;
+        speed = 14;
         huntPlayer = false;
         wasHit = false;
         isExploding = false;
+        started = false;
 	}
 
-	void Update()
+	private void Update()
 	{
         if (!huntPlayer)
             playerTrans = playerTrans.transform;
-        if (huntPlayer)
+        if (huntPlayer) //check if the player got close to pigeon
         {
-            if (!isExploding)
+            if (!isExploding) //check if the pigeon is already exploding (stop moving if it has)
                 BombsAway();
+        }
+        distance = Vector3.Distance(gameObject.transform.position, playerTrans.position);
+        if (distance <= 18)
+        {
+            huntPlayer = true;
+            if (!started)
+                TargetPlayer();
         }
 	}
 
-    void TargetPlayer()
+	void TargetPlayer() //pick a target position
     {
-        targetPosition = playerTrans;
+        started = true;
+        FaceTarget();
+        targetPosition = playerTrans.position;
+        Instantiate(pigeonDestination, playerTrans.position, playerTrans.rotation);
     }
 
-	void BombsAway()
+	void BombsAway() //sends pigeon to target location
     {
-        Debug.Log("fucking chase him you stupid cunt");
-        gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, playerTrans.position, speed * Time.deltaTime);
+        gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, targetPosition, speed * Time.deltaTime);
     }
 
-    void DeactivateRenderers()
+    void DeactivateRenderers() // give illusion of pigeon disappearing while particles play
     {
         for (int i = 0; i < objects.Length; i++)
         {
@@ -62,9 +83,17 @@ public class PigeonBomb : MonoBehaviour
         }
     }
 
+    void FaceTarget()
+    {
+        Vector3 direction = (playerTrans.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, direction.y, direction.z));
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 30f);
+    }
+
     IEnumerator SelfDestruct()
     {
         isExploding = true;
+        sphereCollider.enabled = false;
         explosionParticles.Play();
         DeactivateRenderers();
         yield return new WaitForSeconds(3);
@@ -73,10 +102,9 @@ public class PigeonBomb : MonoBehaviour
 
 	private void OnTriggerEnter(Collider other)
 	{
-		if (other.tag == "Player")
+		if (other.tag == "Pigeon")
         {
-            TargetPlayer();
-            huntPlayer = true;
+            StartCoroutine(SelfDestruct());
         }
 	}
 
