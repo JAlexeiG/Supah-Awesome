@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Piston : MonoBehaviour {
+public class Piston : Power {
 
     [SerializeField]
     GameObject piston;
+    [SerializeField]
+    GameObject killingObject;
 
     [SerializeField]
     Transform position1;
@@ -19,7 +21,6 @@ public class Piston : MonoBehaviour {
     float toPos1Speed;
     float toPos2Speed;
     float toPos3Speed;
-
     float newSpeed;
 
     int state;
@@ -54,8 +55,21 @@ public class Piston : MonoBehaviour {
             newSpeed = toPos3Speed;
         }
 
+        if (isPowered)
+        {
+            piston.transform.position = Vector3.MoveTowards(piston.transform.position, newPosition.position, newSpeed * Time.fixedDeltaTime);
+            if (state == 3)
+                killingObject.SetActive(true);
+            else
+                killingObject.SetActive(false);
+        }
 
-        piston.transform.position = Vector3.MoveTowards(piston.transform.position, newPosition.position, newSpeed * Time.fixedDeltaTime);
+        else
+        {
+            killingObject.SetActive(false);
+            piston.transform.position = Vector3.MoveTowards(piston.transform.position, position1.position, toPos1Speed * Time.deltaTime);
+        }
+            
 	}
 
 	void MoveToFirstPosition()
