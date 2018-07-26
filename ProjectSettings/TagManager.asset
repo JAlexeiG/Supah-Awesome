@@ -17,6 +17,7 @@ TagManager:
   - CollectibleHealth
   - Spider
   - V Wall
+  - Pigeon
   layers:
   - Default
   - TransparentFX
