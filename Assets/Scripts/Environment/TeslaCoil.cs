@@ -66,9 +66,9 @@ public class TeslaCoil : Power {
         {
             if (Physics.Raycast(raycastChecker.position, raycastChecker.forward, out hit))
             {
-                electricityCharging.SetActive(true);
                 if (hit.transform.tag == "Player")
                 {
+                    electricityCharging.SetActive(true);
                     Debug.Log("Can see player");
                     if (!onCooldown)
                     {
@@ -77,13 +77,21 @@ public class TeslaCoil : Power {
                         electricityAttack.SetActive(true);
                     }
                 }
+                else
+                {
+                    electricityCharging.SetActive(false);
+                }
+            }
+            else
+            {
+                electricityCharging.SetActive(false);
             }
         }
         else
         {
             electricityCharging.SetActive(false);
         }
-	}
+    }
 
     void Attack()
     {

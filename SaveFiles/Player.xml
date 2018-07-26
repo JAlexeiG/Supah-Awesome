@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <XMLPlayer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <isMele>false</isMele>
+  <isMele>true</isMele>
   <health>100</health>
   <steam>50</steam>
   <loadedAmmo>0</loadedAmmo>
   <totalAmmo>5</totalAmmo>
   <position>
-    <x>-1.17099965</x>
-    <y>0.894211054</y>
+<<<<<<< HEAD
+    <x>36.0003967</x>
+    <y>17.6936741</y>
+=======
+    <x>-1.00821662</x>
+    <y>0.9179796</y>
+>>>>>>> f2cbf8b06614b345325d06872cce57a51e5a78da
     <z>0</z>
   </position>
   <velocity>
-    <x>-5.034189E-15</x>
-    <y>-1.9867926E-07</y>
+    <x>0</x>
+    <y>-1.81895373E-12</y>
     <z>0</z>
   </velocity>
 </XMLPlayer>
