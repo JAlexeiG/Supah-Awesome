@@ -4,46 +4,56 @@ using UnityEngine.UI;
 
 public class Chara : MonoBehaviour
 {
-    [SerializeField]
-    Transform SpawnPoint;
 
-    public ParticleSystem ammoPE;
-    public ParticleSystem healthPE;
+    /// <summary>
+    /// Controlls the entirety of the character, character physics, XML for the character, character spawn and character physics
+    /// </summary>
 
-    public float gunPos;
 
     [SerializeField]
-    private float feetDistance;
+    Transform SpawnPoint; // Spawn of the character
 
-    public float speed;
-    public float airSpeed;
-    public float jumpSpeed;
-    public float gravity;
-
-
-    private float OGravity;
-    private float OSpeed;
-    private Vector3 moveDirection;
-
-    private Rigidbody rb;
-
-    public float boostStrength;
-    public float gliderStrength;
+    public ParticleSystem ammoPE; // ammo particle system
+    public ParticleSystem healthPE; // health particle system
+    
+    public float gunPos; // controlls the z position of where the gun will shoot
 
     [SerializeField]
-    private bool grounded;
+    private float feetDistance; //No longer used// holds distance for raycast of distance for character to be considered grounded
+    
+
+    public float speed; // shows and holds current max speed
+    public float airSpeed; // shows and holds max air speed
+    public float jumpSpeed; // shows and holds initial jump velocity
+    public float gravity; //shows and holds current gravity
+
+
+    private float OGravity; //shows and holds base gravity
+    private float OSpeed; //shows and holds base speed
+    private Vector3 moveDirection; // holds movement direction vector
+
+    private Rigidbody rb; // character rigidbody
+
+    public float boostStrength; //No longer used//  holds double jump strength
+    public float gliderStrength; // strength of glider's anti-grav
+
     [SerializeField]
-    private bool grounded2;
+    private bool grounded; //For if player hitbox collides with anything
+
+    [SerializeField]
+    private bool grounded2; //For if player triggerbox collides with floor / box
 
 
     //Left and right for booster via arrow keys
     float up;
     float right;
     
+    // position of mouse for functions requiering mouse position
     private Vector3 mousePos;
-    private Vector3 dashPos;
+    private Vector3 dashPos; //No longer used//
     
     
+    // Current bullets in pack - max bullets allowed in pack - loaded bullets
     [SerializeField]
     private int playerBullets;
     [SerializeField]
@@ -52,79 +62,99 @@ public class Chara : MonoBehaviour
     private int bulletLoaded;
 
 
-    [SerializeField]
-    Transform tempMeleeAim;
-    [SerializeField]
-    Transform aimingOrigin;
-    [SerializeField]
-    Transform bulletSpawnPoint;
-    [SerializeField]
-    GameObject bulletPreFab;
-    [SerializeField]
-    GameObject crosshairPreFab;
 
     [SerializeField]
-    GameObject[] weaponComponents;
+    Transform meleAim; //Where the transfrom for the mele will aim
+    [SerializeField]
+    Transform aimingOrigin; // Transfrom for the mele
+    [SerializeField]
+    Transform bulletSpawnPoint; //Where player bullets will spawn
+    [SerializeField]
+    GameObject bulletPreFab; //Prefab of the bullet
+    [SerializeField]
+    GameObject crosshairPreFab; //Prefab of crosshair for shooting
+
+    //No longer used//
+    public bool dashing; // Whether or not player is dashing
+    public float dashLength; //How long the dash will be for
+    public float dashStrength; //Strength of velocity for dash
+    float dashTimer; //Countdown if currently dashing
 
 
-    public bool dashing;
-    public float dashLength;
-    public float dashStrength;
-    float dashTimer;
     [SerializeField]
-    private bool gliderStarted;
+    private bool gliderStarted; //Whether player has just started gliding
     [SerializeField]
-    private float minGliderSpeed;
+    private float minGliderSpeed; // The slowest possible speed the glider can be before no longer lowering speed
 
 
     //[SerializeField]
     // private bool canMove;
 
-    Transform trans;
+    Transform trans; //Transform of player
 
-    static bool onWall_;
+    static bool onWall_; //Whether player is on a magnetic wall
     [SerializeField]
-    private float rad_angle;
+    private float rad_angle; //Rad angle of player
     [SerializeField]
-    private float angle_;
+    private float angle_; //Deg angle of player
     [SerializeField]
-    private float rotationSpeed;
+    private float rotationSpeed; //Speed player rotates when rotating
 
-    public bool doubleJump;
-    bool isStunned;
-    bool isPaused;
-
-    [SerializeField]
-    private Text bulletText;
-
-
-    private bool isMele;
-    [SerializeField]
-    private float meleTime;
-    private float meleTimer;
-    [SerializeField]
-    private float meleCoolDown;
-    private float meleCoolDownTimer;
-    [SerializeField]
-    private GameObject meleBox;
+    public bool doubleJump;  //No longer used// Whether double jump has been used
+    bool isStunned; // Whether player is stunned
+    bool isPaused; // Whether game is paused
 
     [SerializeField]
-    private GameObject glider;
+    private Text bulletText; // Current text for information on bullets
+
+
+    private bool isMele; // Whether player is in mele form
+    [SerializeField]
+    private float meleTime; // Time mele hitbox exists
+    private float meleTimer; // Timer for meleTime
+    [SerializeField]
+    private float meleCoolDown; // Cooldown for mele attacks
+    private float meleCoolDownTimer; // Timer for meleCoolDown
+    [SerializeField]
+    private GameObject meleBox; //Hitbox for mele attack
+
+    // KEEP ALL ART HERE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ KEEP ALL ART HERE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ KEEP ALL ART HERE //
+
+    [SerializeField]
+    GameObject[] weaponComponents; //Weapon
+    [SerializeField]
+    private GameObject glider; //Glider 
+
+    // KEEP ALL ART HERE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ KEEP ALL ART HERE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ KEEP ALL ART HERE //
 
 
     void Start()
     {
+
+        //Sets everything to false initially 
         isMele = false;
         isStunned = false;
         isPaused = false;
-        feetDistance = 1.2f;
-        trans = GetComponent<Transform>();
 
+        onWall = false;
+        grounded = false;
+        grounded2 = false;
+        //canMove = true; //No longer used//
+
+        doubleJump = false;
+        gliderStarted = false;
+
+        feetDistance = 1.2f; //No longer used//
+
+        // Sets player transform and rigidbody
+        trans = GetComponent<Transform>();
         rb = GetComponent<Rigidbody>();
 
         if (!rb)
-        {
+        { 
+            //If someone forgets to add a rigidbody, adds and sets rigidbody
             gameObject.AddComponent<Rigidbody>();
+            rb = GetComponent<Rigidbody>();
         }
 
         //// Checks to make sure nothing is 0 and pre-sets the original speed and gravity
@@ -153,23 +183,17 @@ public class Chara : MonoBehaviour
         {
             dashTimer = 0.1f;
         }
+
+        //Pre-sets gravity
         OGravity = gravity;
         OSpeed = speed;
         ////
 
+        //Pre-sets bullets
         playerBullets = 5;
         bulletCap = 10;
         bulletLoaded = 0;
-
-        ////
-
-        onWall = false;
-        grounded = false;
-        grounded2 = false;
-        //canMove = true;
-
-        doubleJump = false;
-        gliderStarted = false;
+        
     }
 
     void Update()
@@ -177,11 +201,11 @@ public class Chara : MonoBehaviour
         /// DROP DEATH
         if (transform.position.y < -30 || transform.position.y > 150)
         {
-            HealthManager.instance.respawn();
+            HealthManager.instance.respawn(); //Auto-respawns character if hits a certain height
         }
 
-        bulletText.text = string.Format("Bullets Loaded: {0}\nAmmo: {1}" , bulletLoaded, playerBullets);
-        PlayerInput();
+        bulletText.text = string.Format("Bullets Loaded: {0}\nAmmo: {1}" , bulletLoaded, playerBullets); //Sets bullet text
+        PlayerInput(); // Activates inputs for player
         
 
         rb.AddRelativeForce(0, gravity * 2, 0, ForceMode.Acceleration); //Adds gravity downwards towards the player's feet and only towards the player's feet
@@ -193,6 +217,7 @@ public class Chara : MonoBehaviour
             playerBullets = bulletCap;
         }
 
+        // Shows whether player is in ranged or mele form
         if (isMele)
         {
             for (int i = 0; i < weaponComponents.Length; i++)
@@ -205,40 +230,51 @@ public class Chara : MonoBehaviour
         {
                 weaponComponents[i].SetActive(false);
         }
+
     }
 
 
-    public void fire()
+    public void fire(GameObject crosshair)
     {
+        // Spawns bullet, decreases current bullets and makes bullets automatically be destroyed
+        
         GameObject bullet = Instantiate(bulletPreFab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
         
-        bulletLoaded--;
 
-        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 10;
+        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 20;
 
         Destroy(bullet, 3.0f);
+
+        Destroy(crosshair, 0.5f); //Destroys the crosshair afterwards
+
+        bulletLoaded--;
     }
 
     public void addBullets(int x)
     {
-        playerBullets += x;
+        playerBullets += x; // Increases current bullets
     }
 
     public bool onWall
     {
+        //Changes and returns if player is on a wall
         get { return onWall_; }
         set { onWall_ = value; }
     }
     public float angle
     {
+        //Changes and returns player angle
         get { return angle_; }
         set { angle_ = value; }
     }
 
     public void setGrounded(bool set)
     {
+        //Sets player's grounded if on trigger
         grounded2 = set;
     }
+
+    //Sets player's grounded if collides with anything
     private void OnCollisionStay(Collision collision)
     {
             grounded = true;
@@ -248,47 +284,55 @@ public class Chara : MonoBehaviour
             grounded = false;
     }
     
+    //All information for player inputs
     void PlayerInput()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            //Pauses game
             SteamManager.instance.isPaused = !SteamManager.instance.isPaused;
             isPaused = !isPaused;
         }
 
-        if (!isStunned && !isPaused)
+        if (!isStunned && !isPaused) //If the player is not stunned and game is not paused
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
+                //Changes between mele / ranged
                 isMele = !isMele;
             }
 
-            if (isMele)
+            if (isMele) //When player is mele
             {
-                if (Input.GetButtonDown("Fire1") & meleCoolDownTimer <= 0)
+                if (Input.GetButtonDown("Fire1") & meleCoolDownTimer <= 0) //When player meles and is not on cooldown
                 {
-                    gunPos = -Camera.main.transform.position.z;
-                    meleTimer = meleTime;
+                    gunPos = -Camera.main.transform.position.z; //Sets the current transfrom of the camera
+
+                    meleTimer = meleTime; //Starts up mele cooldown
+
                     //Mouse position (+20 because camera is -20) to find where to shoot something
                     mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, trans.position.z + gunPos);
 
 
                     Vector3 potato = Camera.main.ScreenToWorldPoint(mousePos); //Gives world-coordinants of where you just fired
 
-                    GameObject crosshair = Instantiate(crosshairPreFab, potato, Quaternion.Euler(0, 0, 0));
+                    GameObject crosshair = Instantiate(crosshairPreFab, potato, Quaternion.Euler(0, 0, 0)); //Spawns crosshair at where you just fired
 
                     ///Updates for aiming
-                    tempMeleeAim.LookAt(crosshair.transform);
-                    Destroy(crosshair, 0.5f);
+                    meleAim.LookAt(crosshair.transform); //Makes mele look at the crosshair
+                    Destroy(crosshair, 0.5f); //Destroyes the crosshair
                 }
+
                 if (meleTimer > 0)
                 {
-                    meleBox.SetActive(true);
+                    //While the mele timer is up, sets mele hitbox, counts down timer and sets cooldown
+                    meleBox.SetActive(true); // 
                     meleTimer -= Time.deltaTime;
                     meleCoolDownTimer = meleCoolDown;
                 }
                 else
                 {
+                    // Starts cooldown and turns off mele hitbox
                     meleBox.SetActive(false);
                     meleCoolDownTimer -= Time.deltaTime;
                 }
@@ -296,13 +340,18 @@ public class Chara : MonoBehaviour
 
             if (!isMele)
             {
-                meleBox.SetActive(false);
+                //When player is ranged
+
+                meleBox.SetActive(false); //Just in case mele hitbox existed
+
                 //A bunch of stuff to know where mouse is
                 if (Input.GetButtonDown("Fire1"))
                 {
-                    gunPos = -Camera.main.transform.position.z;
+                    gunPos = -Camera.main.transform.position.z; //Position of camera
+
                     //// CHANGE THE SHOOTING THING TO BE NON-RELYANT ON THE CROSSHAIR
-                    if (bulletLoaded != 0)
+
+                    if (bulletLoaded > 0) //If player has bullets
                     {
 
 
@@ -312,48 +361,50 @@ public class Chara : MonoBehaviour
 
                         Vector3 potato = Camera.main.ScreenToWorldPoint(mousePos); //Gives world-coordinants of where you just fired
 
-                        GameObject crosshair = Instantiate(crosshairPreFab, potato, Quaternion.Euler(0, 0, 0));
+                        GameObject crosshair = Instantiate(crosshairPreFab, potato, Quaternion.Euler(0, 0, 0)); //Spawns crosshair
 
                         ///Updates for aiming
-                        aimingOrigin.LookAt(crosshair.transform);
+                        aimingOrigin.LookAt(crosshair.transform); //Makes aim look at crosshair
 
                         //POTATOES// 
-                        int layercast = ~(1 << 11);
-                        RaycastHit hit;
-                        Ray newRay = new Ray(aimingOrigin.position, aimingOrigin.forward);
+
+                        //Updates to prevent player from shooting into an object (that is not an enemy)
+
+                        int layercast = ~(1 << 11); //Sets a layermask
+
+                        RaycastHit hit; //Info of object hit
+
+                        Ray newRay = new Ray(aimingOrigin.position, aimingOrigin.forward); //Ray for raycast
                         if (Physics.Raycast(newRay, out hit, 2.2f, layercast))
                         {
-                            Debug.Log("Object in the way of shooting: " + hit.transform.name);
+                            Debug.Log("Object in the way of shooting: " + hit.transform.name); //Tells you if something is in the way
                         }
                         else
                         {
-
-                            GameObject bullet = Instantiate(bulletPreFab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-
-                            bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 20;
-
-                            Destroy(bullet, 3.0f);
-                            Destroy(crosshair, 0.5f);
-
-                            bulletLoaded--;
+                            fire(crosshair); //If nothing is in the way, shoot
                         }
                     }
                     else
                     {
-                        Debug.Log("You have no bullets loaded, re-loading");
+                        //If player has no bullets
+
+                        Debug.Log("You have no bullets loaded, re-loading"); //Tries to reload
+
                         if (playerBullets <= 0)
                         {
-                            Debug.Log("You have no bullets left");
+                            Debug.Log("You have no bullets left"); //If no bullets available, tells the player he has no bullets left
                         }
                         else
                         {
                             if (playerBullets < 5)
                             {
+                                //If the player cannot reload all bullets, only reloads current bullets
                                 bulletLoaded = playerBullets;
                                 playerBullets = 0;
                             }
                             else
                             {
+                                // Reloads 5 bullets
                                 playerBullets -= 5;
                                 bulletLoaded += 5;
                             }
