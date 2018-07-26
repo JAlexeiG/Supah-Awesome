@@ -78,12 +78,16 @@ public class TeslaCoil : Power {
                     }
                 }
             }
+            else
+            {
+                electricityCharging.SetActive(false);
+            }
         }
         else
         {
             electricityCharging.SetActive(false);
         }
-	}
+    }
 
     void Attack()
     {
