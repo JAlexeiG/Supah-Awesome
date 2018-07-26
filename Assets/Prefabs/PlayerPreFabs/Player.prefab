@@ -726,7 +726,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1272772298425120}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 23.38, y: 4.79, z: 0}
+  m_LocalPosition: {x: -1.1709996, y: 1.0700004, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4601445301478528}
@@ -2243,18 +2243,13 @@ MonoBehaviour:
   playerBullets: 0
   bulletCap: 0
   bulletLoaded: 0
-  tempMeleeAim: {fileID: 4882113903068942}
+  meleAim: {fileID: 4882113903068942}
   aimingOrigin: {fileID: 4568060522022106}
   bulletSpawnPoint: {fileID: 4634483718654312}
   bulletPreFab: {fileID: 1056223846333592, guid: e39ae98a82c33ce4a82adee3c77aa6a2,
     type: 2}
   crosshairPreFab: {fileID: 1566234836182138, guid: 05cc471978a18e1499b2e04853696c24,
     type: 2}
-  weaponComponents:
-  - {fileID: 1140880096846246}
-  - {fileID: 1645862653441434}
-  - {fileID: 1736234729276634}
-  - {fileID: 1859474699544438}
   dashing: 0
   dashLength: 0.25
   dashStrength: 0
@@ -2268,6 +2263,11 @@ MonoBehaviour:
   meleTime: 0.2
   meleCoolDown: 0
   meleBox: {fileID: 1864507170043914}
+  weaponComponents:
+  - {fileID: 1140880096846246}
+  - {fileID: 1645862653441434}
+  - {fileID: 1736234729276634}
+  - {fileID: 1859474699544438}
   glider: {fileID: 1411588868519448}
 --- !u!136 &136513694222743058
 CapsuleCollider:
