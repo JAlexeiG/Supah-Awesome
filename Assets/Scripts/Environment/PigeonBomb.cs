@@ -5,33 +5,96 @@ using UnityEngine;
 public class PigeonBomb : MonoBehaviour 
 {
     float speed;
-    GameObject player;
 
+    [SerializeField]
+    bool huntPlayer;
+    bool wasHit;    //so player can't 
+    bool isExploding; //variable to prevent it from moving while particle effects play
+
+    [SerializeField]
+    ParticleSystem explosionParticles;
+
+    [SerializeField]
     Transform playerTrans;
+    [SerializeField]
     Transform targetPosition;
+
+    [SerializeField]
+    GameObject[] objects;
 
 	// Use this for initialization
 	void Start () 
     {
-        player = GameObject.FindWithTag("Player");
+        playerTrans = GameObject.FindWithTag("Player").transform;
+        speed = 6;
+        huntPlayer = false;
+        wasHit = false;
+        isExploding = false;
 	}
 
 	void Update()
 	{
-        playerTrans = playerTrans.transform;
+        if (!huntPlayer)
+            playerTrans = playerTrans.transform;
+        if (huntPlayer)
+        {
+            if (!isExploding)
+                BombsAway();
+        }
 	}
+
+    void TargetPlayer()
+    {
+        targetPosition = playerTrans;
+    }
 
 	void BombsAway()
     {
-        targetPosition = playerTrans;
-        this.gameObject.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, playerTrans.position, speed * Time.deltaTime);
+        Debug.Log("fucking chase him you stupid cunt");
+        gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, playerTrans.position, speed * Time.deltaTime);
+    }
+
+    void DeactivateRenderers()
+    {
+        for (int i = 0; i < objects.Length; i++)
+        {
+            objects[i].SetActive(false);
+        }
+    }
+
+    IEnumerator SelfDestruct()
+    {
+        isExploding = true;
+        explosionParticles.Play();
+        DeactivateRenderers();
+        yield return new WaitForSeconds(3);
+        Destroy(gameObject);
     }
 
 	private void OnTriggerEnter(Collider other)
 	{
 		if (other.tag == "Player")
         {
-            BombsAway();
+            TargetPlayer();
+            huntPlayer = true;
         }
+	}
+
+	private void OnCollisionEnter(Collision collision)
+	{
+		if (collision.gameObject.tag == "Player")
+        {
+            if (!wasHit)
+            {
+                StartCoroutine(SelfDestruct());
+                HealthManager.instance.health -= 20;
+                wasHit = true;
+            }
+        }
+
+        else
+        {
+            StartCoroutine(SelfDestruct());
+        } 
 	}
 }

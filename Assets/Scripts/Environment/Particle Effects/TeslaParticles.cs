@@ -33,8 +33,6 @@ public class TeslaParticles : MonoBehaviour {
 
         int totalParticles = pSystem.GetParticles(particles);
 
-        Debug.Log(totalParticles);
-
         for(int i = 0; i < totalParticles;i++)
         {
             Vector3 normalVelocity = (playerTransform.position - particles[i].position).normalized;

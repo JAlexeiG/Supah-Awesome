@@ -10,4 +10,9 @@ public class InstantDeath : MonoBehaviour {
             HealthManager.instance.health = 0;
         }
     }
+
+    public void KillPlayer()
+    {
+        HealthManager.instance.health = 0;
+    }
 }
