@@ -81,7 +81,7 @@ public class Piston : Power {
     void MovetoSecondPosition()
     {
         state = 2;
-        Invoke("MoveToThirdPosition", 2.5f);
+        Invoke("MoveToThirdPosition", 2f);
     }
 
     void MoveToThirdPosition()
