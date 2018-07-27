@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 198304526606543258}
   - component: {fileID: 199765977283152038}
   m_Layer: 0
-  m_Name: Electricity Beam
+  m_Name: electricity beam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
