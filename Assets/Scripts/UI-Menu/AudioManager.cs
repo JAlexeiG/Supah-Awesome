@@ -15,10 +15,23 @@ public class AudioManager : MonoBehaviour {
     //public bool playMenuTheme;
     //public bool playGameTheme;
     bool musicPlaying;
-    
+
+    static AudioManager _instance = null;
+
     // Use this for initialization
     void Awake () {
-        DontDestroyOnLoad(this.gameObject);
+        DontDestroyOnLoad(this);
+
+        if (!instance)
+        {
+            instance = this;
+            DontDestroyOnLoad(this);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
         activeAudio = new List<string>();
         foreach (Sound s in sounds)
         {
@@ -209,5 +222,10 @@ public class AudioManager : MonoBehaviour {
             activeAudio.Clear();
         }
     }
-    
+    public static AudioManager instance
+    {
+        get;
+        set;
+    }
+
 }

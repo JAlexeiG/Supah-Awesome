@@ -9,13 +9,13 @@ public class PauseMenu : MonoBehaviour {
 
     public GameObject pauseMenuUI;
     public GameObject settingsPanel;
-    Scene activeScene;
+    public AudioManager audioManager;
 
     private void Start()
     {
         pauseMenuUI.SetActive(false);
         settingsPanel.SetActive(false);
-    activeScene = SceneManager.GetActiveScene();
+        audioManager = GetComponent<AudioManager>();
     }
 
     // Update is called once per frame
@@ -26,9 +26,14 @@ public class PauseMenu : MonoBehaviour {
             if (GameIsPaused)
             {
                 Resume();
+                //audioManager.Play("Click");     pause sound
             }
             else
+            {
                 Pause();
+                //audioManager.Play("Click");     pause sound
+            }
+
         }
 	}
     public void Resume()
@@ -46,13 +51,15 @@ public class PauseMenu : MonoBehaviour {
 
     public void Restart()
     {
-        SceneManager.LoadScene(activeScene.name);
+        SceneManager.LoadSceneAsync(1);
+        Resume();
     }
 
 
     public void Menu()
     {
-        SceneManager.LoadScene(0);
+        Resume();
+        SceneManager.LoadSceneAsync(0);
     }
 
     public void Settings()

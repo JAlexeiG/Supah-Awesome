@@ -30,6 +30,8 @@ public class XMLCheckpointManager : MonoBehaviour
 
     private void Awake()
     {
+        DontDestroyOnLoad(this);
+
         checkpointNumber = -1;
         if (!instance)
         {
