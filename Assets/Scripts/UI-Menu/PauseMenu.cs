@@ -9,13 +9,11 @@ public class PauseMenu : MonoBehaviour {
 
     public GameObject pauseMenuUI;
     public GameObject settingsPanel;
-    public AudioManager audioManager;
 
     private void Start()
     {
         pauseMenuUI.SetActive(false);
         settingsPanel.SetActive(false);
-        audioManager = GetComponent<AudioManager>();
     }
 
     // Update is called once per frame
@@ -25,7 +23,7 @@ public class PauseMenu : MonoBehaviour {
             Debug.Log("Escape is pressed.");
             if (GameIsPaused)
             {
-                Resume();
+                
                 //audioManager.Play("Click");     pause sound
             }
             else
@@ -48,11 +46,15 @@ public class PauseMenu : MonoBehaviour {
         Time.timeScale = 0f;
         GameIsPaused = true;
     }
-
+    public void Unpause()
+    {
+        Resume();
+    }
     public void Restart()
     {
-        SceneManager.LoadSceneAsync(1);
         Resume();
+        SceneManager.LoadSceneAsync(1);
+        
     }
 
 
