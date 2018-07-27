@@ -128,12 +128,7 @@ public class XMLCheckpointManager : MonoBehaviour
         switchWriter.Close();
 
     }
-
-    private void OnLevelWasLoaded(int level)
-    {
-        StartCoroutine("LevelBuffer");
-
-    }
+    
 
     IEnumerator LevelBuffer()
     {
@@ -212,7 +207,7 @@ public class XMLCheckpointManager : MonoBehaviour
 
             GameManager.instance.loadSave(sceneLoad);
 
-            OnLevelWasLoaded(sceneLoad.sceneNumber);
+            StartCoroutine("LevelBuffer");
         }
     }
 
@@ -286,6 +281,7 @@ public class XMLCheckpointManager : MonoBehaviour
     {
         if (Directory.Exists("SaveFiles"))
         {
+            Debug.Log("Deleting save file");
             delete();
         }
         SceneManager.LoadScene(1);
