@@ -36,7 +36,7 @@ public class XMLCheckpointManager : MonoBehaviour
         if (!instance)
         {
             instance = this;
-            DontDestroyOnLoad(this);
+            //DontDestroyOnLoad(this);
         }
         else
         {
