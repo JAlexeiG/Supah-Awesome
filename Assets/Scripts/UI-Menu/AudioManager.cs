@@ -114,12 +114,12 @@ public class AudioManager : MonoBehaviour {
     }
     public void PlayTheme()
     {
-        if (activeScene.name == "MainMenu")
+        //if (activeScene.name == "MainMenu")
         {
             Play("Menu Theme");
             //musicPlaying = true;
         }
-        if (activeScene.name == "Main")
+        //if (activeScene.name == "Main")
         {
             Play("Game Theme");
             //musicPlaying = true;
@@ -134,7 +134,7 @@ public class AudioManager : MonoBehaviour {
         
         if (s == null)
         {
-            Debug.LogWarning("Sound: " + name + " not found.");
+            //Debug.LogWarning("Sound: " + name + " not found.");
             return;
         }
         

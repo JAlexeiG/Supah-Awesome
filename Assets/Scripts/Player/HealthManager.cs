@@ -17,6 +17,7 @@ public class HealthManager : MonoBehaviour {
 
     [SerializeField]
     Transform SpawnPoint;
+    
 
     // Use this for initialization
     void Start ()
@@ -37,6 +38,7 @@ public class HealthManager : MonoBehaviour {
             maxHealth = 100;
         }
         healthScale = healthBar.sizeDelta.x / health;
+
     }
 	
 	// Update is called once per frame

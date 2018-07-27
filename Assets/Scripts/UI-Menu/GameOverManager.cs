@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class GameOverManager : MonoBehaviour {
 
-    public float restartDelay = 5f;
     public HealthManager health;
-    Animator anim;
+    public float restartDelay = 5f;    
+    public Animator anim;
     float restartTimer;
 
 
