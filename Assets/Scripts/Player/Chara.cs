@@ -294,7 +294,7 @@ public class Chara : MonoBehaviour
             isPaused = !isPaused;
         }
 
-        if (!isStunned && !isPaused) //If the player is not stunned and game is not paused
+        if (!isStunned) //If the player is not stunned and game is not paused
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
