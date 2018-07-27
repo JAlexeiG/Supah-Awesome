@@ -279,6 +279,24 @@ public class XMLCheckpointManager : MonoBehaviour
             Destroy(checkpoints[checkpointNumber]);
         }
     }
+
+    public void newGame()
+    {
+        if (Directory.Exists("SaveFiles"))
+        {
+            delete();
+        }
+        SceneManager.LoadScene(1);
+    }
+
+    public void loadGame()
+    {
+        if (Directory.Exists("SaveFiles"))
+        {
+            loadScene();
+        }
+    }
+
     public static XMLCheckpointManager instance
     {
         get;

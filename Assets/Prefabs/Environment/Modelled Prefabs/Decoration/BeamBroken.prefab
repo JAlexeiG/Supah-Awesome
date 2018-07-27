@@ -22,10 +22,10 @@ GameObject:
   - component: {fileID: 33969512326784028}
   - component: {fileID: 23871784556870550}
   - component: {fileID: 95039081603216188}
-  - component: {fileID: 64973657998845546}
+  - component: {fileID: 65146918755168520}
   m_Layer: 0
   m_Name: BeamBroken
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,13 +36,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1606487831838526}
-  m_LocalRotation: {x: 0.5000001, y: -0.49999988, z: 0.49999994, w: 0.50000006}
-  m_LocalPosition: {x: 11.930291, y: 2.73, z: 0.54537904}
-  m_LocalScale: {x: 1, y: 0.68320304, z: 0.7881623}
+  m_LocalRotation: {x: -0.4325326, y: 0.5552447, z: -0.4285276, w: -0.5665536}
+  m_LocalPosition: {x: -19.01, y: 24.88, z: 0}
+  m_LocalScale: {x: 1, y: 0.6832004, z: 0.7881602}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 75.012, y: 272.047, z: 1.1620001}
 --- !u!23 &23871784556870550
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -84,20 +84,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1606487831838526}
   m_Mesh: {fileID: 4300000, guid: 0e57b9e432f004526b7fff8bb64e3bd2, type: 3}
---- !u!64 &64973657998845546
-MeshCollider:
+--- !u!65 &65146918755168520
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1606487831838526}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 784c3c2bb47820e47903320cef3037c9, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: 0e57b9e432f004526b7fff8bb64e3bd2, type: 3}
+  m_Size: {x: 0.67819524, y: 1.3611966, z: 5.344526}
+  m_Center: {x: -0.0255327, y: 0.007975523, z: 0.19060615}
 --- !u!95 &95039081603216188
 Animator:
   serializedVersion: 3

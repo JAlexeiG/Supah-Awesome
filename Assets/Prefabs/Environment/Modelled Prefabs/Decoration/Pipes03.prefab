@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4555521243733902}
   - component: {fileID: 33966517812784288}
   - component: {fileID: 23302202119940854}
-  - component: {fileID: 64205218249786448}
   m_Layer: 0
   m_Name: Pipes03
   m_TagString: Untagged
@@ -35,13 +34,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1308605375235070}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 11.103224, y: 3.34, z: 0}
+  m_LocalRotation: {x: -0.50000453, y: 0.49999568, z: 0.49999568, w: -0.5000041}
+  m_LocalPosition: {x: 11.16, y: -5.03, z: 4.371}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -180.001, y: 89.99999, z: 89.99999}
 --- !u!23 &23302202119940854
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -82,18 +81,4 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1308605375235070}
-  m_Mesh: {fileID: 4300000, guid: 5a351ee41cafa401d9564cc8ec554b1a, type: 3}
---- !u!64 &64205218249786448
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1308605375235070}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 5a351ee41cafa401d9564cc8ec554b1a, type: 3}

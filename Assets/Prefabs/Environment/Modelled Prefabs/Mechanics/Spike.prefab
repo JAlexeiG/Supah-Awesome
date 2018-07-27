@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: 33118186407114746}
   - component: {fileID: 23911689839590182}
   - component: {fileID: 95870138947392192}
-  - component: {fileID: 64834083337446292}
   - component: {fileID: 114366615632245442}
+  - component: {fileID: 65575654535198802}
   m_Layer: 0
   m_Name: Spike
   m_TagString: Untagged
@@ -37,8 +37,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1090763437194074}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 10.497641, y: 0.5, z: 0.116461754}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -27.497852, y: -9.7136545, z: -0.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -85,8 +85,8 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1090763437194074}
   m_Mesh: {fileID: 4300000, guid: 8b7333b3ce4ec4f30896b8a4052a7cbf, type: 3}
---- !u!64 &64834083337446292
-MeshCollider:
+--- !u!65 &65575654535198802
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -95,10 +95,8 @@ MeshCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 1
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: 8b7333b3ce4ec4f30896b8a4052a7cbf, type: 3}
+  m_Size: {x: 0.5075283, y: 0.5355953, z: 0.5066445}
+  m_Center: {x: -0.0035524368, y: -0.024942309, z: 0.26467425}
 --- !u!95 &95870138947392192
 Animator:
   serializedVersion: 3

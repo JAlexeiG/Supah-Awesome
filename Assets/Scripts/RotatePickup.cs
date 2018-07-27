@@ -6,6 +6,6 @@ public class RotatePickup : MonoBehaviour
 {
 	private void FixedUpdate()
 	{
-        transform.Rotate(0, Time.fixedDeltaTime * 135, 0);
+        transform.Rotate(0, 0, Time.fixedDeltaTime * 135);
 	}
 }
