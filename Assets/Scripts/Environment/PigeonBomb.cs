@@ -64,8 +64,8 @@ public class PigeonBomb : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(raycastChecker.position, raycastChecker.forward, out hit))
             {
-            Debug.Log(hit.transform.name);
-            Debug.DrawRay(raycastChecker.position, raycastChecker.forward);
+            //Debug.Log(hit.transform.name);
+            //Debug.DrawRay(raycastChecker.position, raycastChecker.forward);
             if (hit.transform.name == "Player")
             {
                     huntPlayer = true;

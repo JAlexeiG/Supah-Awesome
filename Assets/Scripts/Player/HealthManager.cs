@@ -26,7 +26,7 @@ public class HealthManager : MonoBehaviour {
 
         foreach (Transform trans in playerTrans)
         {
-            Debug.Log(trans.name);
+            //Debug.Log(trans.name);
         }
         instance = this;
         if (health <= 0)

@@ -46,7 +46,7 @@ public class SwitchSave : MonoBehaviour {
             //Gets specific info from the save file
             foreach(string itemName in savedSwitches.nameSwitches)
             {
-                Debug.Log(itemName + " " + item.name);
+                //Debug.Log(itemName + " " + item.name);
                 //Gets specific info from the game and checks if the object is correct
                 if (item.name == itemName)
                 {
