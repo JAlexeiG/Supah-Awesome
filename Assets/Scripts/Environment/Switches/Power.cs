@@ -16,7 +16,7 @@ public class Power : MonoBehaviour {
     public void PowerSwitch(bool x)
     {
         isPowered = x;
-        Debug.Log(gameObject + " power has been switched to " + x + "Using the 2nd power switch option");
+        //Debug.Log(gameObject + " power has been switched to " + x + "Using the 2nd power switch option");
 
     }
     
