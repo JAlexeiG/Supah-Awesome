@@ -18,6 +18,8 @@ public class XMLCheckpointManager : MonoBehaviour
 
     public bool deleteXML;
 
+    private bool deleteBool;
+
     [SerializeField]
     private GameObject[] checkpoints;
 
@@ -55,6 +57,11 @@ public class XMLCheckpointManager : MonoBehaviour
         {
             delete();
             deleteXML = false;
+        }
+        if(Directory.Exists("SaveFiles") && deleteBool)
+        {
+            Directory.Delete("SaveFiles");
+            deleteBool = false;
         }
     }
 
@@ -227,12 +234,14 @@ public class XMLCheckpointManager : MonoBehaviour
                 dir.Delete(true);
             }
 
+            deleteBool = true;
+
             StartCoroutine("SaveBuffer");
         }
     }
     IEnumerator SaveBuffer()
     {
-        yield return new WaitForSeconds(0.00005f);
+        yield return new WaitForSeconds(0.01f);
         Directory.Delete("SaveFiles");
     }
 
