@@ -6,13 +6,22 @@
   <loadedAmmo>0</loadedAmmo>
   <totalAmmo>10</totalAmmo>
   <position>
+<<<<<<< HEAD
     <x>64.81904</x>
     <y>34.1936531</y>
+=======
+    <x>-0.719880939</x>
+    <y>0.917979538</y>
+>>>>>>> 462eb3a808d4a852f17b5bc95a6d67962d886243
     <z>0</z>
   </position>
   <velocity>
     <x>0</x>
+<<<<<<< HEAD
     <y>-1.81895373E-12</y>
+=======
+    <y>-7.15255737E-06</y>
+>>>>>>> 462eb3a808d4a852f17b5bc95a6d67962d886243
     <z>0</z>
   </velocity>
 </XMLPlayer>

@@ -18,6 +18,8 @@ public class XMLCheckpointManager : MonoBehaviour
 
     public bool deleteXML;
 
+    private bool deleteBool;
+
     [SerializeField]
     private GameObject[] checkpoints;
 
@@ -30,13 +32,13 @@ public class XMLCheckpointManager : MonoBehaviour
 
     private void Awake()
     {
-        //DontDestroyOnLoad(this);
+        DontDestroyOnLoad(this);
 
         checkpointNumber = -1;
         if (!instance)
         {
             instance = this;
-            //DontDestroyOnLoad(this);
+            DontDestroyOnLoad(this);
         }
         else
         {
@@ -56,22 +58,27 @@ public class XMLCheckpointManager : MonoBehaviour
             delete();
             deleteXML = false;
         }
+        if(Directory.Exists("SaveFiles") && deleteBool)
+        {
+            Directory.Delete("SaveFiles");
+            deleteBool = false;
+        }
     }
 
     public void save()
     {
         if (!Directory.Exists("SaveFiles"))
         {
-            Debug.Log("Making New Directory: Save Files");
+            //Debug.Log("Making New Directory: Save Files");
             Directory.CreateDirectory("SaveFiles");
-            Debug.Log("Making New Directory: BoxSaves");
+            //Debug.Log("Making New Directory: BoxSaves");
             Directory.CreateDirectory("SaveFiles/BoxSaves");
         }
         else
         {
             if (!Directory.Exists("SaveFiles/BoxSaves"))
             {
-                Debug.Log("Making New Directory: BoxSaves");
+                //Debug.Log("Making New Directory: BoxSaves");
                 Directory.CreateDirectory("SaveFiles/BoxSaves");
             }
         }
@@ -132,10 +139,10 @@ public class XMLCheckpointManager : MonoBehaviour
 
     IEnumerator LevelBuffer()
     {
-        Debug.Log("Starting wait");
+        //Debug.Log("Starting wait");
         yield return new WaitForSeconds(0.00005f);
 
-        Debug.Log("Wait finished");
+        //Debug.Log("Wait finished");
 
         
         // FOR OBJECTS
@@ -148,7 +155,7 @@ public class XMLCheckpointManager : MonoBehaviour
             {
                 if (box.name == boxCheck.name)
                 {
-                    Debug.Log(box.name + " " + boxCheck.name);
+                    //Debug.Log(box.name + " " + boxCheck.name);
                     XmlSerializer boxSerializer = new XmlSerializer(typeof(BoxSave.Box));
                     StreamReader boxReader = new StreamReader("SaveFiles/BoxSaves/" + box.name + ".xml");
                     BoxSave.Box loadedBox = (BoxSave.Box)boxSerializer.Deserialize(boxReader.BaseStream);
@@ -174,7 +181,7 @@ public class XMLCheckpointManager : MonoBehaviour
             // FOR PLAYER //
             player = FindObjectOfType<Chara>();
 
-            Debug.Log(player.transform.name);
+            //Debug.Log(player.transform.name);
             XmlSerializer playerSerializer = new XmlSerializer(typeof(Chara.XMLPlayer));
             StreamReader playerReader = new StreamReader("SaveFiles/Player.xml");
             Chara.XMLPlayer loadedPlayer = (Chara.XMLPlayer)playerSerializer.Deserialize(playerReader.BaseStream);
@@ -232,7 +239,7 @@ public class XMLCheckpointManager : MonoBehaviour
     }
     IEnumerator SaveBuffer()
     {
-        yield return new WaitForSeconds(0.00005f);
+        yield return new WaitForSeconds(0.01f);
         Directory.Delete("SaveFiles");
     }
 
