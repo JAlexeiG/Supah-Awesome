@@ -737,7 +737,7 @@ Prefab:
     - target: {fileID: 108502182767982524, guid: bd0586980cb5441dd983a3b964504095,
         type: 2}
       propertyPath: m_Range
-      value: 1.5
+      value: 6.5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Range
@@ -1559,13 +1559,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 67369147}
-  m_LocalRotation: {x: -0.024770152, y: -0.25873387, z: -0.0066371495, w: 0.9656082}
+  m_LocalRotation: {x: 0.39813673, y: -0.23581049, z: 0.10668034, w: 0.8800568}
   m_LocalPosition: {x: -18.2, y: 69.8, z: 29.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 20
-  m_LocalEulerAnglesHint: {x: -2.9390001, y: -30.000002, z: 0}
+  m_LocalEulerAnglesHint: {x: 48.684002, y: -30.000002, z: 0}
 --- !u!1001 &78156015
 Prefab:
   m_ObjectHideFlags: 0
@@ -8200,72 +8200,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 17
       objectReference: {fileID: 0}
-    - target: {fileID: 4610518247078710, guid: bd0586980cb5441dd983a3b964504095, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610518247078710, guid: bd0586980cb5441dd983a3b964504095, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610518247078710, guid: bd0586980cb5441dd983a3b964504095, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Intensity
-      value: 28.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Range
-      value: 8.21
-      objectReference: {fileID: 0}
-    - target: {fileID: 108502182767982524, guid: bd0586980cb5441dd983a3b964504095,
-        type: 2}
-      propertyPath: m_Range
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Range
-      value: 6.83
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.r
-      value: 0.9764706
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.b
-      value: 0.5137255
-      objectReference: {fileID: 0}
-    - target: {fileID: 108502182767982524, guid: bd0586980cb5441dd983a3b964504095,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 0.97590005
-      objectReference: {fileID: 0}
-    - target: {fileID: 108502182767982524, guid: bd0586980cb5441dd983a3b964504095,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0.5147059
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.r
-      value: 0.9764706
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.b
-      value: 0.5137255
-      objectReference: {fileID: 0}
     - target: {fileID: 1066144421059398, guid: bd0586980cb5441dd983a3b964504095, type: 2}
       propertyPath: m_Name
       value: Chandelier (17)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610518247078710, guid: bd0586980cb5441dd983a3b964504095, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -3.9650002
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bd0586980cb5441dd983a3b964504095, type: 2}
@@ -14718,65 +14655,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 4610518247078710, guid: bd0586980cb5441dd983a3b964504095, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610518247078710, guid: bd0586980cb5441dd983a3b964504095, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610518247078710, guid: bd0586980cb5441dd983a3b964504095, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Intensity
-      value: 28.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Range
-      value: 12.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 108502182767982524, guid: bd0586980cb5441dd983a3b964504095,
-        type: 2}
-      propertyPath: m_Range
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Range
-      value: 8.88
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.r
-      value: 0.9764706
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.b
-      value: 0.5137255
-      objectReference: {fileID: 0}
-    - target: {fileID: 108502182767982524, guid: bd0586980cb5441dd983a3b964504095,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 0.97590005
-      objectReference: {fileID: 0}
-    - target: {fileID: 108502182767982524, guid: bd0586980cb5441dd983a3b964504095,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0.5147059
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.r
-      value: 0.9764706
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.b
-      value: 0.5137255
-      objectReference: {fileID: 0}
     - target: {fileID: 1066144421059398, guid: bd0586980cb5441dd983a3b964504095, type: 2}
       propertyPath: m_Name
       value: Chandelier (8)
@@ -15636,6 +15514,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4015113838542168, guid: 5f7cf78cd9a11461db502fba054f39f3, type: 2}
       propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735921476132770, guid: 5f7cf78cd9a11461db502fba054f39f3, type: 2}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -16669,65 +16551,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 14
       objectReference: {fileID: 0}
-    - target: {fileID: 4610518247078710, guid: bd0586980cb5441dd983a3b964504095, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610518247078710, guid: bd0586980cb5441dd983a3b964504095, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610518247078710, guid: bd0586980cb5441dd983a3b964504095, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Intensity
-      value: 28.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Range
-      value: 8.33
-      objectReference: {fileID: 0}
-    - target: {fileID: 108502182767982524, guid: bd0586980cb5441dd983a3b964504095,
-        type: 2}
-      propertyPath: m_Range
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Range
-      value: 6.43
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.r
-      value: 0.9764706
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.b
-      value: 0.5137255
-      objectReference: {fileID: 0}
-    - target: {fileID: 108502182767982524, guid: bd0586980cb5441dd983a3b964504095,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 0.97590005
-      objectReference: {fileID: 0}
-    - target: {fileID: 108502182767982524, guid: bd0586980cb5441dd983a3b964504095,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0.5147059
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.r
-      value: 0.9764706
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.b
-      value: 0.5137255
-      objectReference: {fileID: 0}
     - target: {fileID: 1066144421059398, guid: bd0586980cb5441dd983a3b964504095, type: 2}
       propertyPath: m_Name
       value: Chandelier (14)
@@ -17362,72 +17185,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 4610518247078710, guid: bd0586980cb5441dd983a3b964504095, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610518247078710, guid: bd0586980cb5441dd983a3b964504095, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610518247078710, guid: bd0586980cb5441dd983a3b964504095, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Intensity
-      value: 28.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Range
-      value: 3.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 108502182767982524, guid: bd0586980cb5441dd983a3b964504095,
-        type: 2}
-      propertyPath: m_Range
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Range
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.r
-      value: 0.9764706
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.b
-      value: 0.5137255
-      objectReference: {fileID: 0}
-    - target: {fileID: 108502182767982524, guid: bd0586980cb5441dd983a3b964504095,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 0.97590005
-      objectReference: {fileID: 0}
-    - target: {fileID: 108502182767982524, guid: bd0586980cb5441dd983a3b964504095,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0.5147059
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.r
-      value: 0.9764706
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.b
-      value: 0.5137255
-      objectReference: {fileID: 0}
     - target: {fileID: 1066144421059398, guid: bd0586980cb5441dd983a3b964504095, type: 2}
       propertyPath: m_Name
       value: Chandelier (9)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1066144421059398, guid: bd0586980cb5441dd983a3b964504095, type: 2}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bd0586980cb5441dd983a3b964504095, type: 2}
@@ -17548,65 +17308,6 @@ Prefab:
     - target: {fileID: 4610518247078710, guid: bd0586980cb5441dd983a3b964504095, type: 2}
       propertyPath: m_RootOrder
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610518247078710, guid: bd0586980cb5441dd983a3b964504095, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610518247078710, guid: bd0586980cb5441dd983a3b964504095, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610518247078710, guid: bd0586980cb5441dd983a3b964504095, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Intensity
-      value: 28.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Range
-      value: 5.56
-      objectReference: {fileID: 0}
-    - target: {fileID: 108502182767982524, guid: bd0586980cb5441dd983a3b964504095,
-        type: 2}
-      propertyPath: m_Range
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Range
-      value: 5.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.r
-      value: 0.9764706
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.b
-      value: 0.5137255
-      objectReference: {fileID: 0}
-    - target: {fileID: 108502182767982524, guid: bd0586980cb5441dd983a3b964504095,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 0.97590005
-      objectReference: {fileID: 0}
-    - target: {fileID: 108502182767982524, guid: bd0586980cb5441dd983a3b964504095,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0.5147059
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.r
-      value: 0.9764706
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.b
-      value: 0.5137255
       objectReference: {fileID: 0}
     - target: {fileID: 1066144421059398, guid: bd0586980cb5441dd983a3b964504095, type: 2}
       propertyPath: m_Name
@@ -24181,72 +23882,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 4610518247078710, guid: bd0586980cb5441dd983a3b964504095, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610518247078710, guid: bd0586980cb5441dd983a3b964504095, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610518247078710, guid: bd0586980cb5441dd983a3b964504095, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Intensity
-      value: 28.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Range
-      value: 10.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 108502182767982524, guid: bd0586980cb5441dd983a3b964504095,
-        type: 2}
-      propertyPath: m_Range
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Range
-      value: 9.32
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.r
-      value: 0.9764706
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.b
-      value: 0.5137255
-      objectReference: {fileID: 0}
-    - target: {fileID: 108502182767982524, guid: bd0586980cb5441dd983a3b964504095,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 0.97590005
-      objectReference: {fileID: 0}
-    - target: {fileID: 108502182767982524, guid: bd0586980cb5441dd983a3b964504095,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0.5147059
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.r
-      value: 0.9764706
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.b
-      value: 0.5137255
-      objectReference: {fileID: 0}
     - target: {fileID: 1066144421059398, guid: bd0586980cb5441dd983a3b964504095, type: 2}
       propertyPath: m_Name
       value: Chandelier (7)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4421750716192226, guid: bd0586980cb5441dd983a3b964504095, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -0.119
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bd0586980cb5441dd983a3b964504095, type: 2}
@@ -31984,7 +31622,7 @@ Prefab:
     - target: {fileID: 108502182767982524, guid: bd0586980cb5441dd983a3b964504095,
         type: 2}
       propertyPath: m_Range
-      value: 1.5
+      value: 6.5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Range
@@ -33113,73 +32751,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 4610518247078710, guid: bd0586980cb5441dd983a3b964504095, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610518247078710, guid: bd0586980cb5441dd983a3b964504095, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610518247078710, guid: bd0586980cb5441dd983a3b964504095, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Intensity
-      value: 28.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Range
-      value: 6.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 108502182767982524, guid: bd0586980cb5441dd983a3b964504095,
-        type: 2}
-      propertyPath: m_Range
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Range
-      value: 6.49
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.r
-      value: 0.9764706
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.b
-      value: 0.5137255
-      objectReference: {fileID: 0}
-    - target: {fileID: 108502182767982524, guid: bd0586980cb5441dd983a3b964504095,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 0.97590005
-      objectReference: {fileID: 0}
-    - target: {fileID: 108502182767982524, guid: bd0586980cb5441dd983a3b964504095,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0.5147059
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.r
-      value: 0.9764706
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.b
-      value: 0.5137255
-      objectReference: {fileID: 0}
     - target: {fileID: 1066144421059398, guid: bd0586980cb5441dd983a3b964504095, type: 2}
       propertyPath: m_Name
       value: Chandelier (6)
-      objectReference: {fileID: 0}
-    - target: {fileID: 108502182767982524, guid: bd0586980cb5441dd983a3b964504095,
-        type: 2}
-      propertyPath: m_Intensity
-      value: 0.97
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bd0586980cb5441dd983a3b964504095, type: 2}
@@ -35083,7 +34657,7 @@ Prefab:
     - target: {fileID: 108502182767982524, guid: bd0586980cb5441dd983a3b964504095,
         type: 2}
       propertyPath: m_Range
-      value: 1.5
+      value: 6.5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Range
@@ -41639,7 +41213,7 @@ Prefab:
     - target: {fileID: 108502182767982524, guid: bd0586980cb5441dd983a3b964504095,
         type: 2}
       propertyPath: m_Range
-      value: 1.5
+      value: 6.5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Range
@@ -41678,6 +41252,11 @@ Prefab:
     - target: {fileID: 1066144421059398, guid: bd0586980cb5441dd983a3b964504095, type: 2}
       propertyPath: m_Name
       value: Chandelier (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 108502182767982524, guid: bd0586980cb5441dd983a3b964504095,
+        type: 2}
+      propertyPath: m_Intensity
+      value: 0.97
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bd0586980cb5441dd983a3b964504095, type: 2}
@@ -43051,65 +42630,6 @@ Prefab:
     - target: {fileID: 4610518247078710, guid: bd0586980cb5441dd983a3b964504095, type: 2}
       propertyPath: m_RootOrder
       value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610518247078710, guid: bd0586980cb5441dd983a3b964504095, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610518247078710, guid: bd0586980cb5441dd983a3b964504095, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610518247078710, guid: bd0586980cb5441dd983a3b964504095, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Intensity
-      value: 28.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Range
-      value: 5.56
-      objectReference: {fileID: 0}
-    - target: {fileID: 108502182767982524, guid: bd0586980cb5441dd983a3b964504095,
-        type: 2}
-      propertyPath: m_Range
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Range
-      value: 5.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.r
-      value: 0.9764706
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.b
-      value: 0.5137255
-      objectReference: {fileID: 0}
-    - target: {fileID: 108502182767982524, guid: bd0586980cb5441dd983a3b964504095,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 0.97590005
-      objectReference: {fileID: 0}
-    - target: {fileID: 108502182767982524, guid: bd0586980cb5441dd983a3b964504095,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0.5147059
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.r
-      value: 0.9764706
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.b
-      value: 0.5137255
       objectReference: {fileID: 0}
     - target: {fileID: 1066144421059398, guid: bd0586980cb5441dd983a3b964504095, type: 2}
       propertyPath: m_Name
@@ -46387,65 +45907,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 16
       objectReference: {fileID: 0}
-    - target: {fileID: 4610518247078710, guid: bd0586980cb5441dd983a3b964504095, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610518247078710, guid: bd0586980cb5441dd983a3b964504095, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610518247078710, guid: bd0586980cb5441dd983a3b964504095, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Intensity
-      value: 28.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Range
-      value: 7.09
-      objectReference: {fileID: 0}
-    - target: {fileID: 108502182767982524, guid: bd0586980cb5441dd983a3b964504095,
-        type: 2}
-      propertyPath: m_Range
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Range
-      value: 12.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.r
-      value: 0.9764706
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.b
-      value: 0.5137255
-      objectReference: {fileID: 0}
-    - target: {fileID: 108502182767982524, guid: bd0586980cb5441dd983a3b964504095,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 0.97590005
-      objectReference: {fileID: 0}
-    - target: {fileID: 108502182767982524, guid: bd0586980cb5441dd983a3b964504095,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0.5147059
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.r
-      value: 0.9764706
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Color.b
-      value: 0.5137255
-      objectReference: {fileID: 0}
     - target: {fileID: 1066144421059398, guid: bd0586980cb5441dd983a3b964504095, type: 2}
       propertyPath: m_Name
       value: Chandelier (16)
@@ -47264,7 +46725,7 @@ Prefab:
     - target: {fileID: 108502182767982524, guid: bd0586980cb5441dd983a3b964504095,
         type: 2}
       propertyPath: m_Range
-      value: 1.5
+      value: 6.5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Range
