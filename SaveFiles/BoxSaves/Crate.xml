@@ -2,13 +2,8 @@
 <Box xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <name>Crate</name>
   <position>
-<<<<<<< HEAD
     <x>16.9100037</x>
     <y>24.7936535</y>
-=======
-    <x>17.5200939</x>
-    <y>24.7936516</y>
->>>>>>> 81b50feb808f8b6b5b508652d515015302c54b73
     <z>0.0439176559</z>
   </position>
 </Box>
