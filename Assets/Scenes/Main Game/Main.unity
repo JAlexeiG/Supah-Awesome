@@ -3260,6 +3260,11 @@ Prefab:
       propertyPath: bulletText
       value: 
       objectReference: {fileID: 1005152951}
+    - target: {fileID: 54621990146880668, guid: 511e6f2db1682474aa73565a795b5488,
+        type: 2}
+      propertyPath: m_CollisionDetection
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 511e6f2db1682474aa73565a795b5488, type: 2}
   m_IsPrefabParent: 0
@@ -15547,7 +15552,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1475516296182856, guid: c78a0fca1ab28204baaff381f37ebe1e, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 223258201046208266, guid: c78a0fca1ab28204baaff381f37ebe1e,
         type: 2}
