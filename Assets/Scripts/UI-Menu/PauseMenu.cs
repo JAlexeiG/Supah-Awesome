@@ -53,7 +53,9 @@ public class PauseMenu : MonoBehaviour {
     public void Restart()
     {
         Resume();
-        SceneManager.LoadSceneAsync(1);
+        XMLCheckpointManager.instance.load();
+        //SceneManager.LoadSceneAsync(1);
+
         
     }
 
