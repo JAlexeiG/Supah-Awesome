@@ -296,7 +296,7 @@ public class Chara : MonoBehaviour
 
         if (!isStunned) //If the player is not stunned and game is not paused
         {
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetMouseButtonDown(2) || Input.GetKeyDown(KeyCode.Q))
             {
                 //Changes between mele / ranged
                 isMele = !isMele;
