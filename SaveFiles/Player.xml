@@ -3,16 +3,16 @@
   <isMele>false</isMele>
   <health>100</health>
   <steam>50</steam>
-  <loadedAmmo>0</loadedAmmo>
-  <totalAmmo>5</totalAmmo>
+  <loadedAmmo>4</loadedAmmo>
+  <totalAmmo>10</totalAmmo>
   <position>
-    <x>75.64767</x>
-    <y>88.6439362</y>
+    <x>0.9161846</x>
+    <y>25.7936764</y>
     <z>0</z>
   </position>
   <velocity>
-    <x>0.004870653</x>
-    <y>-0.004004176</y>
+    <x>0</x>
+    <y>-1.81895373E-12</y>
     <z>0</z>
   </velocity>
 </XMLPlayer>
