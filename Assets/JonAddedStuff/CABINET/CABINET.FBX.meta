@@ -1,0 +1,173 @@
+fileFormatVersion: 2
+guid: 6f4fba5a4a8090845b2fb5b80c38aa68
+timeCreated: 1534200361
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: DOORLEFT_low
+    100004: DOORRIGHT_low
+    100006: FOOT1_low
+    100008: FOOT2_low
+    100010: FOOT3_low
+    100012: FOOT4_low
+    100014: GEAR_low
+    100016: HINGELEFT_low
+    100018: HINGERIGHT_low
+    100020: LOCKLEFT_low
+    100022: LOCKRIGHT_low
+    100024: MAIN_low
+    100026: SHELF1_low
+    100028: SHELF2_low
+    100030: SHELF3_low
+    100032: TOP_low
+    400000: //RootNode
+    400002: DOORLEFT_low
+    400004: DOORRIGHT_low
+    400006: FOOT1_low
+    400008: FOOT2_low
+    400010: FOOT3_low
+    400012: FOOT4_low
+    400014: GEAR_low
+    400016: HINGELEFT_low
+    400018: HINGERIGHT_low
+    400020: LOCKLEFT_low
+    400022: LOCKRIGHT_low
+    400024: MAIN_low
+    400026: SHELF1_low
+    400028: SHELF2_low
+    400030: SHELF3_low
+    400032: TOP_low
+    2300000: DOORLEFT_low
+    2300002: DOORRIGHT_low
+    2300004: FOOT1_low
+    2300006: FOOT2_low
+    2300008: FOOT3_low
+    2300010: FOOT4_low
+    2300012: GEAR_low
+    2300014: HINGELEFT_low
+    2300016: HINGERIGHT_low
+    2300018: LOCKLEFT_low
+    2300020: LOCKRIGHT_low
+    2300022: MAIN_low
+    2300024: SHELF1_low
+    2300026: SHELF2_low
+    2300028: SHELF3_low
+    2300030: TOP_low
+    3300000: DOORLEFT_low
+    3300002: DOORRIGHT_low
+    3300004: FOOT1_low
+    3300006: FOOT2_low
+    3300008: FOOT3_low
+    3300010: FOOT4_low
+    3300012: GEAR_low
+    3300014: HINGELEFT_low
+    3300016: HINGERIGHT_low
+    3300018: LOCKLEFT_low
+    3300020: LOCKRIGHT_low
+    3300022: MAIN_low
+    3300024: SHELF1_low
+    3300026: SHELF2_low
+    3300028: SHELF3_low
+    3300030: TOP_low
+    4300000: MAIN_low
+    4300002: TOP_low
+    4300004: DOORRIGHT_low
+    4300006: HINGERIGHT_low
+    4300008: GEAR_low
+    4300010: LOCKRIGHT_low
+    4300012: DOORLEFT_low
+    4300014: LOCKLEFT_low
+    4300016: HINGELEFT_low
+    4300018: FOOT1_low
+    4300020: FOOT2_low
+    4300022: FOOT3_low
+    4300024: FOOT4_low
+    4300026: SHELF1_low
+    4300028: SHELF2_low
+    4300030: SHELF3_low
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 01 - Default
+    second: {fileID: 2100000, guid: 5e090590237d20a40b25c5a4f6a80005, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

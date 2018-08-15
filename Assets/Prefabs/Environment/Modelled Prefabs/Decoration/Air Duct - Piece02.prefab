@@ -9,18 +9,18 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1470676530648098}
+  m_RootGameObject: {fileID: 1507269074611476}
   m_IsPrefabParent: 1
---- !u!1 &1470676530648098
+--- !u!1 &1507269074611476
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4457258540334256}
-  - component: {fileID: 33676829986720928}
-  - component: {fileID: 23448252767267962}
+  - component: {fileID: 4972903462828582}
+  - component: {fileID: 33214561576469768}
+  - component: {fileID: 23432825639629342}
   m_Layer: 0
   m_Name: Air Duct - Piece02
   m_TagString: Untagged
@@ -28,25 +28,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4457258540334256
+--- !u!4 &4972903462828582
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1470676530648098}
+  m_GameObject: {fileID: 1507269074611476}
   m_LocalRotation: {x: 0.0000000793275, y: 0.00000001851852, z: 0.22733171, w: 0.9738174}
-  m_LocalPosition: {x: -27.403393, y: 2.13, z: 3.0319586}
+  m_LocalPosition: {x: 95.7997, y: -7.663965, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23448252767267962
+--- !u!23 &23432825639629342
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1470676530648098}
+  m_GameObject: {fileID: 1507269074611476}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -55,7 +55,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 71282089d1e20495a9330517b200a390, type: 2}
+  - {fileID: 2100000, guid: 8fdf11c3fffeca54cbfc36722f768832, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -75,10 +75,10 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33676829986720928
+--- !u!33 &33214561576469768
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1470676530648098}
-  m_Mesh: {fileID: 4300000, guid: 191eafc6b00de4259b825b12a78b1894, type: 3}
+  m_GameObject: {fileID: 1507269074611476}
+  m_Mesh: {fileID: 4300000, guid: afea1e61df1dd484583f42b18d23c62d, type: 3}
