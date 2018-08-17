@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="Windows-1252"?>
+<?xml version="1.0" encoding="us-ascii"?>
 <Box xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <name>Crate (1)</name>
   <position>
-    <x>66.13001</x>
-    <y>27.2546864</y>
+    <x>71.4616547</x>
+    <y>24.79</y>
     <z>0.0439147949</z>
   </position>
 </Box>
