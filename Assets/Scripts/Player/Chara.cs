@@ -205,10 +205,11 @@ public class Chara : MonoBehaviour
         }
 
         bulletText.text = string.Format("Bullets Loaded: {0}\nAmmo: {1}" , bulletLoaded, playerBullets); //Sets bullet text
+
+        rb.AddRelativeForce(0, gravity * 2, 0, ForceMode.Acceleration); //Adds gravity downwards towards the player's feet and only towards the player's feet
         PlayerInput(); // Activates inputs for player
         
 
-        rb.AddRelativeForce(0, gravity * 2, 0, ForceMode.Acceleration); //Adds gravity downwards towards the player's feet and only towards the player's feet
 
 
         //Updates to make sure everything is not over the cap
@@ -682,7 +683,7 @@ public class Chara : MonoBehaviour
         playerXML.loadedAmmo = bulletLoaded;
         playerXML.totalAmmo = playerBullets;
         playerXML.position = trans.position;
-        playerXML.velocity = rb.velocity;
+        //playerXML.velocity = rb.velocity; // No longer used //
 
         return playerXML;
     }
@@ -695,7 +696,7 @@ public class Chara : MonoBehaviour
         bulletLoaded = playerXML.loadedAmmo;
         playerBullets = playerXML.totalAmmo;
         trans.position = playerXML.position;
-        rb.velocity = playerXML.velocity;
+        rb.velocity = playerXML.velocity; // No longer used //
     }
     
 
