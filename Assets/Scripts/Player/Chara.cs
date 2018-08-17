@@ -106,7 +106,11 @@ public class Chara : MonoBehaviour
 
     [SerializeField]
     private Text bulletText; // Current text for information on bullets
-
+    
+    [SerializeField]
+    private float shootCoolDown; // Cooldown for shooting attacks
+    private float shootCooldownTimer; // Timer for shootCoolDown
+    [SerializeField]
 
     private bool isMele; // Whether player is in mele form
     [SerializeField]
