@@ -88,7 +88,6 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
-    m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 112000152, guid: c018d012357d176408e5531e04d1cf2b,
     type: 2}
   m_UseShadowmask: 1
@@ -2903,8 +2902,8 @@ Transform:
   m_PrefabParentObject: {fileID: 400008, guid: 8acc393a8f8951d4b8a01e6656c72877, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 111376940}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7496492, w: 0.6618354}
+  m_LocalPosition: {x: 0, y: 0, z: -0.24800014}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1133670521}
@@ -30459,14 +30458,14 @@ Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 8acc393a8f8951d4b8a01e6656c72877, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1133670520}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.46798828, y: -0.53008205, z: -0.53008205, w: 0.46798828}
+  m_LocalPosition: {x: 0, y: -0.40899992, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 111376941}
   m_Father: {fileID: 1716798924}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: -97.12}
 --- !u!23 &1133670522
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -30522,7 +30521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationStrength: 1000
-  parentPlatform: {fileID: 1585254461}
+  parentPlatform: {fileID: 1942172798}
 --- !u!4 &1136183403 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4026841638490172, guid: 200cb5c6bd4494d73be956302a055509,
@@ -35739,7 +35738,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1333815635}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -42603,7 +42602,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1716798924}
   - component: {fileID: 1585254462}
-  - component: {fileID: 1585254461}
   m_Layer: 0
   m_Name: FlyingPlatform
   m_TagString: Untagged
@@ -42611,25 +42609,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1585254461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1585254460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f731d6d8cfe4bd242acd035e60f9d294, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isPowered: 0
-  movingPlatform: {fileID: 1716798924}
-  position1: {fileID: 1333815636}
-  position2: {fileID: 1672342644}
-  newposition: {x: 0, y: 0, z: 0}
-  currentState: 
-  smooth: 1
-  resetTime: 1
 --- !u!95 &1585254462
 Animator:
   serializedVersion: 3
@@ -42642,7 +42621,7 @@ Animator:
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -44988,7 +44967,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1672342643}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 118.646614, y: -4.0062933, z: 0}
+  m_LocalPosition: {x: 116.646614, y: -4.0062933, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1942172797}
@@ -45000,7 +44979,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1672342643}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -52130,6 +52109,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1942172797}
+  - component: {fileID: 1942172798}
   m_Layer: 11
   m_Name: MovingPlatform
   m_TagString: Untagged
@@ -52153,6 +52133,25 @@ Transform:
   m_Father: {fileID: 1238235020}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1942172798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1942172796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f731d6d8cfe4bd242acd035e60f9d294, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPowered: 1
+  movingPlatform: {fileID: 1716798924}
+  position1: {fileID: 1333815636}
+  position2: {fileID: 1672342644}
+  newposition: {x: 0, y: 0, z: 0}
+  currentState: 
+  smooth: 1
+  resetTime: 1
 --- !u!1001 &1943016889
 Prefab:
   m_ObjectHideFlags: 0
