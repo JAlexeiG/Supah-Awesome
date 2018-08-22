@@ -56,6 +56,8 @@ GameObject:
   - component: {fileID: 33617761739529558}
   - component: {fileID: 23644252279227044}
   - component: {fileID: 65114310635587788}
+  - component: {fileID: 65052292514974266}
+  - component: {fileID: 65993145488480634}
   m_Layer: 0
   m_Name: Platform
   m_TagString: Floor
@@ -213,7 +215,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1092017482110446}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.14927, y: 4.04, z: 0.03816986}
+  m_LocalPosition: {x: -9.5, y: 2.6, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4579519881938830}
@@ -452,7 +454,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.3417714, y: 1.2266614, z: 0.08409396}
   m_Center: {x: 0.031309158, y: -0.15214866, z: -0.17955546}
---- !u!65 &65114310635587788
+--- !u!65 &65052292514974266
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -462,7 +464,19 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.7500674, y: 1.9953034, z: 0.24863769}
+  m_Size: {x: 0.7500674, y: 0.05773306, z: 0.24863768}
+  m_Center: {x: 0.000043660402, y: 0.96, z: 0.12656173}
+--- !u!65 &65114310635587788
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1377948906162672}
+  m_Material: {fileID: 13400000, guid: 04c670911f4c3f149b3d73d0f4f29ac9, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7500674, y: 1.9, z: 0.24863769}
   m_Center: {x: 0.000043660402, y: -0.00044724345, z: 0.12656173}
 --- !u!65 &65884516765732880
 BoxCollider:
@@ -488,6 +502,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65993145488480634
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1377948906162672}
+  m_Material: {fileID: 13400000, guid: 784c3c2bb47820e47903320cef3037c9, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7500674, y: 0.05773306, z: 0.24863768}
+  m_Center: {x: 0.000043660402, y: -0.98069406, z: 0.12656173}
 --- !u!65 &65994059680649666
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -541,6 +567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0b2f2b2dde4642db9435dfb599ce9b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mEnemy: {fileID: 0}
 --- !u!114 &114886145448750762
 MonoBehaviour:
   m_ObjectHideFlags: 1
