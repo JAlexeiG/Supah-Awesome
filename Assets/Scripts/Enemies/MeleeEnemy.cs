@@ -22,19 +22,27 @@ public class MeleeEnemy : MonoBehaviour {
     float timer;
     [SerializeField] bool isHit;
 
+
+
+    //Animation
+    Animator animator;
+    [SerializeField]AnimationClip walkClip;
+
+
     // Use this for initialization
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         agent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
     }
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        agent.stoppingDistance = 1.1f;
-        agent.speed = 1.25f;
-        agent.acceleration = 0.75f;
+        agent.stoppingDistance = 2f;
+        agent.speed = 3f;
+        agent.acceleration = 100f;
         currentHealth = maxHealth;
     }
 
@@ -44,10 +52,10 @@ public class MeleeEnemy : MonoBehaviour {
         if (!isHit)
         {
             playerLocation = player.position;
-            if (Vector3.Distance(transform.position, player.position) < 5 && !moveCooldown && !isDying)
+            if (Vector3.Distance(transform.position, player.position) < 7f && !moveCooldown && !isDying)
             {
                 agent.SetDestination(playerLocation);
-                if (Vector3.Distance(transform.position, player.position) < 1.1f && !attackCooldown)
+                if (Vector3.Distance(transform.position, player.position) < 2.3f && !attackCooldown)
                 {
                     if (!isDying)
                         Attack();
@@ -68,14 +76,13 @@ public class MeleeEnemy : MonoBehaviour {
         {
             StartCoroutine("DelayedDeath");
         }
-
     }
 
     void FaceTarget()
     {
         Vector3 direction = (player.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 30f);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, 2f);
     }
 
     void Attack()
@@ -88,7 +95,7 @@ public class MeleeEnemy : MonoBehaviour {
             moveCooldown = true;
             //play attacking animation
             playerLocation = player.position;
-            if (Vector3.Distance(transform.position, player.position) < 1.9f)
+            if (Vector3.Distance(transform.position, player.position) < 2.3f)
             {
                 HealthManager.instance.health -= meleeEnemyDamage;
                 Debug.Log("hit player");
