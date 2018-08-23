@@ -110,8 +110,8 @@ public class Chara : MonoBehaviour
     [SerializeField]
     private float shootCoolDown; // Cooldown for shooting attacks
     private float shootCooldownTimer; // Timer for shootCoolDown
-    [SerializeField]
 
+    [SerializeField]
     private bool isMele; // Whether player is in mele form
     [SerializeField]
     private float meleTime; // Time mele hitbox exists
@@ -309,7 +309,7 @@ public class Chara : MonoBehaviour
 
             if (isMele) //When player is mele
             {
-                if (Input.GetButtonDown("Fire1") & meleCoolDownTimer <= 0) //When player meles and is not on cooldown
+                if (Input.GetButtonDown("Fire1") && meleCoolDownTimer <= 0) //When player meles and is not on cooldown
                 {
                     gunPos = -Camera.main.transform.position.z; //Sets the current transfrom of the camera
 
@@ -350,8 +350,9 @@ public class Chara : MonoBehaviour
                 meleBox.SetActive(false); //Just in case mele hitbox existed
 
                 //A bunch of stuff to know where mouse is
-                if (Input.GetButtonDown("Fire1"))
+                if (Input.GetButtonDown("Fire1") && shootCooldownTimer <= 0)
                 {
+                    shootCooldownTimer = shootCoolDown;
                     gunPos = -Camera.main.transform.position.z; //Position of camera
 
                     //// CHANGE THE SHOOTING THING TO BE NON-RELYANT ON THE CROSSHAIR
@@ -416,6 +417,10 @@ public class Chara : MonoBehaviour
                         }
                     }
 
+                }
+                else
+                {
+                    shootCooldownTimer -= Time.deltaTime;
                 }
                 //}
 
