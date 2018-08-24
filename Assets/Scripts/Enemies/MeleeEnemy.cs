@@ -26,7 +26,8 @@ public class MeleeEnemy : MonoBehaviour {
 
     //Animation
     Animator animator;
-    [SerializeField]AnimationClip walkClip;
+    [SerializeField]
+    AnimationClip[] animationClips;
 
 
     // Use this for initialization
@@ -49,6 +50,12 @@ public class MeleeEnemy : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        if (isDying)
+        {
+            animator.SetBool("isDying", true);
+            animator.SetBool("isWalking", false);
+        }
+            
         if (!isHit)
         {
             playerLocation = player.position;
@@ -128,7 +135,7 @@ public class MeleeEnemy : MonoBehaviour {
     IEnumerator DelayedDeath()
     {
         isDying = true;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(3f);
         Destroy(gameObject);
         //Drop Loot
     }

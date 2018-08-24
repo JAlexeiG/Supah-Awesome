@@ -1,0 +1,235 @@
+fileFormatVersion: 2
+guid: de3a89ec6beda334fbe50fff25f0f8bd
+timeCreated: 1534958473
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: CTRL_Master
+    100004: curve1
+    100006: GRP_All
+    100008: GRP_Joints
+    100010: JNT_Chest
+    100012: JNT_Head
+    100014: JNT_HeadTip
+    100016: JNT_L_Ankle
+    100018: JNT_L_Clavicle
+    100020: JNT_L_Elbow
+    100022: JNT_L_Foot
+    100024: JNT_L_FootTip
+    100026: JNT_L_Hip
+    100028: JNT_L_Knee
+    100030: JNT_L_MiddleFingerA
+    100032: JNT_L_MiddleFingerB
+    100034: JNT_L_MiddleFingerC
+    100036: JNT_L_MiddleFingerD
+    100038: JNT_L_PinkyFingerA
+    100040: JNT_L_PinkyFingerB
+    100042: JNT_L_PinkyFingerC
+    100044: JNT_L_PinkyFingerD
+    100046: JNT_L_PointerFingerA
+    100048: JNT_L_PointerFingerB
+    100050: JNT_L_PointerFingerC
+    100052: JNT_L_PointerFingerD
+    100054: JNT_L_RingFingerA
+    100056: JNT_L_RingFingerB
+    100058: JNT_L_RingFingerC
+    100060: JNT_L_RingFingerD
+    100062: JNT_L_Shoulder
+    100064: JNT_L_ThumbA
+    100066: JNT_L_ThumbB
+    100068: JNT_L_ThumbC
+    100070: JNT_L_ThumbD
+    100072: JNT_L_Wrist1
+    100074: JNT_L_Wrist2
+    100076: JNT_Neck1
+    100078: JNT_Neck2
+    100080: JNT_R_Ankle
+    100082: JNT_R_Clavicle
+    100084: JNT_R_Elbow
+    100086: JNT_R_Foot
+    100088: JNT_R_FootTip
+    100090: JNT_R_Hip
+    100092: JNT_R_Knee
+    100094: JNT_R_MiddleFingerA
+    100096: JNT_R_MiddleFingerB
+    100098: JNT_R_MiddleFingerC
+    100100: JNT_R_MiddleFingerD
+    100102: JNT_R_PinkyFingerA
+    100104: JNT_R_PinkyFingerB
+    100106: JNT_R_PinkyFingerC
+    100108: JNT_R_PinkyFingerD
+    100110: JNT_R_PointerFingerA
+    100112: JNT_R_PointerFingerB
+    100114: JNT_R_PointerFingerC
+    100116: JNT_R_PointerFingerD
+    100118: JNT_R_RingFingerA
+    100120: JNT_R_RingFingerB
+    100122: JNT_R_RingFingerC
+    100124: JNT_R_RingFingerD
+    100126: JNT_R_Shoulder
+    100128: JNT_R_ThumbA
+    100130: JNT_R_ThumbB
+    100132: JNT_R_ThumbC
+    100134: JNT_R_ThumbD
+    100136: JNT_R_Wrist1
+    100138: JNT_R_Wrist2
+    100140: JNT_Root
+    100142: JNT_Spine1
+    100144: JNT_Spine2
+    100146: JNT_Spine3
+    400000: //RootNode
+    400002: CTRL_Master
+    400004: curve1
+    400006: GRP_All
+    400008: GRP_Joints
+    400010: JNT_Chest
+    400012: JNT_Head
+    400014: JNT_HeadTip
+    400016: JNT_L_Ankle
+    400018: JNT_L_Clavicle
+    400020: JNT_L_Elbow
+    400022: JNT_L_Foot
+    400024: JNT_L_FootTip
+    400026: JNT_L_Hip
+    400028: JNT_L_Knee
+    400030: JNT_L_MiddleFingerA
+    400032: JNT_L_MiddleFingerB
+    400034: JNT_L_MiddleFingerC
+    400036: JNT_L_MiddleFingerD
+    400038: JNT_L_PinkyFingerA
+    400040: JNT_L_PinkyFingerB
+    400042: JNT_L_PinkyFingerC
+    400044: JNT_L_PinkyFingerD
+    400046: JNT_L_PointerFingerA
+    400048: JNT_L_PointerFingerB
+    400050: JNT_L_PointerFingerC
+    400052: JNT_L_PointerFingerD
+    400054: JNT_L_RingFingerA
+    400056: JNT_L_RingFingerB
+    400058: JNT_L_RingFingerC
+    400060: JNT_L_RingFingerD
+    400062: JNT_L_Shoulder
+    400064: JNT_L_ThumbA
+    400066: JNT_L_ThumbB
+    400068: JNT_L_ThumbC
+    400070: JNT_L_ThumbD
+    400072: JNT_L_Wrist1
+    400074: JNT_L_Wrist2
+    400076: JNT_Neck1
+    400078: JNT_Neck2
+    400080: JNT_R_Ankle
+    400082: JNT_R_Clavicle
+    400084: JNT_R_Elbow
+    400086: JNT_R_Foot
+    400088: JNT_R_FootTip
+    400090: JNT_R_Hip
+    400092: JNT_R_Knee
+    400094: JNT_R_MiddleFingerA
+    400096: JNT_R_MiddleFingerB
+    400098: JNT_R_MiddleFingerC
+    400100: JNT_R_MiddleFingerD
+    400102: JNT_R_PinkyFingerA
+    400104: JNT_R_PinkyFingerB
+    400106: JNT_R_PinkyFingerC
+    400108: JNT_R_PinkyFingerD
+    400110: JNT_R_PointerFingerA
+    400112: JNT_R_PointerFingerB
+    400114: JNT_R_PointerFingerC
+    400116: JNT_R_PointerFingerD
+    400118: JNT_R_RingFingerA
+    400120: JNT_R_RingFingerB
+    400122: JNT_R_RingFingerC
+    400124: JNT_R_RingFingerD
+    400126: JNT_R_Shoulder
+    400128: JNT_R_ThumbA
+    400130: JNT_R_ThumbB
+    400132: JNT_R_ThumbC
+    400134: JNT_R_ThumbD
+    400136: JNT_R_Wrist1
+    400138: JNT_R_Wrist2
+    400140: JNT_Root
+    400142: JNT_Spine1
+    400144: JNT_Spine2
+    400146: JNT_Spine3
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

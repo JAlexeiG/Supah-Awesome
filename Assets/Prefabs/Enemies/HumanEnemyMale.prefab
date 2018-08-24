@@ -491,7 +491,7 @@ GameObject:
   - component: {fileID: 195384206255107082}
   m_Layer: 0
   m_Name: HumanEnemyMale
-  m_TagString: Untagged
+  m_TagString: MeleeEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1301,7 +1301,7 @@ Transform:
   m_GameObject: {fileID: 1421321750702600}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -22.584404, y: -0.25000143, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4819838423351146}
   - {fileID: 4906382440329414}

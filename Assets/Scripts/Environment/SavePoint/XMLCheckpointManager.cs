@@ -212,7 +212,7 @@ public class XMLCheckpointManager : MonoBehaviour
             GameManager.CurrentScene sceneLoad = (GameManager.CurrentScene)sceneSerializer.Deserialize(sceneReader.BaseStream);
             sceneReader.Close();
 
-            GameManager.instance.loadSave(sceneLoad);
+            GameManager.instance.LoadSave(sceneLoad);
 
             StartCoroutine("LevelBuffer");
         }
