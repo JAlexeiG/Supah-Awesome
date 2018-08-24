@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour {
         return scene;
     }
 
-    public void loadSave(CurrentScene XMLScene)
+    public void LoadSave(CurrentScene XMLScene)
     {
         SceneManager.LoadScene(XMLScene.sceneNumber);
     }
@@ -56,9 +56,9 @@ public class GameManager : MonoBehaviour {
     {
         SceneManager.LoadScene(num);
     }
-    public void LoadMain()
+    public void LoadMain(CurrentScene XMLScene)
     {
-        SceneManager.LoadSceneAsync("Main");
+        SceneManager.LoadSceneAsync(XMLScene.sceneNumber);
     }
     public static GameManager instance
     {
