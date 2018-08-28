@@ -3869,11 +3869,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4651271299612350, guid: 511e6f2db1682474aa73565a795b5488, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -38.5
+      value: -3.6
       objectReference: {fileID: 0}
     - target: {fileID: 4651271299612350, guid: 511e6f2db1682474aa73565a795b5488, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 78.99
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4651271299612350, guid: 511e6f2db1682474aa73565a795b5488, type: 2}
       propertyPath: m_LocalPosition.z
@@ -9492,7 +9492,7 @@ Light:
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 0.9635239, g: 1, b: 0.76292175, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.74
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -29607,7 +29607,7 @@ Prefab:
     - target: {fileID: 114005970067288582, guid: b528dc76f6e684990991508862ee3bf1,
         type: 2}
       propertyPath: strength
-      value: 175
+      value: 176
       objectReference: {fileID: 0}
     - target: {fileID: 4667309662131582, guid: b528dc76f6e684990991508862ee3bf1, type: 2}
       propertyPath: m_LocalScale.x
