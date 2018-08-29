@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 6a9807ffb703b184ba849cb8386ac2ec
-timeCreated: 1534958472
+guid: f18096dc19c67e244a6ea30e7f66fd99
+timeCreated: 1535131151
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -196,7 +196,7 @@ ModelImporter:
     400186: locator1
     400188: XcalibreRigv3_GRP_All
     2000000: left
-    7400000: Take 001
+    7400000: Shoot Up
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -226,10 +226,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
+      name: Shoot Up
       takeName: Take 001
-      firstFrame: 3
-      lastFrame: 30
+      firstFrame: 2
+      lastFrame: 40
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

@@ -93,9 +93,9 @@ AvatarMask:
   - m_Path: GRP_All/GRP_Joints
     m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: GRP_All/GRP_Joints/JNT_Root/curve1
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1
     m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_L_Hip
