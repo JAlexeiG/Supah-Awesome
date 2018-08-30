@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23715330437557368}
   - component: {fileID: 95857645576262026}
   - component: {fileID: 64810771593728998}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Tree Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,9 +36,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1719868875759814}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 20.198145, y: 0.5, z: -0.074166775}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.67704034, y: -0, z: -0, w: 0.735946}
+  m_LocalPosition: {x: 4.1392303, y: -0.015383213, z: -4.587559}
+  m_LocalScale: {x: 0.076923065, y: 0.033564266, z: 0.06643578}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
