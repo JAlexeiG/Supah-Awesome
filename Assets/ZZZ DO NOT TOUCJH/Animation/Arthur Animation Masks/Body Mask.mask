@@ -59,35 +59,35 @@ AvatarMask:
   - m_Path: group/XcalibreRigv3_GRP_All/CTRL_Gun
     m_Weight: 1
   - m_Path: group/XcalibreRigv3_GRP_All/JNT_Root 1
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: group/XcalibreRigv3_GRP_All/JNT_Root 1/JNT_GunLEFTHANDTARGET
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: group/XcalibreRigv3_GRP_All/JNT_Root 1/JNT_handle
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: group/XcalibreRigv3_GRP_All/JNT_Root 1/JNT_handle/JNT_Middle
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: group/XcalibreRigv3_GRP_All/JNT_Root 1/JNT_handle/JNT_Middle/JNT_Blade
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: group/XcalibreRigv3_GRP_All/JNT_Root 1/JNT_handle/JNT_Middle/JNT_Blade/JNT_BladeTip
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: group/XcalibreRigv3_GRP_All/JNT_Root 1/JNT_handle/JNT_Middle/JNT_Blade/JNT_BladeTip/JNT_BladeTipBottom
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: group/XcalibreRigv3_GRP_All/JNT_Root 1/JNT_handle/JNT_Middle/JNT_Blade/JNT_BladeTip/JNT_BladeTipBottom/JNT_BladeTipBottomEnd
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: group/XcalibreRigv3_GRP_All/JNT_Root 1/JNT_handle/JNT_Middle/JNT_Blade/JNT_BladeTip/JNT_BladeTipTop
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: group/XcalibreRigv3_GRP_All/JNT_Root 1/JNT_handle/JNT_Middle/JNT_Blade/JNT_BladeTip/JNT_BladeTipTop/JNT_BladeTipTopEnd
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: group/XcalibreRigv3_GRP_All/JNT_Root 1/JNT_handle/JNT_Middle/JNT_Blade/JNT_Lever
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: group/XcalibreRigv3_GRP_All/JNT_Root 1/JNT_handle/JNT_Middle/JNT_Blade/JNT_Lever/JNT_LeverEnd
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: group/XcalibreRigv3_GRP_All/JNT_Root 1/JNT_handle/JNT_Middle/JNT_Blade/JNT_Trigger
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: group/XcalibreRigv3_GRP_All/JNT_Root 1/JNT_handle/JNT_Middle/JNT_Blade/JNT_Trigger/JNT_TriggerEnd
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: group/XcalibreRigv3_GRP_All/JNT_Root 1/JNT_SwordLEFTHANDTARGET
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All
     m_Weight: 1
   - m_Path: GRP_All/GRP_Joints
@@ -245,10 +245,10 @@ AvatarMask:
   - m_Path: Mesh/HEAD_low
     m_Weight: 1
   - m_Path: Mesh/LEFTBOOT_low
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: Mesh/PANTS_low
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: Mesh/RIGHTBOOT_low
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: Mesh/SHIRT_low
-    m_Weight: 0
+    m_Weight: 1

@@ -196,7 +196,7 @@ ModelImporter:
     400186: LOC_LeftHand
     400188: XcalibreRigv3_GRP_All
     2000000: left
-    7400000: Take 001
+    7400000: Shoot
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -226,7 +226,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
+      name: Shoot
       takeName: Take 001
       firstFrame: 2
       lastFrame: 35
