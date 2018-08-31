@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 0799e999a253b9443a6b58e95fc29615
-timeCreated: 1535729872
+guid: 34c3d65aa48415841b62e3563ffa8255
+timeCreated: 1535741851
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -80,7 +80,6 @@ ModelImporter:
     100144: JNT_Spine1
     100146: JNT_Spine2
     100148: JNT_Spine3
-    100150: LOC_LeftHand
     400000: //RootNode
     400002: CTRL_Master
     400004: curve1
@@ -156,9 +155,7 @@ ModelImporter:
     400144: JNT_Spine1
     400146: JNT_Spine2
     400148: JNT_Spine3
-    400150: LOC_LeftHand
-    7400000: Aim Straight
-    7400002: Shoot Straight
+    7400000: Take 001
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -186,63 +183,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: Shoot Straight
-      takeName: Take 001
-      firstFrame: 2
-      lastFrame: 30
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: Aim Straight
-      takeName: Take 001
-      firstFrame: 2.1
-      lastFrame: 2.1
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []

@@ -190,8 +190,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Shoot Down
       takeName: Take 001
-      firstFrame: 2
-      lastFrame: 30
+      firstFrame: 1
+      lastFrame: 31
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

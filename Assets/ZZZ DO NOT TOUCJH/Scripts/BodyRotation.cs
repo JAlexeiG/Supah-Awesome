@@ -29,10 +29,10 @@ public class BodyRotation : MonoBehaviour {
     {
 
 
-        anim.SetLayerWeight(2, 1);
-        anim.SetLayerWeight(3, shootWeight);
-        anim.SetLayerWeight(4, shootDownWeight);
-
+        anim.SetLayerWeight(1, 1);
+        anim.SetLayerWeight(2, shootWeight);
+        anim.SetLayerWeight(3, shootDownWeight);
+    
 
 
         //Mouse position (+20 because camera is -20) to find where to shoot something
@@ -60,18 +60,22 @@ public class BodyRotation : MonoBehaviour {
         Debug.Log(rotatedX + " " + rotatedY);
 
 
-        if (rotatedY < 91 && rotatedY > 89)
+        if (rotatedY < 180)
         {
-            if (rotatedX > 45 && rotatedX < 270)
+            if (rotatedX < 315.5f && rotatedX > 90.5f)
             {
-                shootDownWeight = (-rotatedX + 90) /45;
+                shootWeight = 0;
+                shootDownWeight = 0;
             }
-        }
-        else if (rotatedY < 210 && rotatedY > 269)
-        {
-            if (rotatedX > 45 && rotatedX < 270)
+            if (rotatedX > 315)
             {
-                shootWeight = (rotatedX - 45) / 45;
+                shootWeight = (rotatedX - 315) /45;
+                shootDownWeight = 0;
+            }
+            else if (rotatedX < 45)
+            {
+                shootWeight = 1;
+                shootDownWeight  = (rotatedX) / 45;
             }
         }
     }
