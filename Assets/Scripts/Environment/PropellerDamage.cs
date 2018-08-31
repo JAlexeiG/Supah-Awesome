@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class PropellerDamage : MonoBehaviour 
 {
-    [SerializeField]
-    MeleeEnemy mEnemy;
-
     void OnTriggerStay(Collider col)
     {
         if (col.name == "Player")
@@ -16,7 +13,7 @@ public class PropellerDamage : MonoBehaviour
         
         else if (col.gameObject.tag == "MeleeEnemy")
         {
-            mEnemy.DoDamage();
+            col.GetComponent<MeleeEnemy>().DoDamage();
         }
     }
 }

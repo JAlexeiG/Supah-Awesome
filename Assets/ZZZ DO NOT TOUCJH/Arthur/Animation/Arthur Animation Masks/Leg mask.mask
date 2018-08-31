@@ -11,93 +11,17 @@ AvatarMask:
   - m_Path: 
     m_Weight: 1
   - m_Path: CTRL_Master
-    m_Weight: 0
-  - m_Path: group
-    m_Weight: 0
-  - m_Path: group/GunMeshGroup
     m_Weight: 1
-  - m_Path: group/GunMeshGroup/AccordionBack_low
-    m_Weight: 1
-  - m_Path: group/GunMeshGroup/AccordionFront_low
-    m_Weight: 1
-  - m_Path: group/GunMeshGroup/Barrel_low
-    m_Weight: 1
-  - m_Path: group/GunMeshGroup/Barrel_low 1
-    m_Weight: 1
-  - m_Path: group/GunMeshGroup/Blade_low
-    m_Weight: 1
-  - m_Path: group/GunMeshGroup/Blade_low 1
-    m_Weight: 1
-  - m_Path: group/GunMeshGroup/BladeTipBottom_low
-    m_Weight: 1
-  - m_Path: group/GunMeshGroup/BladeTipTop_low
-    m_Weight: 1
-  - m_Path: group/GunMeshGroup/Grip_low
-    m_Weight: 1
-  - m_Path: group/GunMeshGroup/Lock_low
-    m_Weight: 1
-  - m_Path: group/GunMeshGroup/LockBolt_low
-    m_Weight: 1
-  - m_Path: group/GunMeshGroup/Reciever_low
-    m_Weight: 1
-  - m_Path: group/GunMeshGroup/Reciever_low 1
-    m_Weight: 1
-  - m_Path: group/GunMeshGroup/Sword_low
-    m_Weight: 1
-  - m_Path: group/GunMeshGroup/Sword_low 1
-    m_Weight: 1
-  - m_Path: group/GunMeshGroup/SwordPommel_low
-    m_Weight: 1
-  - m_Path: group/GunMeshGroup/Trigger_low
-    m_Weight: 1
-  - m_Path: group/GunMeshGroup/Trigger_low 1
-    m_Weight: 1
-  - m_Path: group/left
-    m_Weight: 0
-  - m_Path: group/XcalibreRigv3_GRP_All
-    m_Weight: 0
-  - m_Path: group/XcalibreRigv3_GRP_All/CTRL_Gun
-    m_Weight: 0
-  - m_Path: group/XcalibreRigv3_GRP_All/JNT_Root 1
-    m_Weight: 0
-  - m_Path: group/XcalibreRigv3_GRP_All/JNT_Root 1/JNT_GunLEFTHANDTARGET
-    m_Weight: 0
-  - m_Path: group/XcalibreRigv3_GRP_All/JNT_Root 1/JNT_handle
-    m_Weight: 0
-  - m_Path: group/XcalibreRigv3_GRP_All/JNT_Root 1/JNT_handle/JNT_Middle
-    m_Weight: 0
-  - m_Path: group/XcalibreRigv3_GRP_All/JNT_Root 1/JNT_handle/JNT_Middle/JNT_Blade
-    m_Weight: 0
-  - m_Path: group/XcalibreRigv3_GRP_All/JNT_Root 1/JNT_handle/JNT_Middle/JNT_Blade/JNT_BladeTip
-    m_Weight: 0
-  - m_Path: group/XcalibreRigv3_GRP_All/JNT_Root 1/JNT_handle/JNT_Middle/JNT_Blade/JNT_BladeTip/JNT_BladeTipBottom
-    m_Weight: 0
-  - m_Path: group/XcalibreRigv3_GRP_All/JNT_Root 1/JNT_handle/JNT_Middle/JNT_Blade/JNT_BladeTip/JNT_BladeTipBottom/JNT_BladeTipBottomEnd
-    m_Weight: 0
-  - m_Path: group/XcalibreRigv3_GRP_All/JNT_Root 1/JNT_handle/JNT_Middle/JNT_Blade/JNT_BladeTip/JNT_BladeTipTop
-    m_Weight: 0
-  - m_Path: group/XcalibreRigv3_GRP_All/JNT_Root 1/JNT_handle/JNT_Middle/JNT_Blade/JNT_BladeTip/JNT_BladeTipTop/JNT_BladeTipTopEnd
-    m_Weight: 0
-  - m_Path: group/XcalibreRigv3_GRP_All/JNT_Root 1/JNT_handle/JNT_Middle/JNT_Blade/JNT_Lever
-    m_Weight: 0
-  - m_Path: group/XcalibreRigv3_GRP_All/JNT_Root 1/JNT_handle/JNT_Middle/JNT_Blade/JNT_Lever/JNT_LeverEnd
-    m_Weight: 0
-  - m_Path: group/XcalibreRigv3_GRP_All/JNT_Root 1/JNT_handle/JNT_Middle/JNT_Blade/JNT_Trigger
-    m_Weight: 0
-  - m_Path: group/XcalibreRigv3_GRP_All/JNT_Root 1/JNT_handle/JNT_Middle/JNT_Blade/JNT_Trigger/JNT_TriggerEnd
-    m_Weight: 0
-  - m_Path: group/XcalibreRigv3_GRP_All/JNT_Root 1/JNT_SwordLEFTHANDTARGET
-    m_Weight: 0
   - m_Path: GRP_All
-    m_Weight: 0
-  - m_Path: GRP_All/GRP_Joints
-    m_Weight: 0
-  - m_Path: GRP_All/GRP_Joints/JNT_Root
     m_Weight: 1
+  - m_Path: GRP_All/GRP_Joints
+    m_Weight: 1
+  - m_Path: GRP_All/GRP_Joints/JNT_Root
+    m_Weight: 0
   - m_Path: GRP_All/GRP_Joints/JNT_Root/curve1
     m_Weight: 0
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_L_Hip
     m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_L_Hip/JNT_L_Knee
