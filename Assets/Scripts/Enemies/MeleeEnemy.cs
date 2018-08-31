@@ -50,10 +50,14 @@ public class MeleeEnemy : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (isDying)
+        if (isDying && animator != null)
         {
             animator.SetBool("isDying", true);
             animator.SetBool("isWalking", false);
+        }
+        else
+        {
+            Debug.Log("Does not have animator");
         }
             
         if (!isHit)

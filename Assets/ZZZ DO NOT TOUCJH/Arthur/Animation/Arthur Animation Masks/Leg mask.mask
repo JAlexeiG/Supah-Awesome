@@ -11,91 +11,15 @@ AvatarMask:
   - m_Path: 
     m_Weight: 1
   - m_Path: CTRL_Master
-    m_Weight: 0
-  - m_Path: group
-    m_Weight: 0
-  - m_Path: group/GunMeshGroup
     m_Weight: 1
-  - m_Path: group/GunMeshGroup/AccordionBack_low
-    m_Weight: 1
-  - m_Path: group/GunMeshGroup/AccordionFront_low
-    m_Weight: 1
-  - m_Path: group/GunMeshGroup/Barrel_low
-    m_Weight: 1
-  - m_Path: group/GunMeshGroup/Barrel_low 1
-    m_Weight: 1
-  - m_Path: group/GunMeshGroup/Blade_low
-    m_Weight: 1
-  - m_Path: group/GunMeshGroup/Blade_low 1
-    m_Weight: 1
-  - m_Path: group/GunMeshGroup/BladeTipBottom_low
-    m_Weight: 1
-  - m_Path: group/GunMeshGroup/BladeTipTop_low
-    m_Weight: 1
-  - m_Path: group/GunMeshGroup/Grip_low
-    m_Weight: 1
-  - m_Path: group/GunMeshGroup/Lock_low
-    m_Weight: 1
-  - m_Path: group/GunMeshGroup/LockBolt_low
-    m_Weight: 1
-  - m_Path: group/GunMeshGroup/Reciever_low
-    m_Weight: 1
-  - m_Path: group/GunMeshGroup/Reciever_low 1
-    m_Weight: 1
-  - m_Path: group/GunMeshGroup/Sword_low
-    m_Weight: 1
-  - m_Path: group/GunMeshGroup/Sword_low 1
-    m_Weight: 1
-  - m_Path: group/GunMeshGroup/SwordPommel_low
-    m_Weight: 1
-  - m_Path: group/GunMeshGroup/Trigger_low
-    m_Weight: 1
-  - m_Path: group/GunMeshGroup/Trigger_low 1
-    m_Weight: 1
-  - m_Path: group/left
-    m_Weight: 0
-  - m_Path: group/XcalibreRigv3_GRP_All
-    m_Weight: 0
-  - m_Path: group/XcalibreRigv3_GRP_All/CTRL_Gun
-    m_Weight: 0
-  - m_Path: group/XcalibreRigv3_GRP_All/JNT_Root 1
-    m_Weight: 0
-  - m_Path: group/XcalibreRigv3_GRP_All/JNT_Root 1/JNT_GunLEFTHANDTARGET
-    m_Weight: 0
-  - m_Path: group/XcalibreRigv3_GRP_All/JNT_Root 1/JNT_handle
-    m_Weight: 0
-  - m_Path: group/XcalibreRigv3_GRP_All/JNT_Root 1/JNT_handle/JNT_Middle
-    m_Weight: 0
-  - m_Path: group/XcalibreRigv3_GRP_All/JNT_Root 1/JNT_handle/JNT_Middle/JNT_Blade
-    m_Weight: 0
-  - m_Path: group/XcalibreRigv3_GRP_All/JNT_Root 1/JNT_handle/JNT_Middle/JNT_Blade/JNT_BladeTip
-    m_Weight: 0
-  - m_Path: group/XcalibreRigv3_GRP_All/JNT_Root 1/JNT_handle/JNT_Middle/JNT_Blade/JNT_BladeTip/JNT_BladeTipBottom
-    m_Weight: 0
-  - m_Path: group/XcalibreRigv3_GRP_All/JNT_Root 1/JNT_handle/JNT_Middle/JNT_Blade/JNT_BladeTip/JNT_BladeTipBottom/JNT_BladeTipBottomEnd
-    m_Weight: 0
-  - m_Path: group/XcalibreRigv3_GRP_All/JNT_Root 1/JNT_handle/JNT_Middle/JNT_Blade/JNT_BladeTip/JNT_BladeTipTop
-    m_Weight: 0
-  - m_Path: group/XcalibreRigv3_GRP_All/JNT_Root 1/JNT_handle/JNT_Middle/JNT_Blade/JNT_BladeTip/JNT_BladeTipTop/JNT_BladeTipTopEnd
-    m_Weight: 0
-  - m_Path: group/XcalibreRigv3_GRP_All/JNT_Root 1/JNT_handle/JNT_Middle/JNT_Blade/JNT_Lever
-    m_Weight: 0
-  - m_Path: group/XcalibreRigv3_GRP_All/JNT_Root 1/JNT_handle/JNT_Middle/JNT_Blade/JNT_Lever/JNT_LeverEnd
-    m_Weight: 0
-  - m_Path: group/XcalibreRigv3_GRP_All/JNT_Root 1/JNT_handle/JNT_Middle/JNT_Blade/JNT_Trigger
-    m_Weight: 0
-  - m_Path: group/XcalibreRigv3_GRP_All/JNT_Root 1/JNT_handle/JNT_Middle/JNT_Blade/JNT_Trigger/JNT_TriggerEnd
-    m_Weight: 0
-  - m_Path: group/XcalibreRigv3_GRP_All/JNT_Root 1/JNT_SwordLEFTHANDTARGET
-    m_Weight: 0
   - m_Path: GRP_All
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root
     m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/curve1
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1
     m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_L_Hip
@@ -119,121 +43,121 @@ AvatarMask:
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_R_Hip/JNT_R_Knee/JNT_R_Ankle/JNT_R_Foot/JNT_R_FootTip
     m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_L_Clavicle
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_L_Clavicle/JNT_L_Shoulder
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_L_Clavicle/JNT_L_Shoulder/JNT_L_Elbow
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_L_Clavicle/JNT_L_Shoulder/JNT_L_Elbow/JNT_L_Wrist1
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_L_Clavicle/JNT_L_Shoulder/JNT_L_Elbow/JNT_L_Wrist1/JNT_L_Wrist2
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_L_Clavicle/JNT_L_Shoulder/JNT_L_Elbow/JNT_L_Wrist1/JNT_L_Wrist2/JNT_L_MiddleFingerA
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_L_Clavicle/JNT_L_Shoulder/JNT_L_Elbow/JNT_L_Wrist1/JNT_L_Wrist2/JNT_L_MiddleFingerA/JNT_L_MiddleFingerB
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_L_Clavicle/JNT_L_Shoulder/JNT_L_Elbow/JNT_L_Wrist1/JNT_L_Wrist2/JNT_L_MiddleFingerA/JNT_L_MiddleFingerB/JNT_L_MiddleFingerC
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_L_Clavicle/JNT_L_Shoulder/JNT_L_Elbow/JNT_L_Wrist1/JNT_L_Wrist2/JNT_L_MiddleFingerA/JNT_L_MiddleFingerB/JNT_L_MiddleFingerC/JNT_L_MiddleFingerD
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_L_Clavicle/JNT_L_Shoulder/JNT_L_Elbow/JNT_L_Wrist1/JNT_L_Wrist2/JNT_L_PinkyFingerA
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_L_Clavicle/JNT_L_Shoulder/JNT_L_Elbow/JNT_L_Wrist1/JNT_L_Wrist2/JNT_L_PinkyFingerA/JNT_L_PinkyFingerB
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_L_Clavicle/JNT_L_Shoulder/JNT_L_Elbow/JNT_L_Wrist1/JNT_L_Wrist2/JNT_L_PinkyFingerA/JNT_L_PinkyFingerB/JNT_L_PinkyFingerC
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_L_Clavicle/JNT_L_Shoulder/JNT_L_Elbow/JNT_L_Wrist1/JNT_L_Wrist2/JNT_L_PinkyFingerA/JNT_L_PinkyFingerB/JNT_L_PinkyFingerC/JNT_L_PinkyFingerD
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_L_Clavicle/JNT_L_Shoulder/JNT_L_Elbow/JNT_L_Wrist1/JNT_L_Wrist2/JNT_L_PointerFingerA
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_L_Clavicle/JNT_L_Shoulder/JNT_L_Elbow/JNT_L_Wrist1/JNT_L_Wrist2/JNT_L_PointerFingerA/JNT_L_PointerFingerB
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_L_Clavicle/JNT_L_Shoulder/JNT_L_Elbow/JNT_L_Wrist1/JNT_L_Wrist2/JNT_L_PointerFingerA/JNT_L_PointerFingerB/JNT_L_PointerFingerC
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_L_Clavicle/JNT_L_Shoulder/JNT_L_Elbow/JNT_L_Wrist1/JNT_L_Wrist2/JNT_L_PointerFingerA/JNT_L_PointerFingerB/JNT_L_PointerFingerC/JNT_L_PointerFingerD
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_L_Clavicle/JNT_L_Shoulder/JNT_L_Elbow/JNT_L_Wrist1/JNT_L_Wrist2/JNT_L_RingFingerA
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_L_Clavicle/JNT_L_Shoulder/JNT_L_Elbow/JNT_L_Wrist1/JNT_L_Wrist2/JNT_L_RingFingerA/JNT_L_RingFingerB
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_L_Clavicle/JNT_L_Shoulder/JNT_L_Elbow/JNT_L_Wrist1/JNT_L_Wrist2/JNT_L_RingFingerA/JNT_L_RingFingerB/JNT_L_RingFingerC
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_L_Clavicle/JNT_L_Shoulder/JNT_L_Elbow/JNT_L_Wrist1/JNT_L_Wrist2/JNT_L_RingFingerA/JNT_L_RingFingerB/JNT_L_RingFingerC/JNT_L_RingFingerD
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_L_Clavicle/JNT_L_Shoulder/JNT_L_Elbow/JNT_L_Wrist1/JNT_L_Wrist2/JNT_L_ThumbA
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_L_Clavicle/JNT_L_Shoulder/JNT_L_Elbow/JNT_L_Wrist1/JNT_L_Wrist2/JNT_L_ThumbA/JNT_L_ThumbB
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_L_Clavicle/JNT_L_Shoulder/JNT_L_Elbow/JNT_L_Wrist1/JNT_L_Wrist2/JNT_L_ThumbA/JNT_L_ThumbB/JNT_L_ThumbC
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_L_Clavicle/JNT_L_Shoulder/JNT_L_Elbow/JNT_L_Wrist1/JNT_L_Wrist2/JNT_L_ThumbA/JNT_L_ThumbB/JNT_L_ThumbC/JNT_L_ThumbD
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_Neck1
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_Neck1/JNT_Neck2
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_Neck1/JNT_Neck2/JNT_Head
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_Neck1/JNT_Neck2/JNT_Head/JNT_HeadTip
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_R_Clavicle
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_R_Clavicle/JNT_R_Shoulder
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_R_Clavicle/JNT_R_Shoulder/JNT_R_Elbow
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_R_Clavicle/JNT_R_Shoulder/JNT_R_Elbow/JNT_R_Wrist1
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_R_Clavicle/JNT_R_Shoulder/JNT_R_Elbow/JNT_R_Wrist1/JNT_R_Wrist2
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_R_Clavicle/JNT_R_Shoulder/JNT_R_Elbow/JNT_R_Wrist1/JNT_R_Wrist2/JNT_Prop
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_R_Clavicle/JNT_R_Shoulder/JNT_R_Elbow/JNT_R_Wrist1/JNT_R_Wrist2/JNT_R_MiddleFingerA
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_R_Clavicle/JNT_R_Shoulder/JNT_R_Elbow/JNT_R_Wrist1/JNT_R_Wrist2/JNT_R_MiddleFingerA/JNT_R_MiddleFingerB
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_R_Clavicle/JNT_R_Shoulder/JNT_R_Elbow/JNT_R_Wrist1/JNT_R_Wrist2/JNT_R_MiddleFingerA/JNT_R_MiddleFingerB/JNT_R_MiddleFingerC
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_R_Clavicle/JNT_R_Shoulder/JNT_R_Elbow/JNT_R_Wrist1/JNT_R_Wrist2/JNT_R_MiddleFingerA/JNT_R_MiddleFingerB/JNT_R_MiddleFingerC/JNT_R_MiddleFingerD
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_R_Clavicle/JNT_R_Shoulder/JNT_R_Elbow/JNT_R_Wrist1/JNT_R_Wrist2/JNT_R_PinkyFingerA
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_R_Clavicle/JNT_R_Shoulder/JNT_R_Elbow/JNT_R_Wrist1/JNT_R_Wrist2/JNT_R_PinkyFingerA/JNT_R_PinkyFingerB
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_R_Clavicle/JNT_R_Shoulder/JNT_R_Elbow/JNT_R_Wrist1/JNT_R_Wrist2/JNT_R_PinkyFingerA/JNT_R_PinkyFingerB/JNT_R_PinkyFingerC
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_R_Clavicle/JNT_R_Shoulder/JNT_R_Elbow/JNT_R_Wrist1/JNT_R_Wrist2/JNT_R_PinkyFingerA/JNT_R_PinkyFingerB/JNT_R_PinkyFingerC/JNT_R_PinkyFingerD
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_R_Clavicle/JNT_R_Shoulder/JNT_R_Elbow/JNT_R_Wrist1/JNT_R_Wrist2/JNT_R_PointerFingerA
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_R_Clavicle/JNT_R_Shoulder/JNT_R_Elbow/JNT_R_Wrist1/JNT_R_Wrist2/JNT_R_PointerFingerA/JNT_R_PointerFingerB
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_R_Clavicle/JNT_R_Shoulder/JNT_R_Elbow/JNT_R_Wrist1/JNT_R_Wrist2/JNT_R_PointerFingerA/JNT_R_PointerFingerB/JNT_R_PointerFingerC
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_R_Clavicle/JNT_R_Shoulder/JNT_R_Elbow/JNT_R_Wrist1/JNT_R_Wrist2/JNT_R_PointerFingerA/JNT_R_PointerFingerB/JNT_R_PointerFingerC/JNT_R_PointerFingerD
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_R_Clavicle/JNT_R_Shoulder/JNT_R_Elbow/JNT_R_Wrist1/JNT_R_Wrist2/JNT_R_RingFingerA
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_R_Clavicle/JNT_R_Shoulder/JNT_R_Elbow/JNT_R_Wrist1/JNT_R_Wrist2/JNT_R_RingFingerA/JNT_R_RingFingerB
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_R_Clavicle/JNT_R_Shoulder/JNT_R_Elbow/JNT_R_Wrist1/JNT_R_Wrist2/JNT_R_RingFingerA/JNT_R_RingFingerB/JNT_R_RingFingerC
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_R_Clavicle/JNT_R_Shoulder/JNT_R_Elbow/JNT_R_Wrist1/JNT_R_Wrist2/JNT_R_RingFingerA/JNT_R_RingFingerB/JNT_R_RingFingerC/JNT_R_RingFingerD
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_R_Clavicle/JNT_R_Shoulder/JNT_R_Elbow/JNT_R_Wrist1/JNT_R_Wrist2/JNT_R_ThumbA
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_R_Clavicle/JNT_R_Shoulder/JNT_R_Elbow/JNT_R_Wrist1/JNT_R_Wrist2/JNT_R_ThumbA/JNT_R_ThumbB
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_R_Clavicle/JNT_R_Shoulder/JNT_R_Elbow/JNT_R_Wrist1/JNT_R_Wrist2/JNT_R_ThumbA/JNT_R_ThumbB/JNT_R_ThumbC
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: GRP_All/GRP_Joints/JNT_Root/JNT_Spine1/JNT_Spine2/JNT_Spine3/JNT_Chest/JNT_R_Clavicle/JNT_R_Shoulder/JNT_R_Elbow/JNT_R_Wrist1/JNT_R_Wrist2/JNT_R_ThumbA/JNT_R_ThumbB/JNT_R_ThumbC/JNT_R_ThumbD
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: LOC_LeftHand
     m_Weight: 1
   - m_Path: Mesh
