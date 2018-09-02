@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/ZZZ DO NOT TOUCJH/Arthur/Arthur Meshes/Materials/Map__1_Checker.mat.meta
 guid: d1e11d0bab0ec9c4ba05a24c84f6a346
 timeCreated: 1535732555
+=======
+guid: ff823641a1598af4f9d57ebcf5f2f5b3
+timeCreated: 1535734735
+>>>>>>> 6bb07c16e2e8cd3c28fe6a476bcf0e1d5379eafc:Assets/ZZZ DO NOT TOUCJH/Arthur/Arthur Meshes/Materials/Map__1_Checker.mat.meta
 licenseType: Free
 NativeFormatImporter:
   externalObjects: {}

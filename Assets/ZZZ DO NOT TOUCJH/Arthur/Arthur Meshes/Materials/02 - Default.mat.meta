@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/ZZZ DO NOT TOUCJH/Arthur/Arthur Meshes/Materials/02 - Default.mat.meta
 guid: db2d4d09446fa0f44a2b810c2c200f46
 timeCreated: 1535732556
+=======
+guid: 47a5c97d0281b504f927540033ee15ad
+timeCreated: 1535734736
+>>>>>>> 6bb07c16e2e8cd3c28fe6a476bcf0e1d5379eafc:Assets/ZZZ DO NOT TOUCJH/Arthur/Arthur Meshes/Materials/02 - Default.mat.meta
 licenseType: Free
 NativeFormatImporter:
   externalObjects: {}
