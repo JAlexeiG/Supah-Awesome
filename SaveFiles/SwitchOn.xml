@@ -4,14 +4,20 @@
     <boolean>false</boolean>
     <boolean>false</boolean>
     <boolean>false</boolean>
+<<<<<<< HEAD
     <boolean>false</boolean>
     <boolean>false</boolean>
+=======
+>>>>>>> 49f7ad6b68ac94a3af760a4858abceac80ca91bb
   </saveSwitches>
   <nameSwitches>
     <string>Button</string>
     <string>Button</string>
     <string>Button</string>
+<<<<<<< HEAD
     <string>Button</string>
     <string>Button</string>
+=======
+>>>>>>> 49f7ad6b68ac94a3af760a4858abceac80ca91bb
   </nameSwitches>
 </switchXML>

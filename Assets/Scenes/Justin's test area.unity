@@ -1547,6 +1547,7 @@ MonoBehaviour:
   shootUpWeight: 0
   shootWeight: 0
   shootDownWeight: 0
+  turnoffAnims: 1
 --- !u!114 &231366052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2171,7 +2172,7 @@ Prefab:
     - target: {fileID: 224933378456568212, guid: c78a0fca1ab28204baaff381f37ebe1e,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 167.5
+      value: 140
       objectReference: {fileID: 0}
     - target: {fileID: 224933378456568212, guid: c78a0fca1ab28204baaff381f37ebe1e,
         type: 2}

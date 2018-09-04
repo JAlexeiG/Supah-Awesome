@@ -19,6 +19,10 @@ public class BodyRotation : MonoBehaviour {
     public float shootWeight;
     public float shootDownWeight;
 
+    public bool shooting;
+    public bool bang;
+
+    public float shootTimer;
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -27,14 +31,25 @@ public class BodyRotation : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-
-
-        anim.SetLayerWeight(1, 1);
-        anim.SetLayerWeight(2, shootWeight);
-        anim.SetLayerWeight(3, shootDownWeight);
-    
-
-
+        if(bang)
+        {
+            shooting = true;
+            bang = false;
+            anim.SetTrigger("Shoot");
+        }
+        if (shooting)
+        {
+            anim.SetLayerWeight(1, 1);
+            anim.SetLayerWeight(2, shootWeight);
+            anim.SetLayerWeight(3, shootDownWeight);
+        }
+        else
+        {
+            anim.SetLayerWeight(1, 0);
+            anim.SetLayerWeight(2, 0);
+            anim.SetLayerWeight(3, 0);
+        }
+        
         //Mouse position (+20 because camera is -20) to find where to shoot something
         mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z + cameraPosZ);
 
@@ -83,5 +98,10 @@ public class BodyRotation : MonoBehaviour {
     public void changeMele(bool newMele)
     {
         isMele = newMele;
+    }
+
+    public void endShoot()
+    {
+        shooting = false;
     }
 }

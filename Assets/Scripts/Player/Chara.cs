@@ -123,6 +123,8 @@ public class Chara : MonoBehaviour
     private GameObject meleBox; //Hitbox for mele attack
 
     // KEEP ALL ART HERE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ KEEP ALL ART HERE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ KEEP ALL ART HERE //
+    private Animator anim;
+
 
     [SerializeField]
     GameObject[] weaponComponents; //Weapon
@@ -370,7 +372,9 @@ public class Chara : MonoBehaviour
                         GameObject crosshair = Instantiate(crosshairPreFab, potato, Quaternion.Euler(0, 0, 0)); //Spawns crosshair
 
                         ///Updates for aiming
-                        aimingOrigin.LookAt(crosshair.transform); //Makes aim look at crosshair
+
+
+                        //aimingOrigin.LookAt(crosshair.transform); //Makes aim look at crosshair
 
                         //POTATOES// 
 
