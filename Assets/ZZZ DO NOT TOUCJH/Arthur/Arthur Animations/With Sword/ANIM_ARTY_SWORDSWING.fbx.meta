@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 5f75b1080a060f741b3098d9bf1db964
-timeCreated: 1535729569
+guid: 475c19c8dd9ad29489fb695ece95e939
+timeCreated: 1536070888
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -80,6 +80,7 @@ ModelImporter:
     100144: JNT_Spine1
     100146: JNT_Spine2
     100148: JNT_Spine3
+    100150: locator1
     400000: //RootNode
     400002: CTRL_Master
     400004: curve1
@@ -155,7 +156,8 @@ ModelImporter:
     400144: JNT_Spine1
     400146: JNT_Spine2
     400148: JNT_Spine3
-    7400000: Idle Gun
+    400150: locator1
+    7400000: Take 001
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -183,35 +185,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: Idle Gun
-      takeName: Take 001
-      firstFrame: 1
-      lastFrame: 23
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -256,8 +230,7 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 5395663a570f5d94995db2ce0675e1a9,
-    type: 3}
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
   humanoidOversampling: 1
   additionalBone: 0

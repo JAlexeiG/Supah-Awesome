@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 8e2bfd547f5819948a1aadbc15c1186f
-timeCreated: 1536076475
+guid: 617315ddb801cb542a65a308ce68f08a
+timeCreated: 1535741851
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -80,7 +80,6 @@ ModelImporter:
     100144: JNT_Spine1
     100146: JNT_Spine2
     100148: JNT_Spine3
-    100150: LOC_LeftHand
     400000: //RootNode
     400002: CTRL_Master
     400004: curve1
@@ -156,8 +155,7 @@ ModelImporter:
     400144: JNT_Spine1
     400146: JNT_Spine2
     400148: JNT_Spine3
-    400150: LOC_LeftHand
-    7400000: Shoot Down
+    7400000: Run w/Gun
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -187,9 +185,9 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Shoot Down
+      name: Run w/Gun
       takeName: Take 001
-      firstFrame: 2
+      firstFrame: 6
       lastFrame: 35
       wrapMode: 0
       orientationOffsetY: 0
@@ -197,7 +195,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

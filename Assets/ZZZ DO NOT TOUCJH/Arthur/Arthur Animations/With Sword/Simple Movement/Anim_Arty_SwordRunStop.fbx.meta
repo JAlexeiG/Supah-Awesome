@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 34c3d65aa48415841b62e3563ffa8255
-timeCreated: 1535741851
+guid: 4d536d9b9cc8c0f4bba6e30b6388c609
+timeCreated: 1536070888
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -155,7 +155,7 @@ ModelImporter:
     400144: JNT_Spine1
     400146: JNT_Spine2
     400148: JNT_Spine3
-    7400000: Take 001
+    7400000: Run End w/Sword
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -183,7 +183,35 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Run End w/Sword
+      takeName: Take 001
+      firstFrame: 38
+      lastFrame: 42
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []

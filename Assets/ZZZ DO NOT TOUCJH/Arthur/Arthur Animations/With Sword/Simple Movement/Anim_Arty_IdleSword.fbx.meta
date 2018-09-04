@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 8e2bfd547f5819948a1aadbc15c1186f
-timeCreated: 1536076475
+guid: 9c06d52929be8e548b29df1f8e464a99
+timeCreated: 1536070889
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -80,7 +80,6 @@ ModelImporter:
     100144: JNT_Spine1
     100146: JNT_Spine2
     100148: JNT_Spine3
-    100150: LOC_LeftHand
     400000: //RootNode
     400002: CTRL_Master
     400004: curve1
@@ -156,8 +155,7 @@ ModelImporter:
     400144: JNT_Spine1
     400146: JNT_Spine2
     400148: JNT_Spine3
-    400150: LOC_LeftHand
-    7400000: Shoot Down
+    7400000: Idle w/Sword
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -187,17 +185,17 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Shoot Down
+      name: Idle w/Sword
       takeName: Take 001
-      firstFrame: 2
-      lastFrame: 35
+      firstFrame: 3
+      lastFrame: 26
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
