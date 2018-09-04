@@ -125,7 +125,7 @@ MonoBehaviour:
         tint: 0
         hueShift: 0
         saturation: 1
-        contrast: 1
+        contrast: 0.45
       channelMixer:
         red: {x: 1, y: 0, z: 0}
         green: {x: 0, y: 1, z: 0}
@@ -134,9 +134,9 @@ MonoBehaviour:
       colorWheels:
         mode: 1
         log:
-          slope: {r: 1, g: 0.99635357, b: 0.9406986, a: 0}
-          power: {r: 0.9917755, g: 0.9835526, b: 1, a: 0}
-          offset: {r: 0.6609281, g: 1, b: 0.77907324, a: 0}
+          slope: {r: 0.9274015, g: 1, b: 0.31260645, a: 0}
+          power: {r: 0.93997395, g: 1, b: 0.9549804, a: 0}
+          offset: {r: 0.985852, g: 1, b: 0.9717038, a: 0}
         linear:
           lift: {r: 0, g: 0, b: 0, a: 0}
           gamma: {r: 0, g: 0, b: 0, a: 0}
