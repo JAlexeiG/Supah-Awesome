@@ -123,11 +123,14 @@ public class Chara : MonoBehaviour
     private GameObject meleBox; //Hitbox for mele attack
 
     // KEEP ALL ART HERE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ KEEP ALL ART HERE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ KEEP ALL ART HERE //
+
+    [SerializeField]
+    private Transform Arthur;
+
+    [SerializeField]
     private Animator anim;
 
 
-    [SerializeField]
-    GameObject[] weaponComponents; //Weapon
     [SerializeField]
     private GameObject glider; //Glider 
 
@@ -224,20 +227,6 @@ public class Chara : MonoBehaviour
             playerBullets = bulletCap;
         }
 
-        // Shows whether player is in ranged or mele form
-        if (isMele)
-        {
-            for (int i = 0; i < weaponComponents.Length; i++)
-            {
-                weaponComponents[i].SetActive(true);
-            }
-        }
-        else
-            for (int i = 0; i < weaponComponents.Length; i++)
-        {
-                weaponComponents[i].SetActive(false);
-        }
-
     }
 
 
@@ -303,10 +292,13 @@ public class Chara : MonoBehaviour
 
         if (!isStunned) //If the player is not stunned and game is not paused
         {
-            if (Input.GetMouseButtonDown(2) || Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetMouseButtonDown(2) || Input.GetKeyDown(KeyCode.Q) && !(anim.GetCurrentAnimatorClipInfo(0)[0].clip.name == "Wep Transition Blend"))
             {
                 //Changes between mele / ranged
                 isMele = !isMele;
+                anim.SetTrigger("Weapon Transition");
+                anim.SetBool("Gun Not Sword",!isMele);
+                anim.SetFloat("Weapon Transition Mult", -anim.GetFloat("Weapon Transition Mult"));
             }
 
             if (isMele) //When player is mele
@@ -459,14 +451,19 @@ public class Chara : MonoBehaviour
                 if (input > 0.1f)
                 {
                     rb.velocity = new Vector3(speed, rb.velocity.y);
+                    anim.SetBool("Running",true);
+                    Arthur.eulerAngles = new Vector3(0, 90, 0);
                 }
                 else if (input < -0.1f)
                 {
                     rb.velocity = new Vector3(-speed, rb.velocity.y);
+                    anim.SetBool("Running", true);
+                    Arthur.eulerAngles = new Vector3(0, -90, 0);
                 }
                 else
                 {
                     rb.velocity = new Vector3(0, rb.velocity.y);
+                    anim.SetBool("Running", false);
                 }
 
                 //doubleJump = true; //Makes jumping available again
