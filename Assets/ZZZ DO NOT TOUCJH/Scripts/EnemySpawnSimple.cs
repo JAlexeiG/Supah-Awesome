@@ -6,79 +6,85 @@ using UnityEngine.AI;
 public class EnemySpawnSimple : MonoBehaviour {
 
     public bool trigger;
+    public bool triggerCheck;
 
     [SerializeField]
-    private GameObject MelePref;
+    private GameObject[] meleObjects;
 
     [SerializeField]
-    private GameObject RangedPref;
-    
+    private GameObject[] rangedObjects;
     [SerializeField]
-    public GameObject SpoodersPref;
+    private GameObject[] spooderObjects;
 
-    [System.Serializable]
-    public class spooderInfo
-    {
-        public Transform Spooders;
-        
-        public Transform MovePos1;
-        
-        public Transform MovePos2;
-    }
 
     [SerializeField]
-    public spooderInfo[] spooderInf;
-    
-    
-    [SerializeField]
-    private Transform[] Mele;
+    private GameObject[] anyExtraObjects;
 
-    [SerializeField]
-    private Transform[] Ranged;
 
-    
-    private GameObject[] melePos;
-    
-    private GameObject[] rangedPos;
-    
-    private GameObject[] spooderPos;
-
-    
     // Use this for initialization
     void Start ()
     {
-        melePos = new GameObject[Mele.Length];
-        rangedPos = new GameObject[Ranged.Length];
-        spooderPos = new GameObject[spooderInf.Length];
+        triggerCheck = trigger;
+        for (int i = 0; i < meleObjects.Length && meleObjects.Length > 0; i++)
+        {
+            meleObjects[i].SetActive(false);
+        }
+        for (int i = 0; i < rangedObjects.Length && rangedObjects.Length > 0; i++)
+        {
+            rangedObjects[i].SetActive(false);
+        }
+        for (int i = 0; i < spooderObjects.Length && spooderObjects.Length > 0; i++)
+        {
+            spooderObjects[i].SetActive(false);
+        }
+        for (int i = 0; i < anyExtraObjects.Length && anyExtraObjects.Length > 0; i++)
+        {
+            anyExtraObjects[i].SetActive(false);
+        }
     }
 
     private void Update()
     {
-        if(trigger)
+        if (trigger != triggerCheck)
         {
-            spawnLevel();
-            trigger = false;
+            switchOn(trigger);
         }
     }
-    public void spawnLevel()
+
+    public void switchOn(bool switching)
     {
-        for (int i = 0; i < Mele.Length && Mele.Length > 0; i++)
+        for (int i = 0; i < meleObjects.Length && meleObjects.Length > 0; i++)
         {
-            GameObject newMele = Instantiate(MelePref, Mele[i].position, Mele[i].rotation);
-            melePos[i] = newMele;
+            meleObjects[i].SetActive(switching);
         }
-        for (int i = 0; i < Ranged.Length && Ranged.Length > 0; i++)
+        for (int i = 0; i < rangedObjects.Length && rangedObjects.Length > 0; i++)
         {
-            GameObject newRanged = Instantiate(RangedPref, Ranged[i].position, Ranged[i].rotation);
-            rangedPos[i] = newRanged;
+            rangedObjects[i].SetActive(switching);
         }
-        for (int i = 0; i < spooderInf.Length && spooderInf.Length > 0; i++)
+        for (int i = 0; i < spooderObjects.Length && spooderObjects.Length > 0; i++)
         {
-            GameObject newSpooder = Instantiate(SpoodersPref, spooderInf[i].Spooders.position, spooderInf[i].Spooders.rotation);
-            SpiderAI spiderAI = newSpooder.GetComponentInChildren<SpiderAI>();
-            spiderAI.setPos(spooderInf[i].MovePos1, spooderInf[i].MovePos2);
-            spooderPos[i] = newSpooder;
-            spiderAI.start();
+            spooderObjects[i].SetActive(switching);
+        }
+        for (int i = 0; i < anyExtraObjects.Length && anyExtraObjects.Length > 0; i++)
+        {
+            anyExtraObjects[i].SetActive(switching);
+        }
+        triggerCheck = trigger;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Player")
+        {
+            trigger = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            trigger = false;
         }
     }
 }
