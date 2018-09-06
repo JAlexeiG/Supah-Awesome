@@ -2,6 +2,11 @@
 <switchXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <saveSwitches>
     <boolean>false</boolean>
+<<<<<<< HEAD
+  </saveSwitches>
+  <nameSwitches>
+    <string>Button</string>
+=======
     <boolean>false</boolean>
     <boolean>false</boolean>
 <<<<<<< HEAD
@@ -19,5 +24,6 @@
     <string>Button</string>
 =======
 >>>>>>> 49f7ad6b68ac94a3af760a4858abceac80ca91bb
+>>>>>>> cd2c47e107b0a37e6d58758a46e25bc865e3370b
   </nameSwitches>
 </switchXML>

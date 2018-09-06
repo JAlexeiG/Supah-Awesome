@@ -26,6 +26,7 @@ public class BodyRotation : MonoBehaviour {
     private void Start()
     {
         anim = GetComponent<Animator>();
+        lookAtObject.parent = null;
     }
 
     // Update is called once per frame
@@ -59,7 +60,7 @@ public class BodyRotation : MonoBehaviour {
         potato = new Vector3(potato.x, potato.y, transform.position.z);
 
         lookAtObject.position = potato;
-        Debug.Log(potato);
+        //Debug.Log(potato);
 
         ///Updates for aiming
         rotationObject.LookAt(lookAtObject); //Makes aim look at crosshair
@@ -72,7 +73,7 @@ public class BodyRotation : MonoBehaviour {
         float rotatedX = rotationObject.localEulerAngles.x;
         float rotatedY = rotationObject.localEulerAngles.y;
 
-        Debug.Log(rotatedX + " " + rotatedY);
+        //Debug.Log(rotatedX + " " + rotatedY);
 
 
         if (rotatedY < 180)
