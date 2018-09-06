@@ -11,9 +11,27 @@ public class EnemySpawnSimple : MonoBehaviour {
 
     [SerializeField]
     private GameObject RangedPref;
+    
+    [SerializeField]
+    public GameObject SpoodersPref;
+
+    [System.Serializable]
+    public class spooderInfo
+    {
+        [SerializeField]
+        public Transform[] Spooders;
+
+        [SerializeField]
+        public Transform[] SpooderMove1;
+
+        [SerializeField]
+        public Transform[] SpooderMove2;
+    }
 
     [SerializeField]
-    private GameObject SpoodersPref;
+    public spooderInfo spooderInf;
+    
+    
 
     [SerializeField]
     private Transform[] Mele;
@@ -21,10 +39,8 @@ public class EnemySpawnSimple : MonoBehaviour {
     [SerializeField]
     private Transform[] Ranged;
 
-    [SerializeField]
-    private Transform[] Spooders;
-    [SerializeField]
-    private Transform[] Spooders;
+
+
 
 
     private GameObject[] melePos;
@@ -39,7 +55,7 @@ public class EnemySpawnSimple : MonoBehaviour {
     {
         melePos = new GameObject[Mele.Length];
         rangedPos = new GameObject[Ranged.Length];
-        spooderPos = new GameObject[Spooders.Length];
+        //spooderPos = new GameObject[Spooders.Length];
     }
 
     private void Update()
@@ -62,10 +78,12 @@ public class EnemySpawnSimple : MonoBehaviour {
             GameObject newRanged = Instantiate(RangedPref, Ranged[i].position, Ranged[i].rotation);
             rangedPos[i] = newRanged;
         }
+        /*
         for (int i = 0; i < Spooders.Length && Spooders.Length > 0; i++)
         {
             GameObject newSpooder = Instantiate(SpoodersPref, Spooders[i].position, Spooders[i].rotation);
             spooderPos[i] = newSpooder;
         }
+        */
     }
 }
