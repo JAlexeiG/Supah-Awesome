@@ -59,42 +59,42 @@ public class EnemySpawning : MonoBehaviour {
 
     IEnumerator CheckRanged()
     {
-        for (int i = 0; i < rangedSpawns.Length; i++)
-        {
-            if (Vector3.Distance(playerLocation, rangedSpawns[i].position) > 50 && rangedSpawned[i])
+            for (int i = 0; i < rangedSpawns.Length; i++)
             {
-                rangedSpawned[i] = false;
-                Destroy(rangedSpawns[i].GetChild(0).gameObject);
+                if (Vector3.Distance(playerLocation, rangedSpawns[i].position) > 50 && rangedSpawned[i])
+                {
+                    rangedSpawned[i] = false;
+                    Destroy(rangedSpawns[i].GetChild(0).gameObject);
+                }
+                else if (Vector3.Distance(playerLocation, rangedSpawns[i].position) < 50 && !rangedSpawned[i])
+                {
+                    rangedSpawned[i] = true;
+                    GameObject spawn = Instantiate(rangedEnemy, rangedSpawns[i].position, rangedSpawns[i].rotation);
+                    spawn.transform.SetParent(rangedSpawns[i]);
+                }
             }
-            else if (Vector3.Distance(playerLocation, rangedSpawns[i].position) < 50 && !rangedSpawned[i])
-            {
-                rangedSpawned[i] = true;
-                GameObject spawn = Instantiate(rangedEnemy, rangedSpawns[i].position, rangedSpawns[i].rotation);
-                spawn.transform.SetParent(rangedSpawns[i]);
-            }
-        }
-        yield return new WaitForSeconds(Timer);
-        StartCoroutine("CheckRanged");
+            yield return new WaitForSeconds(Timer);
+            StartCoroutine("CheckRanged");
     }
 
     IEnumerator CheckMelee()
     {
-        for (int i = 0; i < meleeSpawns.Length; i++)
-        {
-            if (Vector3.Distance(playerLocation, meleeSpawns[i].position) > 50 && meleeSpawned[i])
+            for (int i = 0; i < meleeSpawns.Length; i++)
             {
-                meleeSpawned[i] = false;
-                Destroy(meleeSpawns[i].GetChild(0).gameObject);
+                if (Vector3.Distance(playerLocation, meleeSpawns[i].position) > 50 && meleeSpawned[i])
+                {
+                    meleeSpawned[i] = false;
+                    Destroy(meleeSpawns[i].GetChild(0).gameObject);
+                }
+                else if (Vector3.Distance(playerLocation, meleeSpawns[i].position) < 50 && !meleeSpawned[i])
+                {
+                    meleeSpawned[i] = true;
+                    GameObject spawn = Instantiate(meleeEnemy, meleeSpawns[i].position, meleeSpawns[i].rotation);
+                    spawn.transform.SetParent(meleeSpawns[i]);
+                }
             }
-            else if (Vector3.Distance(playerLocation, meleeSpawns[i].position) < 50 && !meleeSpawned[i])
-            {
-                meleeSpawned[i] = true;
-                GameObject spawn = Instantiate(meleeEnemy, meleeSpawns[i].position, meleeSpawns[i].rotation);
-                spawn.transform.SetParent(meleeSpawns[i]);
-            }
-        }
-        yield return new WaitForSeconds(Timer);
-        StartCoroutine("CheckMelee");
+            yield return new WaitForSeconds(Timer);
+            StartCoroutine("CheckMelee");
     }
 
     IEnumerator CheckSpider()
