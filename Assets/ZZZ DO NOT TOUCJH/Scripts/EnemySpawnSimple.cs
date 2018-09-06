@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemySpawnSimple : MonoBehaviour {
 
@@ -18,31 +19,24 @@ public class EnemySpawnSimple : MonoBehaviour {
     [System.Serializable]
     public class spooderInfo
     {
-        [SerializeField]
-        public Transform[] Spooders;
-
-        [SerializeField]
-        public Transform[] SpooderMove1;
-
-        [SerializeField]
-        public Transform[] SpooderMove2;
+        public Transform Spooders;
+        
+        public Transform MovePos1;
+        
+        public Transform MovePos2;
     }
 
     [SerializeField]
-    public spooderInfo spooderInf;
+    public spooderInfo[] spooderInf;
     
     
-
     [SerializeField]
     private Transform[] Mele;
 
     [SerializeField]
     private Transform[] Ranged;
 
-
-
-
-
+    
     private GameObject[] melePos;
     
     private GameObject[] rangedPos;
@@ -55,7 +49,7 @@ public class EnemySpawnSimple : MonoBehaviour {
     {
         melePos = new GameObject[Mele.Length];
         rangedPos = new GameObject[Ranged.Length];
-        //spooderPos = new GameObject[Spooders.Length];
+        spooderPos = new GameObject[spooderInf.Length];
     }
 
     private void Update()
@@ -78,12 +72,13 @@ public class EnemySpawnSimple : MonoBehaviour {
             GameObject newRanged = Instantiate(RangedPref, Ranged[i].position, Ranged[i].rotation);
             rangedPos[i] = newRanged;
         }
-        /*
-        for (int i = 0; i < Spooders.Length && Spooders.Length > 0; i++)
+        for (int i = 0; i < spooderInf.Length && spooderInf.Length > 0; i++)
         {
-            GameObject newSpooder = Instantiate(SpoodersPref, Spooders[i].position, Spooders[i].rotation);
+            GameObject newSpooder = Instantiate(SpoodersPref, spooderInf[i].Spooders.position, spooderInf[i].Spooders.rotation);
+            SpiderAI spiderAI = newSpooder.GetComponentInChildren<SpiderAI>();
+            spiderAI.setPos(spooderInf[i].MovePos1, spooderInf[i].MovePos2);
             spooderPos[i] = newSpooder;
+            spiderAI.start();
         }
-        */
     }
 }
