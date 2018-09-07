@@ -17,7 +17,9 @@ public class HealthManager : MonoBehaviour {
 
     [SerializeField]
     Transform SpawnPoint;
-    
+
+    [SerializeField]
+    public GameObject gameover;
 
     // Use this for initialization
     void Start ()
@@ -51,12 +53,15 @@ public class HealthManager : MonoBehaviour {
         }
         if (health <=0)
         {
-            respawn();
+            gameover.SetActive(true);
+
+            //respawn();
         }
     }
 
     public void respawn()
     {
+        //gameover.SetActive(true);
         if (Directory.Exists("SaveFiles"))
         {
             XMLCheckpointManager.instance.load();
