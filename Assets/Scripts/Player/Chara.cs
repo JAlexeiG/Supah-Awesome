@@ -128,6 +128,10 @@ public class Chara : MonoBehaviour
     private Transform Arthur;
 
     [SerializeField]
+    private BodyRotation bodyRotation;
+
+
+    [SerializeField]
     private Animator anim;
 
 
@@ -309,6 +313,7 @@ public class Chara : MonoBehaviour
 
                     meleTimer = meleTime; //Starts up mele cooldown
 
+
                     //Mouse position (+20 because camera is -20) to find where to shoot something
                     mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, trans.position.z + gunPos);
 
@@ -320,6 +325,7 @@ public class Chara : MonoBehaviour
                     ///Updates for aiming
                     meleAim.LookAt(crosshair.transform); //Makes mele look at the crosshair
                     Destroy(crosshair, 0.5f); //Destroyes the crosshair
+
                 }
 
                 if (meleTimer > 0)
@@ -346,14 +352,18 @@ public class Chara : MonoBehaviour
                 //A bunch of stuff to know where mouse is
                 if (Input.GetButtonDown("Fire1") && shootCooldownTimer <= 0)
                 {
+                    bodyRotation.startShoot();
+                    anim.SetTrigger("Shoot");
+                    
+
                     shootCooldownTimer = shootCoolDown;
                     gunPos = -Camera.main.transform.position.z; //Position of camera
 
+                    
                     //// CHANGE THE SHOOTING THING TO BE NON-RELYANT ON THE CROSSHAIR
 
                     if (bulletLoaded > 0) //If player has bullets
                     {
-
 
                         //Mouse position (+20 because camera is -20) to find where to shoot something
                         mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, trans.position.z + gunPos);
@@ -364,8 +374,7 @@ public class Chara : MonoBehaviour
                         GameObject crosshair = Instantiate(crosshairPreFab, potato, Quaternion.Euler(0, 0, 0)); //Spawns crosshair
 
                         ///Updates for aiming
-
-
+                        
                         //aimingOrigin.LookAt(crosshair.transform); //Makes aim look at crosshair
 
                         //POTATOES// 
@@ -445,7 +454,9 @@ public class Chara : MonoBehaviour
 
             if (grounded && grounded2 && !dashing)
             {
-
+                gravity = OGravity;
+                
+                anim.SetBool("Grounded", true);
                 float input = Input.GetAxis("Horizontal");
 
                 if (input > 0.1f)
@@ -484,6 +495,7 @@ public class Chara : MonoBehaviour
                 {
                     rb.AddRelativeForce(0, jumpSpeed, 0, ForceMode.Impulse);
                     gliderStarted = false;
+                    anim.SetTrigger("Jump");
                 }
 
                 if (Input.GetButton("Sprint") & SteamManager.instance.steamUsable == true) // Button is Shift

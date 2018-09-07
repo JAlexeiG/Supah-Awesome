@@ -101,6 +101,11 @@ public class BodyRotation : MonoBehaviour {
         isMele = newMele;
     }
 
+    public void startShoot()
+    {
+        shooting = true;
+    }
+
     public void endShoot()
     {
         shooting = false;
